@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>188th PA Portal</title>
+	<meta name="Description" content="188th PA Portal">
+	<meta name="Authors" content="Daniel Condit">
+
+	<!--Page Styling-->
+
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/b9607822c6.css">
+
+	<!--JavaScript Libraries-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.js"></script>
+
+	<!--My JavaScript-->
+
+	<script src="assets/scripts/script.js"></script>
+
+</head>
+
+<body>
+
+	<div id="menu-container">
+
+		<div id="menu-wrapper">
+			<div id="hamburger-menu"><span></span><span></span><span></span></div>
+		</div>
+
+		<div id="menu-list">
+			<a class="menu-link" href="index.html">Home</a>
+			<a data-content="service" class="menu-link" href="#">Service Request</a>
+			<a data-content="equipment" class="menu-link" href="#">Equipment Request</a>
+			<a data-content="examples" class="menu-link" href="#">Recent Work</a>
+			<a data-content="contact" class="menu-link" href="#">Contact</a>
+			<div class="notice">
+				<h1>NOTICE</h1>
+				<p>This system is not secured. Do not upload information considered FOR OFFICIAL USE ONLY (FOUO) or PERSONALLY IDENTIFIABLE INFORMATION (PII), which must be protected under the Freedom of Information Act (5 U.S.C. 552) and/or the Privacy Act of 1974 (5 U.S.C. 552a). Unauthorized disclosure or misuse of such information may result in disciplinary action, criminal and/or civil penalties.</p>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="splash">
+
+		<img class="icon_img" src="assets/images/188th_PA.svg" alt="logo" name="Logo">
+
+	</div>
+
+	<div id="content_pages">
+
+		<div id="service" class="content" data-content="service">
+
+			<h1>What can we do for you?</h1>
+			<hr>
+			<div class="service_form_container">
+				<form class="service_form" action="">
+					<input class="service_form_input" type="date" name="date" matInput placeholder="Choose a date" required>
+					<input class="service_form_input" type="text" name="fname"matInput #input maxlength="20" placeholder="First Name" required>
+					<input class="service_form_input" type="text" name="lname" matInput #input maxlength="20" placeholder="Last Name" required>
+					<select class="service_form_input" name='grade' placeholder="Grade" required>
+						<option value="E-1">E-1</option>
+						<option value="E-2">E-2</option>
+						<option value="E-3">E-3</option>
+						<option value="E-4">E-4</option>
+						<option value="E-5">E-5</option>
+						<option value="E-6">E-6</option>
+						<option value="E-7">E-7</option>
+						<option value="E-8">E-8</option>
+						<option value="E-9">E-9</option>
+						<option value="W-1">W-1</option>
+						<option value="w-2">w-2</option>
+						<option value="W-3">W-3</option>
+						<option value="W-4">W-4</option>
+						<option value="W-5">W-5</option>
+						<option value="O-1">O-1</option>
+						<option value="O-2">O-2</option>
+						<option value="O-3">O-3</option>
+						<option value="O-4">O-4</option>
+						<option value="O-5">O-5</option>
+						<option value="O-6">O-6</option>
+						<option value="O-7">O-7</option>
+						<option value="O-8">O-8</option>
+						<option value="O-9">O-9</option>
+						<option value="O-10">O-10</option>
+						<option value="Civilian">Civilian</option>
+					</select>
+					<input class="service_form_input" type="number" name="phone"matInput placeholder="Phone Number" required>
+					<input class="service_form_input" type="email" name="emails" matInput placeholder="E-mail" [formControl]="email" required>
+					<select class="service_form_input" name='state' placeholder="State/Territory" required>
+						<option value="AL">AL</option>
+						<option value="AK">AK</option>
+						<option value="AZ">AZ</option>
+						<option value="AR">AR</option>
+						<option value="CA">CA</option>
+						<option value="CO">CO</option>
+						<option value="CT">CT</option>
+						<option value="DE">DE</option>
+						<option value="FL">FL</option>
+						<option value="GA">GA</option>
+						<option value="HI">HI</option>
+						<option value="ID">ID</option>
+						<option value="IL">IL</option>
+						<option value="IN">IN</option>
+						<option value="IA">IA</option>
+						<option value="KS">KS</option>
+						<option value="KY">KY</option>
+						<option value="LA">LA</option>
+						<option value="ME">ME</option>
+						<option value="MD">MD</option>
+						<option value="MA">MA</option>
+						<option value="MI">MI</option>
+						<option value="MN">MN</option>
+						<option value="MS">MS</option>
+						<option value="MO">MO</option>
+						<option value="MT">MT</option>
+						<option value="NE">NE</option>
+						<option value="NV">NV</option>
+						<option value="NH">NH</option>
+						<option value="NJ">NJ</option>
+						<option value="NM">NM</option>
+						<option value="NY">NY</option>
+						<option value="NC">NC</option>
+						<option value="ND">ND</option>
+						<option value="OH">OH</option>
+						<option value="OK">OK</option>
+						<option value="OR">OR</option>
+						<option value="PA">PA</option>
+						<option value="RI">RI</option>
+						<option value="SC">SC</option>
+						<option value="SD">SD</option>
+						<option value="TN">TN</option>
+						<option value="TX">TX</option>
+						<option value="UT">UT</option>
+						<option value="VT">VT</option>
+						<option value="VA">VA</option>
+						<option value="WA">WA</option>
+						<option value="WV">WV</option>
+						<option value="WI">WI</option>
+						<option value="WY">WY</option>
+						<option value="AS">AS</option>
+						<option value="DC">DC</option>
+						<option value="FM">FM</option>
+						<option value="GU">GU</option>
+						<option value="MH">MH</option>
+						<option value="MP">MP</option>
+						<option value="PW">PW</option>
+						<option value="PR">PR</option>
+						<option value="VI">VI</option>
+					</select>
+					<input class="service_form_input" type="text" name="org" matInput #input maxlength="20" placeholder="Organization" required>
+					<input class="service_form_input" type="text" name="osymbol" matInput #input maxlength="20" placeholder="Office Symbol">
+					<select class="service_form_input" name='support' placeholder="Type of Support" required>
+						<option value="option">Photo Support</option>
+						<option value="Photo Support">Graphics</option>
+						<option value="Video">Video</option>
+						<option value="Studio Photo">Studio Photo</option>
+						<option value="Other">Other</option>    
+					</select>
+					<textarea class="service_form_input" type="textarea" name="desc" matInput #input maxlength="200" placeholder="Description of Support" required></textarea>
+				</form>
+			</div>
+			<br>
+			
+		</div>
+
+		<div id="equipment" class="content" data-content="equipment">
+
+			<h1>What do you want?</h1>
+			<hr>
+			<br>
+			
+		</div>
+
+		<div id="examples" class="content hide" data-content="examples">
+			<h1>My Recent Work</h1>
+
+			<hr>
+
+			<button class="accordion">Capstone Project</button>
+			<div class="panel">
+				<div class="ex_flex_main">
+					<div class="ex_flex_sub">
+						<a href="https://web-projects.net/allenschool/" target="_blank">
+							<i class="fa fa-external-link">  The Allen School</i>
+						</a>
+						<br>
+						<br>
+						<iframe class="iframe_window" src="https://web-projects.net/allenschool/">
+						</iframe>
+					</div>
+				</div>
+			</div>
+
+			<button class="accordion">Web Projects</button>
+			<div class="panel">
+
+				<div class="ex_flex_main">
+					<div class="ex_flex_sub">
+						<a href="https://piegolocal.com/" target="_blank">
+							<i class="fa fa-external-link">  PieGo Pizza</i>
+						</a>
+						<br>
+						<br>
+						<iframe class="iframe_window" src="https://piegolocal.com/">
+						</iframe>
+					</div>
+
+					<div class="ex_flex_sub">
+						<a href="assets/work/W3_SpaceX/index.html" target="_blank">
+							<i class="fa fa-external-link">  SpaceX Project</i>
+						</a>
+						<br>
+						<br>
+						<iframe class="iframe_window" src="assets/work/W3_SpaceX/index.html">
+						</iframe>
+					</div>
+				</div>
+
+			</div>
+
+			<button class="accordion">Programming</button>
+			<div class="panel">
+				<div class="ex_flex_main">
+					<div class="ex_flex_sub">
+						<a href="assets/work/W4_Cycles/index.html" target="_blank">
+							<i class="fa fa-external-link">  Cycles Example</i>
+						</a>
+						<br>
+						<br>
+						<iframe class="iframe_window" src="assets/work/W4_Cycles/index.html">
+						</iframe>
+					</div>
+					<div class="ex_flex_sub">
+						<a href="assets/work/B1_Validation/index.html" target="_blank">
+							<i class="fa fa-external-link">  Patient Reg.</i>
+						</a>
+						<br>
+						<br>
+						<iframe class="iframe_window" src="assets/work/B1_Validation/index.html">
+						</iframe>
+					</div>
+					<div class="ex_flex_sub">
+						<a href="assets/work/B2_Circle_Calc/index.html" target="_blank">
+							<i class="fa fa-external-link">  Circle Calc.</i>
+						</a>
+						<br>
+						<br>
+						<iframe class="iframe_window" src="assets/work/B2_Cirlcle_Calc/index.html">
+						</iframe>
+					</div>
+					<div class="ex_flex_sub">
+						<a href="assets/work/B3_Price_Total_Example/index.html" target="_blank">
+							<i class="fa fa-external-link">  Price Total</i>
+						</a>
+						<br>
+						<br>
+						<iframe class="iframe_window" src="assets/work/B3_Price_Total_Example/index.html">
+						</iframe>
+					</div>
+					<div class="ex_flex_sub">
+						<a href="assets/work/B4_Calculator/index.html" target="_blank">
+							<i class="fa fa-external-link">  JS Calc.</i>
+						</a>
+						<br>
+						<br>
+						<iframe class="iframe_window" src="assets/work/B4_Calculator/index.html">
+						</iframe>
+					</div>
+					<div class="ex_flex_sub">
+						<a href="assets/work/B5_Unit_Conversion/index.html" target="_blank">
+							<i class="fa fa-external-link">  Unit Converter</i>
+						</a>
+						<br>
+						<br>
+						<iframe class="iframe_window" src="assets/work/B5_Unit_Conversion/index.html">
+						</iframe>
+					</div>
+					<div class="ex_flex_sub">
+						<a href="assets/work/B6_Patient/index.html" target="_blank">
+							<i class="fa fa-external-link">  Patient Reg. Form</i>
+						</a>
+						<br>
+						<br>
+						<iframe class="iframe_window" src="assets/work/B6_Patient/index.html">
+						</iframe>
+					</div>
+					<div class="ex_flex_sub">
+						<a href="assets/work/B7_Survey/index.html" target="_blank">
+							<i class="fa fa-external-link">  Survey Form</i>
+						</a>
+						<br>
+						<br>
+						<iframe class="iframe_window" src="assets/work/B7_Survey/index.html">
+						</iframe>
+					</div>
+				</div>
+			</div>
+
+			<button class="accordion">Database</button>
+			<div class="panel">
+				<div class="db_examples">
+					<object class="db_object" data='assets/db_examples/Movie_DB_Diagram.pdf#zoom=FitH'>
+						<h3>Oops! You don't support PDFs!</h3>
+						<a href="assets/db_examples/Movie_DB_Diagram.pdf"><img class="ws_icon" src="assets/images/pdf-file.svg" alt="WS_1" name="WS_1"></a>
+						<h3>Download Instead</h3>
+					</object>
+				</div>
+				<div class="db_examples">
+					<object class="db_object" data='assets/db_examples/er_mapping.pdf#zoom=FitH'>
+						<h3>Oops! You don't support PDFs!</h3>
+						<a href="assets/db_examples/er_mapping.pdf"><img class="ws_icon" src="assets/images/pdf-file.svg" alt="WS_1" name="WS_1"></a>
+						<h3>Download Instead</h3>
+					</object>
+				</div>
+				<div class="db_examples">
+					<object class="db_object" data='assets/db_examples/sql_query_and_result.pdf#zoom=FitH'>
+						<h3>Oops! You don't support PDFs!</h3>
+						<a href="assets/db_examples/sql_query_and_result.pdf"><img class="ws_icon" src="assets/images/pdf-file.svg" alt="WS_2" name="WS_2"></a>
+						<h3>Download Instead</h3>
+					</object>
+				</div>
+			</div>
+
+			<button class="accordion">Soft Skills</button>
+			<div class="panel">
+				<div class="ex_flex_main">
+				</div>
+			</div>
+
+			<button class="accordion">Writing Samples</button>
+			<div class="panel">
+				<div class="writing_samples">
+					<object class="writing_object" data='assets/writing_samples/Condit_CMSAF_Story.pdf#zoom=FitH'>
+						<h3>Oops! You don't support PDFs!</h3>
+						<a href="assets/writing_samples/Condit_CMSAF_Story.pdf"><img class="ws_icon" src="assets/images/pdf-file.svg" alt="WS_1" name="WS_1"></a>
+						<h3>Download Instead</h3>
+					</object>
+				</div>
+				<div class="writing_samples">
+					<object class="writing_object" data='assets/writing_samples/Condit_Ark_Flood_Story.pdf#zoom=FitH'>
+						<h3>Oops! You don't support PDFs!</h3>
+						<a href="assets/writing_samples/Condit_Ark_Flood_Story.pdf"><img class="ws_icon" src="assets/images/pdf-file.svg" alt="WS_2" name="WS_2"></a>
+						<h3>Download Instead</h3>
+					</object>
+				</div>
+				<div class="writing_samples">
+					<object class="writing_object" data='assets/writing_samples/Condit_Map_Act_2.pdf#zoom=FitH'>
+						<h3>Oops! You don't support PDFs!</h3>
+						<a href="assets/writing_samples/Condit_Map_Act_2.pdf"><img class="ws_icon" src="assets/images/pdf-file.svg" alt="WS_3" name="WS_3"></a>
+						<h3>Download Instead</h3>
+					</object>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="contact" class="content hide" data-content="contact">
+			<h1>Let's Talk</h1>
+			<hr>
+			<div class="contact_flex_main">
+				<div class="contact_flex_sub">
+					<h3>Daniel J. Condit</h3>
+					<h3><a href = "mailto: DanielJCondit@gmail.com">DanielJCondit@gmail.com</a></h3>
+					<h3><a href="tel:503-901-6720">(503) 901-6720</a></h3>
+					<a href="https://github.com/DanielCondit" target="_blank"><img class="icon_img" src="assets/images/Github.svg" alt="Git" name="Git"></a>
+					<a href="https://www.linkedin.com/in/danieljcondit" target="_blank"><img class="icon_img" src="assets/images/linkedin-logo.svg" alt="Linkedin" name="Linkedin"></a>
+				</div>
+				<div class="contact_flex_sub">
+					<iframe height="436" title="Embedded Wufoo Form" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" src="https://danielcondit.wufoo.com/embed/m86v7gq01pex6v/"> <a href="https://danielcondit.wufoo.com/forms/m86v7gq01pex6v/">Fill out my Wufoo form!</a> </iframe>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</body>
+
+</html>
