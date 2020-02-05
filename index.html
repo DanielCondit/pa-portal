@@ -12,6 +12,8 @@
 
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 
+	<link href="assets/css/forms.css" rel="stylesheet" type="text/css" />
+
 	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/b9607822c6.css">
@@ -64,12 +66,12 @@
 
 			<h1>What can we do for you?</h1>
 			<hr>
-			<div class="service_form_container">
-				<form class="service_form" action="">
-					<input class="service_form_input" type="date" name="date" matInput placeholder="Choose a date" required>
-					<input class="service_form_input" type="text" name="fname"matInput #input maxlength="20" placeholder="First Name" required>
-					<input class="service_form_input" type="text" name="lname" matInput #input maxlength="20" placeholder="Last Name" required>
-					<select class="service_form_input" name='grade' placeholder="Grade" required>
+			<div class="forms_container">
+				<form class="forms" action="">
+					<input class="forms_input" type="date" name="date" matInput placeholder="Choose a date" required>
+					<input class="forms_input" type="text" name="fname"matInput #input maxlength="20" placeholder="First Name" required>
+					<input class="forms_input" type="text" name="lname" matInput #input maxlength="20" placeholder="Last Name" required>
+					<select class="forms_input" name='grade' placeholder="Grade" required>
 						<option value="E-1">E-1</option>
 						<option value="E-2">E-2</option>
 						<option value="E-3">E-3</option>
@@ -96,9 +98,9 @@
 						<option value="O-10">O-10</option>
 						<option value="Civilian">Civilian</option>
 					</select>
-					<input class="service_form_input" type="number" name="phone"matInput placeholder="Phone Number" required>
-					<input class="service_form_input" type="email" name="emails" matInput placeholder="E-mail" [formControl]="email" required>
-					<select class="service_form_input" name='state' placeholder="State/Territory" required>
+					<input class="forms_input" type="number" name="phone"matInput placeholder="Phone Number" required>
+					<input class="forms_input" type="email" name="emails" matInput placeholder="E-mail" [formControl]="email" required>
+					<select class="forms_input" name='state' placeholder="State/Territory" required>
 						<option value="AL">AL</option>
 						<option value="AK">AK</option>
 						<option value="AZ">AZ</option>
@@ -159,16 +161,16 @@
 						<option value="PR">PR</option>
 						<option value="VI">VI</option>
 					</select>
-					<input class="service_form_input" type="text" name="org" matInput #input maxlength="20" placeholder="Organization" required>
-					<input class="service_form_input" type="text" name="osymbol" matInput #input maxlength="20" placeholder="Office Symbol">
-					<select class="service_form_input" name='support' placeholder="Type of Support" required>
+					<input class="forms_input" type="text" name="org" matInput #input maxlength="20" placeholder="Organization" required>
+					<input class="forms_input" type="text" name="osymbol" matInput #input maxlength="20" placeholder="Office Symbol">
+					<select class="forms_input" name='support' placeholder="Type of Support" required>
 						<option value="option">Photo Support</option>
 						<option value="Photo Support">Graphics</option>
 						<option value="Video">Video</option>
 						<option value="Studio Photo">Studio Photo</option>
 						<option value="Other">Other</option>    
 					</select>
-					<textarea class="service_form_input" type="textarea" name="desc" matInput #input maxlength="200" placeholder="Description of Support" required></textarea>
+					<textarea class="forms_input" type="textarea" name="desc" matInput #input maxlength="200" placeholder="Description of Support" required></textarea>
 				</form>
 			</div>
 			<br>

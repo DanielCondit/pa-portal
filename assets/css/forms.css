@@ -1,0 +1,14 @@
+/*STYLES FOR FORMS ON THE SITE*/
+
+.forms_container {
+	width: 100%;
+}
+
+.forms {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.forms_input {
+	width: 100%;
+}
