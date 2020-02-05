@@ -68,10 +68,17 @@
 			<hr>
 			<div class="forms_container">
 				<form class="forms" action="">
-					<input class="forms_input" type="date" name="date" matInput placeholder="Choose a date" required>
-					<input class="forms_input" type="text" name="fname"matInput #input maxlength="20" placeholder="First Name" required>
-					<input class="forms_input" type="text" name="lname" matInput #input maxlength="20" placeholder="Last Name" required>
-					<select class="forms_input" name='grade' placeholder="Grade" required>
+					<input class="forms_input half_input" type="date" name="date" matInput placeholder="Choose a date" required>
+					<select class="forms_input half_input" name='support' placeholder="Type of Support" required>
+						<option value="option">Photo Support</option>
+						<option value="Photo Support">Graphics</option>
+						<option value="Video">Video</option>
+						<option value="Studio Photo">Studio Photo</option>
+						<option value="Other">Other</option>    
+					</select>
+					<input class="forms_input thirds_input" type="text" name="fname"matInput #input maxlength="20" placeholder="First Name" required>
+					<input class="forms_input thirds_input" type="text" name="lname" matInput #input maxlength="20" placeholder="Last Name" required>
+					<select class="forms_input thirds_input" name='grade' placeholder="Grade" required>
 						<option value="E-1">E-1</option>
 						<option value="E-2">E-2</option>
 						<option value="E-3">E-3</option>
@@ -98,9 +105,9 @@
 						<option value="O-10">O-10</option>
 						<option value="Civilian">Civilian</option>
 					</select>
-					<input class="forms_input" type="number" name="phone"matInput placeholder="Phone Number" required>
-					<input class="forms_input" type="email" name="emails" matInput placeholder="E-mail" [formControl]="email" required>
-					<select class="forms_input" name='state' placeholder="State/Territory" required>
+					<input class="forms_input half_input" type="number" name="phone"matInput placeholder="Phone Number" required>
+					<input class="forms_input half_input" type="email" name="emails" matInput placeholder="E-mail" [formControl]="email" required>
+					<select class="forms_input thirds_input" name='state' placeholder="State/Territory" required>
 						<option value="Alabama - AL">Alabama - AL</option>
 						<option value="Alaska - AK">Alaska - AK</option>
 						<option value="Arizona - AZ">Arizona - AZ</option>
@@ -157,15 +164,8 @@
 						<option value="Wisconsin - WI">Wisconsin - WI</option>
 						<option value="Wyoming - WY">Wyoming - WY</option>
 					</select>
-					<input class="forms_input" type="text" name="org" matInput #input maxlength="20" placeholder="Organization" required>
-					<input class="forms_input" type="text" name="osymbol" matInput #input maxlength="20" placeholder="Office Symbol">
-					<select class="forms_input" name='support' placeholder="Type of Support" required>
-						<option value="option">Photo Support</option>
-						<option value="Photo Support">Graphics</option>
-						<option value="Video">Video</option>
-						<option value="Studio Photo">Studio Photo</option>
-						<option value="Other">Other</option>    
-					</select>
+					<input class="forms_input thirds_input" type="text" name="org" matInput #input maxlength="20" placeholder="Organization" required>
+					<input class="forms_input thirds_input" type="text" name="osymbol" matInput #input maxlength="20" placeholder="Office Symbol">
 					<textarea class="forms_input" type="textarea" name="desc" matInput #input maxlength="200" placeholder="Description of Support" required></textarea>
 					<br>
 					<br>
