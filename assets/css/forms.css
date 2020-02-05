@@ -2,21 +2,20 @@
 @import url(//db.onlinewebfonts.com/c/cb012419e4820b27abcd1c2e339b8901?family=Berthold+Akzidenz+Grotesk+BE);
 
 .forms_container {
-	/*width: 100%;*/
 
 }
 
 .forms {
 	width: 50%;
 	margin: 0 auto;
-	border: 3px solid #120A8F;
-	padding: 10px;
+	background-color: white;
 }
 
 .forms_input {
 	box-sizing:border-box;
 	width: 100%;
-	border: 3px solid #120A8F;
+	border: 1px solid #120A8F;
+	border-radius: 5px;
 	margin: 10px 0;
 }
 
@@ -26,5 +25,7 @@
 	margin: 0 auto;
 	height: 50px;
 	background-color: #120A8F;
-	color: #FFD700; 
+	color: #FFD700;
+	text-transform: uppercase;
+	font-family: arial black;
 }
