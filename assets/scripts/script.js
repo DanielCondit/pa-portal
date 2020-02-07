@@ -32,19 +32,27 @@ $(document).ready(function () {
    $("#splash").hide();
  });
 
-  var acc = document.getElementsByClassName("accordion");
-  var i;
+  $(".tabs li a").click(function() {
 
-  for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      } 
-    });
+    // Active state for tabs
+    $(".tabs li a").removeClass("active");
+    $(this).addClass("active");
+    
+    // Active state for Tabs Content
+    $(".tab_content_container > .tab_content_active").removeClass("tab_content_active").fadeOut(200);
+    $(this.rel).fadeIn(500).addClass("tab_content_active");
+    
+  });
+
+  $(".notice button").click(function() {
+    $(".notice").hide("slow");
+  });
+
+  $(".forms_input").hover(function() {
+    $( this ).addClass("form_hover");
+  }, function() {
+    $( this ).removeClass("form_hover");
   }
+);
 
 });
