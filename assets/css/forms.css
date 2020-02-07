@@ -15,11 +15,13 @@
 	border: none;
 	border-bottom: 1px solid #120A8F;
 	margin: 5px 0;
+	transition: height 0.2s linear;
 }
 
 .form_hover {
 	height: 50px;
 	cursor: pointer;
+	transition: height 0.2s linear;
 }
 
 /*.half_input {
