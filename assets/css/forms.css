@@ -43,6 +43,9 @@
 	font-family: arial black;
 }
 
+.forms_button:hover {
+	cursor: pointer;
+}
 
 /*CONTACT EMAIL FORM*/
 
