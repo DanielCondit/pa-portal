@@ -199,13 +199,19 @@ ul.tabs li {
 }
 
 ul.tabs li a { 
-  width:195px; 
-  line-height:50px; 
-  background:#FFD700; 
-  text-align:center; 
+  width:125px; 
+  line-height:30px; 
+  background:#FFD700;  
   float:left; 
   text-decoration:none; 
-  color:#120A8F; 
+  color:#120A8F;
+  border-top-right-radius: 30px;
+}
+
+ul.tabs li a span {
+  position: relative;
+  bottom: -5px;
+  left: 5px;
 }
 
 ul.tabs li a:hover, ul.tabs li a.active { 
