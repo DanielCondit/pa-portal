@@ -242,12 +242,13 @@ ul.tabs li a:hover, ul.tabs li a.active {
   padding:20px; 
   margin-top:1px; 
   font-size:14px; 
-  border-radius:0 0 10px 10px; 
+  border-radius:0 0 10px 10px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
   -moz-border-radius:0 0 10px 10px; 
   -webkit-border-radius:0 0 10px 10px; 
   display:block;
-  border-left: 2px solid black;
-  border-bottom: 2px solid black;
+  
 }
 
 .tab_content { 
@@ -284,6 +285,9 @@ ul.tabs li a:hover, ul.tabs li a.active {
   flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: white;
+  border-radius:0 0 10px 10px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
 }
 
 .contact_sub {
@@ -297,6 +301,11 @@ ul.tabs li a:hover, ul.tabs li a.active {
 .contact_sub a {
   text-decoration: none;
   color: black;
+}
+
+.contact_info {
+  background-image: url("/../images/188th.png");
+  /*background-color: #cccccc;*/
 }
 
 /* ^^ END STYLES FOR THE CONTACT PAGE ^^ */
