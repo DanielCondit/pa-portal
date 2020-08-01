@@ -12,378 +12,427 @@
 
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-
-	<link rel="stylesheet" href="https://use.fontawesome.com/b9607822c6.css">
+	<link href="assets/css/forms.css" rel="stylesheet" type="text/css" />
 
 	<!--JavaScript Libraries-->
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.js"></script>
 
+	<script src="https://kit.fontawesome.com/ef382a7536.js" crossorigin="anonymous"></script>
+
 	<!--My JavaScript-->
 
 	<script src="assets/scripts/script.js"></script>
 
+	<script src="assets/scripts/email.js"></script>
+
 </head>
 
 <body>
+	<div class="full_wrap">
+		<div id="menu-container">
 
-	<div id="menu-container">
+			<div id="menu-wrapper">
+				<div id="hamburger-menu"><span></span><span></span><span></span></div>
+			</div>
 
-		<div id="menu-wrapper">
-			<div id="hamburger-menu"><span></span><span></span><span></span></div>
+			<div id="menu-list">
+				<a class="menu-link" href="index.html">Home</a>
+				<a data-content="service" class="menu-link" href="#">Support Request</a>
+				<a data-content="contact" class="menu-link" href="#">Contact</a>
+				<a data-content="admin" class="menu-link" href="#">Admin</a>
+			</div>
+
 		</div>
 
-		<div id="menu-list">
-			<a class="menu-link" href="index.html">Home</a>
-			<a data-content="service" class="menu-link" href="#">Service Request</a>
-			<a data-content="equipment" class="menu-link" href="#">Equipment Request</a>
-			<a data-content="examples" class="menu-link" href="#">Recent Work</a>
-			<a data-content="contact" class="menu-link" href="#">Contact</a>
-			<div class="notice">
-				<h1>NOTICE</h1>
-				<p>This system is not secured. Do not upload information considered FOR OFFICIAL USE ONLY (FOUO) or PERSONALLY IDENTIFIABLE INFORMATION (PII), which must be protected under the Freedom of Information Act (5 U.S.C. 552) and/or the Privacy Act of 1974 (5 U.S.C. 552a). Unauthorized disclosure or misuse of such information may result in disciplinary action, criminal and/or civil penalties.</p>
-			</div>
+		<div id="splash">
+
+			<img class="icon_img" src="assets/images/188th_PA.svg" alt="logo" name="Logo">
+
 		</div>
 
-	</div>
+		<div class="notice">
+			<h1>NOTICE</h1>
+			<p>This system is not secured. Do not upload information considered FOR OFFICIAL USE ONLY (FOUO) or PERSONALLY IDENTIFIABLE INFORMATION (PII), which must be protected under the Freedom of Information Act (5 U.S.C. 552) and/or the Privacy Act of 1974 (5 U.S.C. 552a). Unauthorized disclosure or misuse of such information may result in disciplinary action, criminal and/or civil penalties.</p>
 
-	<div id="splash">
-
-		<img class="icon_img" src="assets/images/188th_PA.svg" alt="logo" name="Logo">
-
-	</div>
-
-	<div id="content_pages">
-
-		<div id="service" class="content" data-content="service">
-
-			<h1>What can we do for you?</h1>
-			<hr>
-			<div class="service_form_container">
-				<form class="service_form" action="">
-					<input class="service_form_input" type="date" name="date" matInput placeholder="Choose a date" required>
-					<input class="service_form_input" type="text" name="fname"matInput #input maxlength="20" placeholder="First Name" required>
-					<input class="service_form_input" type="text" name="lname" matInput #input maxlength="20" placeholder="Last Name" required>
-					<select class="service_form_input" name='grade' placeholder="Grade" required>
-						<option value="E-1">E-1</option>
-						<option value="E-2">E-2</option>
-						<option value="E-3">E-3</option>
-						<option value="E-4">E-4</option>
-						<option value="E-5">E-5</option>
-						<option value="E-6">E-6</option>
-						<option value="E-7">E-7</option>
-						<option value="E-8">E-8</option>
-						<option value="E-9">E-9</option>
-						<option value="W-1">W-1</option>
-						<option value="w-2">w-2</option>
-						<option value="W-3">W-3</option>
-						<option value="W-4">W-4</option>
-						<option value="W-5">W-5</option>
-						<option value="O-1">O-1</option>
-						<option value="O-2">O-2</option>
-						<option value="O-3">O-3</option>
-						<option value="O-4">O-4</option>
-						<option value="O-5">O-5</option>
-						<option value="O-6">O-6</option>
-						<option value="O-7">O-7</option>
-						<option value="O-8">O-8</option>
-						<option value="O-9">O-9</option>
-						<option value="O-10">O-10</option>
-						<option value="Civilian">Civilian</option>
-					</select>
-					<input class="service_form_input" type="number" name="phone"matInput placeholder="Phone Number" required>
-					<input class="service_form_input" type="email" name="emails" matInput placeholder="E-mail" [formControl]="email" required>
-					<select class="service_form_input" name='state' placeholder="State/Territory" required>
-						<option value="AL">AL</option>
-						<option value="AK">AK</option>
-						<option value="AZ">AZ</option>
-						<option value="AR">AR</option>
-						<option value="CA">CA</option>
-						<option value="CO">CO</option>
-						<option value="CT">CT</option>
-						<option value="DE">DE</option>
-						<option value="FL">FL</option>
-						<option value="GA">GA</option>
-						<option value="HI">HI</option>
-						<option value="ID">ID</option>
-						<option value="IL">IL</option>
-						<option value="IN">IN</option>
-						<option value="IA">IA</option>
-						<option value="KS">KS</option>
-						<option value="KY">KY</option>
-						<option value="LA">LA</option>
-						<option value="ME">ME</option>
-						<option value="MD">MD</option>
-						<option value="MA">MA</option>
-						<option value="MI">MI</option>
-						<option value="MN">MN</option>
-						<option value="MS">MS</option>
-						<option value="MO">MO</option>
-						<option value="MT">MT</option>
-						<option value="NE">NE</option>
-						<option value="NV">NV</option>
-						<option value="NH">NH</option>
-						<option value="NJ">NJ</option>
-						<option value="NM">NM</option>
-						<option value="NY">NY</option>
-						<option value="NC">NC</option>
-						<option value="ND">ND</option>
-						<option value="OH">OH</option>
-						<option value="OK">OK</option>
-						<option value="OR">OR</option>
-						<option value="PA">PA</option>
-						<option value="RI">RI</option>
-						<option value="SC">SC</option>
-						<option value="SD">SD</option>
-						<option value="TN">TN</option>
-						<option value="TX">TX</option>
-						<option value="UT">UT</option>
-						<option value="VT">VT</option>
-						<option value="VA">VA</option>
-						<option value="WA">WA</option>
-						<option value="WV">WV</option>
-						<option value="WI">WI</option>
-						<option value="WY">WY</option>
-						<option value="AS">AS</option>
-						<option value="DC">DC</option>
-						<option value="FM">FM</option>
-						<option value="GU">GU</option>
-						<option value="MH">MH</option>
-						<option value="MP">MP</option>
-						<option value="PW">PW</option>
-						<option value="PR">PR</option>
-						<option value="VI">VI</option>
-					</select>
-					<input class="service_form_input" type="text" name="org" matInput #input maxlength="20" placeholder="Organization" required>
-					<input class="service_form_input" type="text" name="osymbol" matInput #input maxlength="20" placeholder="Office Symbol">
-					<select class="service_form_input" name='support' placeholder="Type of Support" required>
-						<option value="option">Photo Support</option>
-						<option value="Photo Support">Graphics</option>
-						<option value="Video">Video</option>
-						<option value="Studio Photo">Studio Photo</option>
-						<option value="Other">Other</option>    
-					</select>
-					<textarea class="service_form_input" type="textarea" name="desc" matInput #input maxlength="200" placeholder="Description of Support" required></textarea>
-				</form>
-			</div>
+			<button class="forms_button">ACKNOWLEDGE</button>
 			<br>
-			
-		</div>
-
-		<div id="equipment" class="content" data-content="equipment">
-
-			<h1>What do you want?</h1>
-			<hr>
 			<br>
-			
 		</div>
 
-		<div id="examples" class="content hide" data-content="examples">
-			<h1>My Recent Work</h1>
+		<div id="content_pages">
 
-			<hr>
+			<div id="service" class="content" data-content="service">
 
-			<button class="accordion">Capstone Project</button>
-			<div class="panel">
-				<div class="ex_flex_main">
-					<div class="ex_flex_sub">
-						<a href="https://web-projects.net/allenschool/" target="_blank">
-							<i class="fa fa-external-link">  The Allen School</i>
+				<h1>Support Request</h1>
+				<hr>
+				<ul class="tabs">
+					<li>
+						<a href="javascript:void(0); return false;" rel="#Services" class="tab active">
+							<span>
+								Service
+							</span>
 						</a>
-						<br>
-						<br>
-						<iframe class="iframe_window" src="https://web-projects.net/allenschool/">
-						</iframe>
+					</li>
+					<li>
+						<a href="javascript:void(0); return false;" rel="#Equipment" class="tab">
+							<span>
+								Equipment
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0); return false;" rel="#RHTC" class="tab">
+							<span>
+								RHTC
+							</span>
+						</a>
+					</li>
+				</ul>
+
+				<div class="tab_content_container">
+					<div id="Services" class="tab_content tab_content_active">
+						<form class="forms" action="">
+							<input class="forms_input half_input" type="date" name="date" required>
+							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
+							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
+							<select class="forms_input thirds_input" name='grade' required>
+								<option value="" disabled selected>Grade</option>
+								<option value="E-1">E-1</option>
+								<option value="E-2">E-2</option>
+								<option value="E-3">E-3</option>
+								<option value="E-4">E-4</option>
+								<option value="E-5">E-5</option>
+								<option value="E-6">E-6</option>
+								<option value="E-7">E-7</option>
+								<option value="E-8">E-8</option>
+								<option value="E-9">E-9</option>
+								<option value="W-1">W-1</option>
+								<option value="w-2">w-2</option>
+								<option value="W-3">W-3</option>
+								<option value="W-4">W-4</option>
+								<option value="W-5">W-5</option>
+								<option value="O-1">O-1</option>
+								<option value="O-2">O-2</option>
+								<option value="O-3">O-3</option>
+								<option value="O-4">O-4</option>
+								<option value="O-5">O-5</option>
+								<option value="O-6">O-6</option>
+								<option value="O-7">O-7</option>
+								<option value="O-8">O-8</option>
+								<option value="O-9">O-9</option>
+								<option value="O-10">O-10</option>
+								<option value="Civilian">Civilian</option>
+							</select>
+							<input class="forms_input half_input" type="number" name="phone" placeholder="Phone Number" required>
+							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" [formControl]="email" required>
+							<select class="forms_input thirds_input" name='state' required>
+								<option value="" disabled selected>State</option>
+								<option value="Alabama - AL">Alabama - AL</option>
+								<option value="Alaska - AK">Alaska - AK</option>
+								<option value="Arizona - AZ">Arizona - AZ</option>
+								<option value="Arkansas - AR">Arkansas - AR</option>
+								<option value="California - CA">California - CA</option>
+								<option value="Canal Zone - CZ">Canal Zone - CZ</option>
+								<option value="Colorado - CO">Colorado - CO</option>
+								<option value="Connecticut - CT">Connecticut - CT</option>
+								<option value="Delaware - DE">Delaware - DE</option>
+								<option value="District of Columbia - DC">District of Columbia - DC</option>
+								<option value="Florida - FL">Florida - FL</option>
+								<option value="Georgia - GA">Georgia - GA</option>
+								<option value="Guam - GU">Guam - GU</option>
+								<option value="Hawaii - HI">Hawaii - HI</option>
+								<option value="Idaho - ID">Idaho - ID</option>
+								<option value="Illinois - IL">Illinois - IL</option>
+								<option value="Indiana - IN">Indiana - IN</option>
+								<option value="Iowa - IA">Iowa - IA</option>
+								<option value="Kansas - KS">Kansas - KS</option>
+								<option value="Kentucky - KY">Kentucky - KY</option>
+								<option value="Louisiana - LA">Louisiana - LA</option>
+								<option value="Maine - ME">Maine - ME</option>
+								<option value="Maryland - MD">Maryland - MD</option>
+								<option value="Massachusetts - MA">Massachusetts - MA</option>
+								<option value="Michigan - MI">Michigan - MI</option>
+								<option value="Minnesota - MN">Minnesota - MN</option>
+								<option value="Mississippi - MS">Mississippi - MS</option>
+								<option value="Missouri - MO">Missouri - MO</option>
+								<option value="Montana - MT">Montana - MT</option>
+								<option value="Nebraska - NE">Nebraska - NE</option>
+								<option value="Nevada - NV">Nevada - NV</option>
+								<option value="New Hampshire - NH">New Hampshire - NH</option>
+								<option value="New Jersey - NJ">New Jersey - NJ</option>
+								<option value="New Mexico - NM">New Mexico - NM</option>
+								<option value="New York - NY">New York - NY</option>
+								<option value="North Carolina - NC">North Carolina - NC</option>
+								<option value="North Dakota - ND">North Dakota - ND</option>
+								<option value="Ohio - OH">Ohio - OH</option>
+								<option value="Oklahoma - OK">Oklahoma - OK</option>
+								<option value="Oregon - OR">Oregon - OR</option>
+								<option value="Pennsylvania - PA">Pennsylvania - PA</option>
+								<option value="Puerto Rico - PR">Puerto Rico - PR</option>
+								<option value="Rhode Island - RI">Rhode Island - RI</option>
+								<option value="South Carolina - SC">South Carolina - SC</option>
+								<option value="South Dakota - SD">South Dakota - SD</option>
+								<option value="Tennessee - TN">Tennessee - TN</option>
+								<option value="Texas - TX">Texas - TX</option>
+								<option value="Utah - UT">Utah - UT</option>
+								<option value="Vermont - VT">Vermont - VT</option>
+								<option value="Virgin Islands - VI">Virgin Islands - VI</option>
+								<option value="Virginia - VA">Virginia - VA</option>
+								<option value="Washington - WA">Washington - WA</option>
+								<option value="West Virginia - WV">West Virginia - WV</option>
+								<option value="Wisconsin - WI">Wisconsin - WI</option>
+								<option value="Wyoming - WY">Wyoming - WY</option>
+							</select>
+							<input class="forms_input thirds_input" type="text" name="org"  maxlength="20" placeholder="Organization" required>
+							<input class="forms_input thirds_input" type="text" name="osymbol" maxlength="20" placeholder="Office Symbol">
+							<select class="forms_input half_input" name='support' required>
+								<option value="" disabled selected>Select Support Type</option>
+								<option value="Photo Support">Photo Support</option>
+								<option value="Video">Video</option>
+								<option value="Studio Photo">Studio Photo</option>
+								<option value="Other">Other</option>
+							</select>
+							<textarea class="forms_input" type="textarea" name="desc" maxlength="200" placeholder="Description of Support" required></textarea>
+							<br>
+							<br>
+							<input class="forms_button" type="submit" value="request">
+							<br>
+							<br>
+						</form>
+					</div>
+					<div id="Equipment" class="tab_content">
+						<form class="forms" action="">
+							<input class="forms_input half_input" type="datetime-local" name="date" required>
+							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
+							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
+							<select class="forms_input thirds_input" name='grade' required>
+								<option value="" disabled selected>Grade</option>
+								<option value="E-1">E-1</option>
+								<option value="E-2">E-2</option>
+								<option value="E-3">E-3</option>
+								<option value="E-4">E-4</option>
+								<option value="E-5">E-5</option>
+								<option value="E-6">E-6</option>
+								<option value="E-7">E-7</option>
+								<option value="E-8">E-8</option>
+								<option value="E-9">E-9</option>
+								<option value="W-1">W-1</option>
+								<option value="w-2">w-2</option>
+								<option value="W-3">W-3</option>
+								<option value="W-4">W-4</option>
+								<option value="W-5">W-5</option>
+								<option value="O-1">O-1</option>
+								<option value="O-2">O-2</option>
+								<option value="O-3">O-3</option>
+								<option value="O-4">O-4</option>
+								<option value="O-5">O-5</option>
+								<option value="O-6">O-6</option>
+								<option value="O-7">O-7</option>
+								<option value="O-8">O-8</option>
+								<option value="O-9">O-9</option>
+								<option value="O-10">O-10</option>
+								<option value="Civilian">Civilian</option>
+							</select>
+							<input class="forms_input half_input" type="number" name="phone" placeholder="Phone Number" required>
+							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" [formControl]="email" required>
+							<input class="forms_input thirds_input" type="text" name="org"  maxlength="20" placeholder="Organization" required>
+							<input class="forms_input thirds_input" type="text" name="osymbol" maxlength="20" placeholder="Office Symbol">
+							<textarea class="forms_input" type="textarea" name="desc" maxlength="200" placeholder="Description of Support" required></textarea>
+							<br>
+							<br>
+							<input class="forms_button" type="submit" value="request">
+							<br>
+							<br>
+						</form>
+					</div>
+					<div id="RHTC" class="tab_content">
+						<form class="forms" action="">
+							<input class="forms_input half_input" type="date" name="date" required>
+							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
+							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
+							<select class="forms_input thirds_input" name='grade' required>
+								<option value="" disabled selected>Grade</option>
+								<option value="E-1">E-1</option>
+								<option value="E-2">E-2</option>
+								<option value="E-3">E-3</option>
+								<option value="E-4">E-4</option>
+								<option value="E-5">E-5</option>
+								<option value="E-6">E-6</option>
+								<option value="E-7">E-7</option>
+								<option value="E-8">E-8</option>
+								<option value="E-9">E-9</option>
+								<option value="W-1">W-1</option>
+								<option value="w-2">w-2</option>
+								<option value="W-3">W-3</option>
+								<option value="W-4">W-4</option>
+								<option value="W-5">W-5</option>
+								<option value="O-1">O-1</option>
+								<option value="O-2">O-2</option>
+								<option value="O-3">O-3</option>
+								<option value="O-4">O-4</option>
+								<option value="O-5">O-5</option>
+								<option value="O-6">O-6</option>
+								<option value="O-7">O-7</option>
+								<option value="O-8">O-8</option>
+								<option value="O-9">O-9</option>
+								<option value="O-10">O-10</option>
+								<option value="Civilian">Civilian</option>
+							</select>
+							<input class="forms_input half_input" type="number" name="phone" placeholder="Phone Number" required>
+							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" [formControl]="email" required>
+							<select class="forms_input thirds_input" name='state' required>
+								<option value="" disabled selected>State</option>
+								<option value="Alabama - AL">Alabama - AL</option>
+								<option value="Alaska - AK">Alaska - AK</option>
+								<option value="Arizona - AZ">Arizona - AZ</option>
+								<option value="Arkansas - AR">Arkansas - AR</option>
+								<option value="California - CA">California - CA</option>
+								<option value="Canal Zone - CZ">Canal Zone - CZ</option>
+								<option value="Colorado - CO">Colorado - CO</option>
+								<option value="Connecticut - CT">Connecticut - CT</option>
+								<option value="Delaware - DE">Delaware - DE</option>
+								<option value="District of Columbia - DC">District of Columbia - DC</option>
+								<option value="Florida - FL">Florida - FL</option>
+								<option value="Georgia - GA">Georgia - GA</option>
+								<option value="Guam - GU">Guam - GU</option>
+								<option value="Hawaii - HI">Hawaii - HI</option>
+								<option value="Idaho - ID">Idaho - ID</option>
+								<option value="Illinois - IL">Illinois - IL</option>
+								<option value="Indiana - IN">Indiana - IN</option>
+								<option value="Iowa - IA">Iowa - IA</option>
+								<option value="Kansas - KS">Kansas - KS</option>
+								<option value="Kentucky - KY">Kentucky - KY</option>
+								<option value="Louisiana - LA">Louisiana - LA</option>
+								<option value="Maine - ME">Maine - ME</option>
+								<option value="Maryland - MD">Maryland - MD</option>
+								<option value="Massachusetts - MA">Massachusetts - MA</option>
+								<option value="Michigan - MI">Michigan - MI</option>
+								<option value="Minnesota - MN">Minnesota - MN</option>
+								<option value="Mississippi - MS">Mississippi - MS</option>
+								<option value="Missouri - MO">Missouri - MO</option>
+								<option value="Montana - MT">Montana - MT</option>
+								<option value="Nebraska - NE">Nebraska - NE</option>
+								<option value="Nevada - NV">Nevada - NV</option>
+								<option value="New Hampshire - NH">New Hampshire - NH</option>
+								<option value="New Jersey - NJ">New Jersey - NJ</option>
+								<option value="New Mexico - NM">New Mexico - NM</option>
+								<option value="New York - NY">New York - NY</option>
+								<option value="North Carolina - NC">North Carolina - NC</option>
+								<option value="North Dakota - ND">North Dakota - ND</option>
+								<option value="Ohio - OH">Ohio - OH</option>
+								<option value="Oklahoma - OK">Oklahoma - OK</option>
+								<option value="Oregon - OR">Oregon - OR</option>
+								<option value="Pennsylvania - PA">Pennsylvania - PA</option>
+								<option value="Puerto Rico - PR">Puerto Rico - PR</option>
+								<option value="Rhode Island - RI">Rhode Island - RI</option>
+								<option value="South Carolina - SC">South Carolina - SC</option>
+								<option value="South Dakota - SD">South Dakota - SD</option>
+								<option value="Tennessee - TN">Tennessee - TN</option>
+								<option value="Texas - TX">Texas - TX</option>
+								<option value="Utah - UT">Utah - UT</option>
+								<option value="Vermont - VT">Vermont - VT</option>
+								<option value="Virgin Islands - VI">Virgin Islands - VI</option>
+								<option value="Virginia - VA">Virginia - VA</option>
+								<option value="Washington - WA">Washington - WA</option>
+								<option value="West Virginia - WV">West Virginia - WV</option>
+								<option value="Wisconsin - WI">Wisconsin - WI</option>
+								<option value="Wyoming - WY">Wyoming - WY</option>
+							</select>
+							<input class="forms_input thirds_input" type="text" name="org"  maxlength="20" placeholder="Organization" required>
+							<input class="forms_input thirds_input" type="text" name="osymbol" maxlength="20" placeholder="Office Symbol">
+							<select class="forms_input half_input" name='equipment' required>
+								<option value="" disabled selected>Select Support Type</option>
+								<option value="camera_kit">Camera Kit</option>
+								<option value="Other">Other</option>    
+							</select>
+							<textarea class="forms_input" type="textarea" name="desc" maxlength="200" placeholder="Description of Support" required></textarea>
+							<br>
+							<br>
+							<input class="forms_button" type="submit" value="request">
+							<br>
+							<br>
+						</form>
 					</div>
 				</div>
 			</div>
 
-			<button class="accordion">Web Projects</button>
-			<div class="panel">
+			<div id="contact" class="content hide" data-content="contact">
+				<h1>Contact Us</h1>
+				<hr>
+				<div class="contact_main">
+					<div class="contact_info contact_sub">
+						<a href="https://www.facebook.com/188thWing/" target="_blank">
+							<i title="Facebook" class="fab fa-facebook-square fa-3x"></i>
+						</a>
+						<a href="https://twitter.com/188thwg?lang=en" target="_blank">
+							<i title="Twitter" class="fab fa-twitter-square fa-3x"></i>
+						</a>
+						<a href="https://www.instagram.com/188thwing/" target="_blank">
+							<i title="Instagram" class="fab fa-instagram-square fa-3x"></i>
+						</a>
+						<a href="https://www.dvidshub.net/search?q=188th+wing&view=grid" target="_blank">
+							<i title="DIVIDS" class="fas fa-camera-retro fa-3x"></i>
+						</a>
+						<a href="https://www.188wg.ang.af.mil/" target="_blank">
+							<i title="AF Site" class="fas fa-globe fa-3x"></i>
+						</a>
+						<h3><a href = "mailto: 188wingpa@gmail.com">188WingPA@gmail.com</a></h3>
+						<h3><a href="tel:479-573-5167">(479) 573-5167</a></h3>
+					</div>
+					<div class="contact_form contact_sub">
+						<form class="forms" id="contact_form">
+							<p id="returnmessage"></p>
+							<label>Name: <span>*</span></label>
+							<input type="text" class="forms_input" id="contact_name" placeholder="Name"/>
+							<label>Email: <span>*</span></label>
+							<input type="text" class="forms_input" id="contact_email" placeholder="Email"/>
+							<label>Contact No: <span>*</span></label>
+							<input type="text" class="forms_input" id="contact_phone" placeholder="10 digit Mobile no."/>
+							<label>Message:</label>
+							<textarea class="forms_input" id="contact_message" placeholder="Message......."></textarea>
+							<input type="button" class="forms_button" id="submit_contact" value="Send Message"/>
+						</form>
 
-				<div class="ex_flex_main">
-					<div class="ex_flex_sub">
-						<a href="https://piegolocal.com/" target="_blank">
-							<i class="fa fa-external-link">  PieGo Pizza</i>
-						</a>
-						<br>
-						<br>
-						<iframe class="iframe_window" src="https://piegolocal.com/">
-						</iframe>
-					</div>
-
-					<div class="ex_flex_sub">
-						<a href="assets/work/W3_SpaceX/index.html" target="_blank">
-							<i class="fa fa-external-link">  SpaceX Project</i>
-						</a>
-						<br>
-						<br>
-						<iframe class="iframe_window" src="assets/work/W3_SpaceX/index.html">
-						</iframe>
-					</div>
-				</div>
-
-			</div>
-
-			<button class="accordion">Programming</button>
-			<div class="panel">
-				<div class="ex_flex_main">
-					<div class="ex_flex_sub">
-						<a href="assets/work/W4_Cycles/index.html" target="_blank">
-							<i class="fa fa-external-link">  Cycles Example</i>
-						</a>
-						<br>
-						<br>
-						<iframe class="iframe_window" src="assets/work/W4_Cycles/index.html">
-						</iframe>
-					</div>
-					<div class="ex_flex_sub">
-						<a href="assets/work/B1_Validation/index.html" target="_blank">
-							<i class="fa fa-external-link">  Patient Reg.</i>
-						</a>
-						<br>
-						<br>
-						<iframe class="iframe_window" src="assets/work/B1_Validation/index.html">
-						</iframe>
-					</div>
-					<div class="ex_flex_sub">
-						<a href="assets/work/B2_Circle_Calc/index.html" target="_blank">
-							<i class="fa fa-external-link">  Circle Calc.</i>
-						</a>
-						<br>
-						<br>
-						<iframe class="iframe_window" src="assets/work/B2_Cirlcle_Calc/index.html">
-						</iframe>
-					</div>
-					<div class="ex_flex_sub">
-						<a href="assets/work/B3_Price_Total_Example/index.html" target="_blank">
-							<i class="fa fa-external-link">  Price Total</i>
-						</a>
-						<br>
-						<br>
-						<iframe class="iframe_window" src="assets/work/B3_Price_Total_Example/index.html">
-						</iframe>
-					</div>
-					<div class="ex_flex_sub">
-						<a href="assets/work/B4_Calculator/index.html" target="_blank">
-							<i class="fa fa-external-link">  JS Calc.</i>
-						</a>
-						<br>
-						<br>
-						<iframe class="iframe_window" src="assets/work/B4_Calculator/index.html">
-						</iframe>
-					</div>
-					<div class="ex_flex_sub">
-						<a href="assets/work/B5_Unit_Conversion/index.html" target="_blank">
-							<i class="fa fa-external-link">  Unit Converter</i>
-						</a>
-						<br>
-						<br>
-						<iframe class="iframe_window" src="assets/work/B5_Unit_Conversion/index.html">
-						</iframe>
-					</div>
-					<div class="ex_flex_sub">
-						<a href="assets/work/B6_Patient/index.html" target="_blank">
-							<i class="fa fa-external-link">  Patient Reg. Form</i>
-						</a>
-						<br>
-						<br>
-						<iframe class="iframe_window" src="assets/work/B6_Patient/index.html">
-						</iframe>
-					</div>
-					<div class="ex_flex_sub">
-						<a href="assets/work/B7_Survey/index.html" target="_blank">
-							<i class="fa fa-external-link">  Survey Form</i>
-						</a>
-						<br>
-						<br>
-						<iframe class="iframe_window" src="assets/work/B7_Survey/index.html">
-						</iframe>
 					</div>
 				</div>
 			</div>
 
-			<button class="accordion">Database</button>
-			<div class="panel">
-				<div class="db_examples">
-					<object class="db_object" data='assets/db_examples/Movie_DB_Diagram.pdf#zoom=FitH'>
-						<h3>Oops! You don't support PDFs!</h3>
-						<a href="assets/db_examples/Movie_DB_Diagram.pdf"><img class="ws_icon" src="assets/images/pdf-file.svg" alt="WS_1" name="WS_1"></a>
-						<h3>Download Instead</h3>
-					</object>
-				</div>
-				<div class="db_examples">
-					<object class="db_object" data='assets/db_examples/er_mapping.pdf#zoom=FitH'>
-						<h3>Oops! You don't support PDFs!</h3>
-						<a href="assets/db_examples/er_mapping.pdf"><img class="ws_icon" src="assets/images/pdf-file.svg" alt="WS_1" name="WS_1"></a>
-						<h3>Download Instead</h3>
-					</object>
-				</div>
-				<div class="db_examples">
-					<object class="db_object" data='assets/db_examples/sql_query_and_result.pdf#zoom=FitH'>
-						<h3>Oops! You don't support PDFs!</h3>
-						<a href="assets/db_examples/sql_query_and_result.pdf"><img class="ws_icon" src="assets/images/pdf-file.svg" alt="WS_2" name="WS_2"></a>
-						<h3>Download Instead</h3>
-					</object>
-				</div>
-			</div>
-
-			<button class="accordion">Soft Skills</button>
-			<div class="panel">
-				<div class="ex_flex_main">
-				</div>
-			</div>
-
-			<button class="accordion">Writing Samples</button>
-			<div class="panel">
-				<div class="writing_samples">
-					<object class="writing_object" data='assets/writing_samples/Condit_CMSAF_Story.pdf#zoom=FitH'>
-						<h3>Oops! You don't support PDFs!</h3>
-						<a href="assets/writing_samples/Condit_CMSAF_Story.pdf"><img class="ws_icon" src="assets/images/pdf-file.svg" alt="WS_1" name="WS_1"></a>
-						<h3>Download Instead</h3>
-					</object>
-				</div>
-				<div class="writing_samples">
-					<object class="writing_object" data='assets/writing_samples/Condit_Ark_Flood_Story.pdf#zoom=FitH'>
-						<h3>Oops! You don't support PDFs!</h3>
-						<a href="assets/writing_samples/Condit_Ark_Flood_Story.pdf"><img class="ws_icon" src="assets/images/pdf-file.svg" alt="WS_2" name="WS_2"></a>
-						<h3>Download Instead</h3>
-					</object>
-				</div>
-				<div class="writing_samples">
-					<object class="writing_object" data='assets/writing_samples/Condit_Map_Act_2.pdf#zoom=FitH'>
-						<h3>Oops! You don't support PDFs!</h3>
-						<a href="assets/writing_samples/Condit_Map_Act_2.pdf"><img class="ws_icon" src="assets/images/pdf-file.svg" alt="WS_3" name="WS_3"></a>
-						<h3>Download Instead</h3>
-					</object>
-				</div>
+			<div id="admin" class="content hide" data-content="admin">
 			</div>
 
 		</div>
+		<div class="push"></div>
+	</div>
 
-		<div id="contact" class="content hide" data-content="contact">
-			<h1>Let's Talk</h1>
-			<hr>
-			<div class="contact_flex_main">
-				<div class="contact_flex_sub">
-					<h3>Daniel J. Condit</h3>
-					<h3><a href = "mailto: DanielJCondit@gmail.com">DanielJCondit@gmail.com</a></h3>
-					<h3><a href="tel:503-901-6720">(503) 901-6720</a></h3>
-					<a href="https://github.com/DanielCondit" target="_blank"><img class="icon_img" src="assets/images/Github.svg" alt="Git" name="Git"></a>
-					<a href="https://www.linkedin.com/in/danieljcondit" target="_blank"><img class="icon_img" src="assets/images/linkedin-logo.svg" alt="Linkedin" name="Linkedin"></a>
-				</div>
-				<div class="contact_flex_sub">
-					<iframe height="436" title="Embedded Wufoo Form" allowtransparency="true" frameborder="0" scrolling="no" style="width:100%;border:none" src="https://danielcondit.wufoo.com/embed/m86v7gq01pex6v/"> <a href="https://danielcondit.wufoo.com/forms/m86v7gq01pex6v/">Fill out my Wufoo form!</a> </iframe>
-				</div>
-			</div>
+	<div class="footer">
+		<div class="footer_text">
+			USAF © All rights reserved - 188th Wing PA
+			<br>
+			<a href="188WingPA@gmail.com">188WingPA@gmail.com</a><a href="tel:479-573-5167">(479)573-5167</a>
 		</div>
+		<a href="https://www.facebook.com/188thWing/" target="_blank">
+			<i title="Facebook" class="fab fa-facebook-square fa-1x"></i>
+		</a>
+		<a href="https://twitter.com/188thwg?lang=en" target="_blank">
+			<i title="Twitter" class="fab fa-twitter-square fa-1x"></i>
+		</a>
+		<a href="https://www.instagram.com/188thwing/" target="_blank">
+			<i title="Instagram" class="fab fa-instagram-square fa-1x"></i>
+		</a>
+		<a href="https://www.dvidshub.net/search?q=188th+wing&view=grid" target="_blank">
+			<i title="DIVIDS" class="fas fa-camera-retro fa-1x"></i>
+		</a>
+		<a href="https://www.188wg.ang.af.mil/" target="_blank">
+			<i title="AF Site" class="fas fa-globe fa-1x"></i>
+		</a>
 
 	</div>
+
 </body>
 
 </html>
