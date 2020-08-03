@@ -1,0 +1,86 @@
+/*STYLES FOR FORMS ON THE SITE*/
+.forms_container {
+
+}
+
+.forms {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.forms_input {
+	box-sizing:border-box;
+	width: 100%;
+	height: 40px;
+	border: none;
+	border-bottom: 1px solid #120A8F;
+	margin: 5px 0;
+	transition: height 0.2s linear;
+}
+
+.form_hover {
+	height: 75px;
+	cursor: pointer;
+	transition: height 0.2s linear;
+}
+
+/*.half_input {
+	width: 49.55%;
+}
+
+.thirds_input {
+	width: 32.78%
+	}*/
+
+.forms_button {
+	display: block;
+	width : 35%;
+	margin: 0 auto;
+	height: 40px;
+	background-color: #120A8F;
+	color: #FFD700;
+	text-transform: uppercase;
+	font-family: arial black;
+}
+
+.forms_button:hover {
+	cursor: pointer;
+}
+
+/*CONTACT EMAIL FORM*/
+
+#contact_form{
+	width: 100%;
+}
+
+#contact_form textarea{
+	width:100%;
+	height:80px;
+	margin-top:5px;
+	border-radius:3px;
+	padding:5px;
+	resize:none;
+}
+
+#contact_form label span{
+	color:red
+}
+
+#note{
+	color:black;
+	font-Weight:400;
+}
+
+#returnmessage{
+	font-size:14px;
+	color:green;
+	text-align:center;
+}
+
+@media only screen and (max-width: 700px) {
+	.forms {
+		width: 95%;
+		margin: 0 auto;
+	}
+
+}
