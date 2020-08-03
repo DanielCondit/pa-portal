@@ -16,6 +16,10 @@
 
 	<!--JavaScript Libraries-->
 
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+	
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
@@ -96,7 +100,7 @@
 
 				<div class="tab_content_container">
 					<div id="Services" class="tab_content tab_content_active">
-						<form class="forms" action="">
+						<form class="forms" id="add-service-form" action="">
 							<input class="forms_input half_input" type="date" name="date" required>
 							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
 							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
@@ -197,7 +201,7 @@
 								<option value="Studio Photo">Studio Photo</option>
 								<option value="Other">Other</option>
 							</select>
-							<textarea class="forms_input" type="textarea" name="desc" maxlength="200" placeholder="Description of Support" required></textarea>
+							<textarea class="forms_input" type="textarea" name="	" maxlength="200" placeholder="Description of Support" required></textarea>
 							<br>
 							<br>
 							<input class="forms_button" type="submit" value="request">
@@ -402,12 +406,35 @@
 				</div>
 			</div>
 
-			<div id="admin" class="content hide" data-content="admin"></div>
+			<div id="admin" class="content hide" data-content="admin">
+				<!-- <div id="loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></div> -->
+				<table id="service-list">
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>FName</th>
+							<th>LName</th>
+							<th>Grade</th>
+							<th>Phone</th>
+							<th>Email</th>
+							<th>State</th>
+							<th>Org</th>
+							<th>Office</th>
+							<th>Support</th>
+							<th>Desc</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+
+				</table>
+			</div>
 
 		</div>
 
 	</div>
-	
+
 	<div class="footer">
 
 		<div class="footer_text">
@@ -437,6 +464,9 @@
 		</a>
 
 	</div>
+	
+	<script src="assets/scripts/firebase.js"></script>
+	<script src="assets/scripts/app.js"></script>
 
 </body>
 

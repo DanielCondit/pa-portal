@@ -311,6 +311,70 @@ ul.tabs li a:hover, ul.tabs li a.active {
 
 /* ^^ END STYLES FOR THE CONTACT PAGE ^^ */
 
+/* STYLES FOR ADMIN PAGE*/
+
+#admin {
+  background: #fff;
+  max-width: 100%;
+  margin: 0 auto;
+  /*padding: 20px 30px;*/
+  border-radius: 10px 120px 10px 10px;
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1)
+}
+
+#admin ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#admin ul li {
+  padding: 20px;
+  background: #f6f6f6;
+  font-size: 20px;
+  color: #555;
+  position: relative;
+  border-bottom: 1px solid #e6e6e6;
+  height: 46px;
+}
+
+#admin ul li:nth-child(even) {
+  padding: 20px;
+  background: #f2f2f2;
+}
+
+#admin ul li span {
+  float: left;
+}
+
+#admin ul li span:not(last-child) {
+  margin-right: 10px;
+}
+
+/*#admin ul li span:nth-child(2) {
+  font-size: 16px;
+  margin-top: 6px;
+  color: red;
+}*/
+
+#admin ul li div {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  background: rgba(255, 255, 255, 0.6);
+  /*width: 40px;*/
+  text-align: center;
+  padding: 10px 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#loader {
+  text-align: center;
+  display: none;
+}
+
+/* ^^ END STYLES FOR ADMIN PAGE^^ */
+
 /* STYLES FOR MOBILE */
 
 @media only screen and (max-width: 700px) {
