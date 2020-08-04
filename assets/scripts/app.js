@@ -1,72 +1,60 @@
-let serviceList = document.querySelector("#service-list");
+let serviceList = document.querySelector("#service_list");
 const form = document.querySelector("#add-service-form");
 
 function renderService(doc) {
 
-  let row = document.createElement("tr");
-  let date = document.createElement("td");
-  let fname = document.createElement("td");
-  let lname = document.createElement("td");
-  let grade = document.createElement("td");
-  let phone = document.createElement("td");
-  let emails = document.createElement("td");
-  let state = document.createElement("td");
-  let org = document.createElement("td");
-  let osymbol = document.createElement("td");
-  let support = document.createElement("td");
-  let desc = document.createElement("td");
-  let cross = document.createElement("td");
+  let li = document.createElement("li");
+  let date = document.createElement("span");
+  // let fname = document.createElement("span");
+  // let lname = document.createElement("span");
+  let name = document.createElement("span");
+  let grade = document.createElement("span");
+  let phone = document.createElement("span");
+  let emails = document.createElement("span");
+  let state = document.createElement("span");
+  let org = document.createElement("span");
+  let osymbol = document.createElement("span");
+  let support = document.createElement("span");
+  let desc = document.createElement("span");
+  let cross = document.createElement("div");
 
-  row.setAttribute("data-id", doc.id);
+  li.setAttribute("data-id", doc.id);
 
-  textNode1 = document.setAttribute(doc.data().date);
-  textNode2 = document.setAttribute(doc.data().fname);
-  textNode3 = document.setAttribute(doc.data().lname);
-  textNode4 = document.setAttribute(doc.data().grade);
-  textNode5 = document.setAttribute(doc.data().phone);
-  textNode6 = document.setAttribute(doc.data().emails);
-  textNode7 = document.setAttribute(doc.data().state);
-  textNode8 = document.setAttribute(doc.data().org);
-  textNode9 = document.setAttribute(doc.data().osymbol);
-  textNode10 = document.setAttribute(doc.data().support);
-  textNode11 = document.setAttribute(doc.data().desc);
-  textNode12 = document.setAttribute("X");
+  date.textContent = doc.data().date;
+  // fname.textContent = doc.data().fname;
+  // lname.textContent = doc.data().lname;
+  name.textContent = [doc.data().lname,doc.data().fname];
+  grade.textContent = doc.data().grade;
+  phone.textContent = doc.data().phone;
+  emails.textContent = doc.data().emails;
+  state.textContent = doc.data().state;
+  org.textContent = doc.data().org;
+  osymbol.textContent = doc.data().osymbol;
+  support.textContent = doc.data().support;
+  desc.textContent = doc.data().desc;
+  cross.textContent = "X";
 
-  date.appendChild(textNode1);
-  fname.appendChild(textNode2);
-  lname.appendChild(textNode3);
-  grade.appendChild(textNode4);
-  phone.appendChild(textNode5);
-  emails.appendChild(textNode6);
-  state.appendChild(textNode7);
-  org.appendChild(textNode8);
-  osymbol.appendChild(textNode9);
-  support.appendChild(textNode10);
-  desc.appendChild(textNode11);
-  cross.appendChild(textNode12);
+  li.appendChild(date);
+  li.appendChild(name);
+  li.appendChild(grade);
+  li.appendChild(phone);
+  li.appendChild(emails);
+  li.appendChild(state);
+  li.appendChild(org);
+  li.appendChild(osymbol);
+  li.appendChild(support);
+  li.appendChild(desc);
+  li.appendChild(cross);
 
-  row.appendChild(date);
-  row.appendChild(fname);
-  row.appendChild(lname);
-  row.appendChild(grade);
-  row.appendChild(phone);
-  row.appendChild(emails);
-  row.appendChild(state);
-  row.appendChild(org);
-  row.appendChild(osymbol);
-  row.appendChild(support);
-  row.appendChild(desc);
-  row.appendChild(cross);
-
-  serviceList.appendChild(row);
+  serviceList.appendChild(li);
 
   // Deleting Data
   cross.addEventListener("click", e => {
     e.stopPropagation();
     let id = e.target.parentElement.getAttribute("data-id");
     db.collection("services")
-      .doc(id)
-      .delete();
+    .doc(id)
+    .delete();
   });
 }
 
@@ -75,13 +63,13 @@ function getData() {
   document.querySelector("#loader").style.display = "block";
 
   db.collection("services")
-    .orderBy("date")
-    .get()
-    .then(snapshot => {
-      console.log(snapshot.docs);
-      document.querySelector("#loader").style.display = "none";
-      snapshot.docs.forEach(doc => renderService(doc));
-    });
+  .orderBy("date")
+  .get()
+  .then(snapshot => {
+    console.log(snapshot.docs);
+    document.querySelector("#loader").style.display = "none";
+    snapshot.docs.forEach(doc => renderService(doc));
+  });
 }
 
 // getData();
@@ -119,18 +107,18 @@ document.getElementById('add-service-form').addEventListener("submit", e => {
 function getRealtimeData() {
   document.querySelector("#loader").style.display = "block";
   db.collection("services")
-    .orderBy("date")
-    .onSnapshot(snapshot => {
-      document.querySelector("#loader").style.display = "none";
-      let changes = snapshot.docChanges();
-      changes.forEach(change => {
-        if (change.type === "added") {
-          renderService(change.doc);
-        } else if (change.type === "removed") {
-          let li = serviceList.querySelector(`[data-id=${change.doc.id}]`);
-          serviceList.removeChild(li);
-        }
-      });
+  .orderBy("date")
+  .onSnapshot(snapshot => {
+    document.querySelector("#loader").style.display = "none";
+    let changes = snapshot.docChanges();
+    changes.forEach(change => {
+      if (change.type === "added") {
+        renderService(change.doc);
+      } else if (change.type === "removed") {
+        let li = serviceList.querySelector(`[data-id=${change.doc.id}]`);
+        serviceList.removeChild(li);
+      }
     });
+  });
 }
 getRealtimeData();
