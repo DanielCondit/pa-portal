@@ -16,7 +16,7 @@ function renderService(doc) {
   let osymbol = document.createElement("span");
   let support = document.createElement("span");
   let desc = document.createElement("span");
-  let cross = document.createElement("div");
+  let cross = document.createElement("span");
 
   li.setAttribute("data-id", doc.id);
 
@@ -27,7 +27,7 @@ function renderService(doc) {
   grade.textContent = doc.data().grade;
   phone.textContent = doc.data().phone;
   emails.textContent = doc.data().emails;
-  state.textContent = doc.data().state;
+  state.textContent = doc.data().state.slice(-2);
   org.textContent = doc.data().org;
   osymbol.textContent = doc.data().osymbol;
   support.textContent = doc.data().support;
@@ -45,6 +45,8 @@ function renderService(doc) {
   li.appendChild(support);
   li.appendChild(desc);
   li.appendChild(cross);
+
+  // state.slice(-2);
 
   serviceList.appendChild(li);
 

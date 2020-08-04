@@ -331,7 +331,8 @@ ul.tabs li a:hover, ul.tabs li a.active {
 }
 
 #service_list li span {
-  display: table-cell
+  display: table-cell;
+  overflow: hidden;
 }
 
 #loader {
