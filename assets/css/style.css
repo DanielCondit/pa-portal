@@ -313,7 +313,7 @@ ul.tabs li a:hover, ul.tabs li a.active {
 
 /* STYLES FOR ADMIN PAGE*/
 
-#service_list, #equipment_list {
+#service_list, #equipment_list, #covid_list {
   display: table;
   list-style-type: none;
   padding: 0;
@@ -321,27 +321,30 @@ ul.tabs li a:hover, ul.tabs li a.active {
   text-align: left;
 }
 
-#service_list li, #equipment_list li  {
+#service_list li, #equipment_list li, #covid_list li  {
   display: table-row;
   width: 100%;
   
 }
 
-#service_list li span, #equipment_list li span {
+#service_list li span, #equipment_list li span, #covid_list li span {
   display: table-cell;
-  /*overflow: scroll;*/
+  white-space: nowrap;
+  overflow: scroll;
+  padding: 10px 0 10px 0;
 }
 
-#service_list #listHead span, #equipment_list #listHead span {
+#service_list #listHead span, #equipment_list #listHead span, #covid_list #listHead span {
   overflow: hidden;
   padding: 0;
 }
 
-#service_list li button, #equipment_list li button {
+#service_list li button, #equipment_list li button, #covid_list li button {
   background-color: yellow;
+  margin: 10px 0 10px 0;
 }
 
-#service_list li button:hover, #equipment_list li button:hover {
+#service_list li button:hover, #equipment_list li button:hover, #covid_list li button:hover {
   cursor: pointer;
   background-color: red;
 }

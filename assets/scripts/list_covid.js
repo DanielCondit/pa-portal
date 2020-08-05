@@ -1,57 +1,51 @@
-let serviceList = document.querySelector("#service_list");
-const form = document.querySelector("#add-service-form");
+let covidList = document.querySelector("#covid_list");
+const form = document.querySelector("#add-covid-form");
 
-function renderService(doc) {
+function renderCovid(doc) {
 
   "use strict";
   let li = document.createElement("li");
   let date = document.createElement("span");
   let name = document.createElement("span");
-  let grade = document.createElement("span");
-  let phone = document.createElement("span");
-  let emails = document.createElement("span");
-  let state = document.createElement("span");
-  let org = document.createElement("span");
-  let osymbol = document.createElement("span");
-  let support = document.createElement("span");
-  let desc = document.createElement("span");
-  let cross = document.createElement("div");
+  let birthYear = document.createElement("span");
+  let gender = document.createElement("span");
+  let temp = document.createElement("span");
+  let symptoms = document.createElement("span");
+  let squadron = document.createElement("span");
+  let notes = document.createElement("span");
+  let cross = document.createElement("button");
 
   li.setAttribute("data-id", doc.id);
 
   date.textContent = doc.data().date;
   name.textContent = [doc.data().lname,doc.data().fname];
-  grade.textContent = doc.data().grade;
-  phone.textContent = doc.data().phone;
-  emails.textContent = doc.data().emails;
-  state.textContent = doc.data().state.slice(-2);
-  org.textContent = doc.data().org;
-  osymbol.textContent = doc.data().osymbol;
-  support.textContent = doc.data().support;
-  desc.textContent = doc.data().desc;
+  birthYear.textContent = doc.data().birthYear;
+  gender.textContent = doc.data().gender;
+  temp.textContent = doc.data().temp;
+  symptoms.textContent = [doc.data().symptom1,doc.data().symptom2,doc.data().symptom3,doc.data().symptom4,doc.data().symptom5,doc.data().symptom6,doc.data().symptom7,doc.data().symptom8];
+  squadron.textContent = doc.data().squadron;
+  notes.textContent = doc.data().notes;
   cross.textContent = "DEL";
 
   li.appendChild(date);
   li.appendChild(name);
-  li.appendChild(grade);
-  li.appendChild(phone);
-  li.appendChild(emails);
-  li.appendChild(state);
-  li.appendChild(org);
-  li.appendChild(osymbol);
-  li.appendChild(support);
-  li.appendChild(desc);
+  li.appendChild(birthYear);
+  li.appendChild(gender);
+  li.appendChild(temp);
+  li.appendChild(symptoms);
+  li.appendChild(squadron);
+  li.appendChild(notes);
   li.appendChild(cross);
 
   // state.slice(-2);
 
-  serviceList.appendChild(li);
+  covidList.appendChild(li);
 
   // Deleting Data
   cross.addEventListener("click", e => {
     e.stopPropagation();
     let id = e.target.parentElement.getAttribute("data-id");
-    db.collection("services")
+    db.collection("covid_screen")
     .doc(id)
     .delete();
   });
@@ -61,61 +55,71 @@ function renderService(doc) {
 function getData() {
   document.querySelector("#loader").style.display = "block";
 
-  db.collection("services")
+  db.collection("covid_screen")
   .orderBy("date")
   .get()
   .then(snapshot => {
     console.log(snapshot.docs);
     document.querySelector("#loader").style.display = "none";
-    snapshot.docs.forEach(doc => renderService(doc));
+    snapshot.docs.forEach(doc => renderCovid(doc));
   });
 }
 
 // getData();
 
-document.getElementById('add-service-form').addEventListener("submit", e => {
+document.getElementById('add-covid-form').addEventListener("submit", e => {
   e.preventDefault();
 
-  db.collection("services").add({
-    date: document.getElementById('add-service-form').date.value,
-    fname: document.getElementById('add-service-form').fname.value,
-    lname: document.getElementById('add-service-form').lname.value,
-    grade: document.getElementById('add-service-form').grade.value,
-    phone: document.getElementById('add-service-form').phone.value,
-    emails: document.getElementById('add-service-form').emails.value,
-    state: document.getElementById('add-service-form').state.value,
-    org: document.getElementById('add-service-form').org.value,
-    osymbol: document.getElementById('add-service-form').osymbol.value,
-    support: document.getElementById('add-service-form').support.value,
-    desc: document.getElementById('add-service-form').desc.value
+  db.collection("covid_screen").add({
+    lname: document.getElementById('add-covid-form').lname.value,
+    fname: document.getElementById('add-covid-form').fname.value,
+    date: document.getElementById('add-covid-form').date.value,
+    birthYear: document.getElementById('add-covid-form').birthYear.value,
+    gender: document.getElementById('add-covid-form').gender.value,
+    temp: document.getElementById('add-covid-form').temp.value,
+    symptom1: document.getElementById('add-covid-form').symptom1.value,
+    symptom2: document.getElementById('add-covid-form').symptom2.value,
+    symptom3: document.getElementById('add-covid-form').symptom3.value,
+    symptom4: document.getElementById('add-covid-form').symptom4.value,
+    symptom5: document.getElementById('add-covid-form').symptom5.value,
+    symptom6: document.getElementById('add-covid-form').symptom6.value,
+    symptom7: document.getElementById('add-covid-form').symptom7.value,
+    symptom8: document.getElementById('add-covid-form').symptom8.value,
+    squadron: document.getElementById('add-covid-form').squadron.value,
+    notes: document.getElementById('add-covid-form').notes.value,
   });
-  document.getElementById('add-service-form').date.value = "";
-  document.getElementById('add-service-form').fname.value = "";
-  document.getElementById('add-service-form').lname.value = "";
-  document.getElementById('add-service-form').grade.value = "";
-  document.getElementById('add-service-form').phone.value = "";
-  document.getElementById('add-service-form').emails.value = "";
-  document.getElementById('add-service-form').state.value = "";
-  document.getElementById('add-service-form').org.value = "";
-  document.getElementById('add-service-form').osymbol.value = "";
-  document.getElementById('add-service-form').support.value = "";
-  document.getElementById('add-service-form').desc.value = "";
+  document.getElementById('add-covid-form').lname.value = "";
+  document.getElementById('add-covid-form').fname.value = "";
+  document.getElementById('add-covid-form').date.value = "";
+  document.getElementById('add-covid-form').birthYear.value = "";
+  document.getElementById('add-covid-form').gender.value = "";
+  document.getElementById('add-covid-form').temp.value = "";
+  document.getElementById('add-covid-form').symptom1.value = "";
+  document.getElementById('add-covid-form').symptom2.value = "";
+  document.getElementById('add-covid-form').symptom3.value = "";
+  document.getElementById('add-covid-form').symptom4.value = "";
+  document.getElementById('add-covid-form').symptom5.value = "";
+  document.getElementById('add-covid-form').symptom6.value = "";
+  document.getElementById('add-covid-form').symptom7.value = "";
+  document.getElementById('add-covid-form').symptom8.value = "";
+  document.getElementById('add-covid-form').squadron.value = "";
+  document.getElementById('add-covid-form').notes.value = "";
 });
 
 // Realtime listener
 function getRealtimeData() {
   document.querySelector("#loader").style.display = "block";
-  db.collection("services")
+  db.collection("covid_screen")
   .orderBy("date")
   .onSnapshot(snapshot => {
     document.querySelector("#loader").style.display = "none";
     let changes = snapshot.docChanges();
     changes.forEach(change => {
       if (change.type === "added") {
-        renderService(change.doc);
+        renderCovid(change.doc);
       } else if (change.type === "removed") {
-        let li = serviceList.querySelector(`[data-id=${change.doc.id}]`);
-        serviceList.removeChild(li);
+        let li = covidList.querySelector(`[data-id=${change.doc.id}]`);
+        covidList.removeChild(li);
       }
     });
   });
