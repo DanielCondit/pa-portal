@@ -11,24 +11,16 @@
 	<!--Page Styling-->
 
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-
 	<link href="assets/css/forms.css" rel="stylesheet" type="text/css" />
 
 	<!--JavaScript Libraries-->
 
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
-
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.js"></script>
-
 	<script src="https://kit.fontawesome.com/ef382a7536.js" crossorigin="anonymous"></script>
-
-	<!--My JavaScript-->
-
-	<script src="assets/scripts/script.js"></script>
-
-	<script src="assets/scripts/email.js"></script>
 
 </head>
 
@@ -92,12 +84,19 @@
 							</span>
 						</a>
 					</li>
+					<li>
+						<a href="javascript:void(0); return false;" rel="#Covid" class="tab">
+							<span>
+								COVID-19
+							</span>
+						</a>
+					</li>
 				</ul>
 
 				<div class="tab_content_container">
 					<div id="Services" class="tab_content tab_content_active">
-						<form class="forms" action="">
-							<input class="forms_input half_input" type="date" name="date" required>
+						<form class="forms" id="add-service-form" action="">
+							<input class="forms_input half_input" type="datetime-local" name="date" required>
 							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
 							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
 							<select class="forms_input thirds_input" name='grade' required>
@@ -206,7 +205,7 @@
 						</form>
 					</div>
 					<div id="Equipment" class="tab_content">
-						<form class="forms" action="">
+						<form class="forms" id="add-equipment-form" action="">
 							<input class="forms_input half_input" type="datetime-local" name="date" required>
 							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
 							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
@@ -242,6 +241,11 @@
 							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" [formControl]="email" required>
 							<input class="forms_input thirds_input" type="text" name="org"  maxlength="20" placeholder="Organization" required>
 							<input class="forms_input thirds_input" type="text" name="osymbol" maxlength="20" placeholder="Office Symbol">
+							<select class="forms_input half_input" name='equipment' required>
+								<option value="" disabled selected>Select Equipment</option>
+								<option value="camera_kit">Camera Kit</option>
+								<option value="Other">Other</option>    
+							</select>
 							<textarea class="forms_input" type="textarea" name="desc" maxlength="200" placeholder="Description of Support" required></textarea>
 							<br>
 							<br>
@@ -251,8 +255,8 @@
 						</form>
 					</div>
 					<div id="RHTC" class="tab_content">
-						<form class="forms" action="">
-							<input class="forms_input half_input" type="date" name="date" required>
+						<form class="forms" id="add-rhtc-form"action="">
+							<input class="forms_input half_input" type="datetime-local" name="date" required>
 							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
 							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
 							<select class="forms_input thirds_input" name='grade' required>
@@ -285,72 +289,9 @@
 							</select>
 							<input class="forms_input half_input" type="number" name="phone" placeholder="Phone Number" required>
 							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" [formControl]="email" required>
-							<select class="forms_input thirds_input" name='state' required>
-								<option value="" disabled selected>State</option>
-								<option value="Alabama - AL">Alabama - AL</option>
-								<option value="Alaska - AK">Alaska - AK</option>
-								<option value="Arizona - AZ">Arizona - AZ</option>
-								<option value="Arkansas - AR">Arkansas - AR</option>
-								<option value="California - CA">California - CA</option>
-								<option value="Canal Zone - CZ">Canal Zone - CZ</option>
-								<option value="Colorado - CO">Colorado - CO</option>
-								<option value="Connecticut - CT">Connecticut - CT</option>
-								<option value="Delaware - DE">Delaware - DE</option>
-								<option value="District of Columbia - DC">District of Columbia - DC</option>
-								<option value="Florida - FL">Florida - FL</option>
-								<option value="Georgia - GA">Georgia - GA</option>
-								<option value="Guam - GU">Guam - GU</option>
-								<option value="Hawaii - HI">Hawaii - HI</option>
-								<option value="Idaho - ID">Idaho - ID</option>
-								<option value="Illinois - IL">Illinois - IL</option>
-								<option value="Indiana - IN">Indiana - IN</option>
-								<option value="Iowa - IA">Iowa - IA</option>
-								<option value="Kansas - KS">Kansas - KS</option>
-								<option value="Kentucky - KY">Kentucky - KY</option>
-								<option value="Louisiana - LA">Louisiana - LA</option>
-								<option value="Maine - ME">Maine - ME</option>
-								<option value="Maryland - MD">Maryland - MD</option>
-								<option value="Massachusetts - MA">Massachusetts - MA</option>
-								<option value="Michigan - MI">Michigan - MI</option>
-								<option value="Minnesota - MN">Minnesota - MN</option>
-								<option value="Mississippi - MS">Mississippi - MS</option>
-								<option value="Missouri - MO">Missouri - MO</option>
-								<option value="Montana - MT">Montana - MT</option>
-								<option value="Nebraska - NE">Nebraska - NE</option>
-								<option value="Nevada - NV">Nevada - NV</option>
-								<option value="New Hampshire - NH">New Hampshire - NH</option>
-								<option value="New Jersey - NJ">New Jersey - NJ</option>
-								<option value="New Mexico - NM">New Mexico - NM</option>
-								<option value="New York - NY">New York - NY</option>
-								<option value="North Carolina - NC">North Carolina - NC</option>
-								<option value="North Dakota - ND">North Dakota - ND</option>
-								<option value="Ohio - OH">Ohio - OH</option>
-								<option value="Oklahoma - OK">Oklahoma - OK</option>
-								<option value="Oregon - OR">Oregon - OR</option>
-								<option value="Pennsylvania - PA">Pennsylvania - PA</option>
-								<option value="Puerto Rico - PR">Puerto Rico - PR</option>
-								<option value="Rhode Island - RI">Rhode Island - RI</option>
-								<option value="South Carolina - SC">South Carolina - SC</option>
-								<option value="South Dakota - SD">South Dakota - SD</option>
-								<option value="Tennessee - TN">Tennessee - TN</option>
-								<option value="Texas - TX">Texas - TX</option>
-								<option value="Utah - UT">Utah - UT</option>
-								<option value="Vermont - VT">Vermont - VT</option>
-								<option value="Virgin Islands - VI">Virgin Islands - VI</option>
-								<option value="Virginia - VA">Virginia - VA</option>
-								<option value="Washington - WA">Washington - WA</option>
-								<option value="West Virginia - WV">West Virginia - WV</option>
-								<option value="Wisconsin - WI">Wisconsin - WI</option>
-								<option value="Wyoming - WY">Wyoming - WY</option>
-							</select>
 							<input class="forms_input thirds_input" type="text" name="org"  maxlength="20" placeholder="Organization" required>
 							<input class="forms_input thirds_input" type="text" name="osymbol" maxlength="20" placeholder="Office Symbol">
-							<select class="forms_input half_input" name='equipment' required>
-								<option value="" disabled selected>Select Support Type</option>
-								<option value="camera_kit">Camera Kit</option>
-								<option value="Other">Other</option>    
-							</select>
-							<textarea class="forms_input" type="textarea" name="desc" maxlength="200" placeholder="Description of Support" required></textarea>
+							<textarea class="forms_input" type="textarea" name="desc" maxlength="200" placeholder="Reason For Use" required></textarea>
 							<br>
 							<br>
 							<input class="forms_button" type="submit" value="request">
@@ -358,81 +299,249 @@
 							<br>
 						</form>
 					</div>
-				</div>
-			</div>
+					<div id="Covid" class="tab_content">
+						<form class="forms" id="add-covid-form" action="">
+							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
+							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
+							<input class="forms_input half_input" type="datetime-local" name="date" required>
+							<input class="forms_input half_input" type="number" name="birthYear" placeholder="Birth Year" required>
+							<select class="forms_input thirds_input" name='gender' required>
+								<option value="" disabled selected>Gender</option>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+								<option value="Other">Other</option>
+							</select>
+							<input class="forms_input half_input" type="number" name="temp" placeholder="Measured Temp" required>
 
-			<div id="contact" class="content hide" data-content="contact">
-				<h1>Contact Us</h1>
-				<hr>
-				<div class="contact_main">
-					<div class="contact_info contact_sub">
-						<a href="https://www.facebook.com/188thWing/" target="_blank">
-							<i title="Facebook" class="fab fa-facebook-square fa-3x"></i>
-						</a>
-						<a href="https://twitter.com/188thwg?lang=en" target="_blank">
-							<i title="Twitter" class="fab fa-twitter-square fa-3x"></i>
-						</a>
-						<a href="https://www.instagram.com/188thwing/" target="_blank">
-							<i title="Instagram" class="fab fa-instagram-square fa-3x"></i>
-						</a>
-						<a href="https://www.dvidshub.net/search?q=188th+wing&view=grid" target="_blank">
-							<i title="DIVIDS" class="fas fa-camera-retro fa-3x"></i>
-						</a>
-						<a href="https://www.188wg.ang.af.mil/" target="_blank">
-							<i title="AF Site" class="fas fa-globe fa-3x"></i>
-						</a>
-						<h3><a href = "mailto: 188wingpa@gmail.com">188WingPA@gmail.com</a></h3>
-						<h3><a href="tel:479-573-5167">(479) 573-5167</a></h3>
+							<input type="checkbox" value="Dy Cough (change from baseline)"class="forms_input thirds_input" name='symptom1'>
+							<label for="symptom1">Dy Cough (change from baseline)</label><br>
+							<input type="checkbox" value="Shortness of breath (change from baseline)" class="forms_input thirds_input" name='symptom2'>
+							<label for="symptom2">Shortness of breath (change from baseline)</label><br>
+							<input type="checkbox" value="Muscle Aches (myalgias)" class="forms_input thirds_input" name='symptom3'>
+							<label for="symptom3">Muscle Aches (myalgias)</label><br>
+							<input type="checkbox" value="Sore throat" class="forms_input thirds_input" name='symptom4'>
+							<label for="symptom4">Sore throat</label><br>
+							<input type="checkbox" value="Headache (influenza like illness)" class="forms_input thirds_input" name='symptom5'>
+							<label for="symptom5">Headache (influenza like illness)</label><br>
+							<input type="checkbox" value="Fatigue(influenza like illness)" class="forms_input thirds_input" name='symptom6'>
+							<label for="symptom6">Fatigue(influenza like illness)</label><br>
+							<input type="checkbox" value="Have you had close contact with anyone who has COVID-19 (close contact is defined as <6ft for >10 minutes)?" class="forms_input thirds_input" name='symptom7'>
+							<label for="symptom7">Have you had close contact with anyone who has COVID-19 (close contact is defined as <6ft for >10 minutes)?</label><br>
+							<input type="checkbox" value="Other" class="forms_input thirds_input" name='symptom8'>
+							<label for="symptom8">Other</label></input>
+
+							<select class="forms_input thirds_input" name='squadron' required>
+									<option value="" disabled selected>Squadron</option>
+									<option value="ISRG">ISRG</option>
+									<option value="Ops">Ops</option>
+									<option value="Medical Group">Medical Group</option>
+									<option value="MSG">MSG</option>
+									<option value="Wing Staff">Wing Staff</option>
+								</select>
+								<textarea class="forms_input" type="textarea" name="notes" maxlength="200" placeholder="Notes"></textarea>
+								<br>
+								<br>
+								<input class="forms_button" type="submit" value="request">
+								<br>
+								<br>
+							</form>
+						</div>
 					</div>
-					<div class="contact_form contact_sub">
-						<form class="forms" id="contact_form">
-							<p id="returnmessage"></p>
-							<label>Name: <span>*</span></label>
-							<input type="text" class="forms_input" id="contact_name" placeholder="Name"/>
-							<label>Email: <span>*</span></label>
-							<input type="text" class="forms_input" id="contact_email" placeholder="Email"/>
-							<label>Contact No: <span>*</span></label>
-							<input type="text" class="forms_input" id="contact_phone" placeholder="10 digit Mobile no."/>
-							<label>Message:</label>
-							<textarea class="forms_input" id="contact_message" placeholder="Message......."></textarea>
-							<input type="button" class="forms_button" id="submit_contact" value="Send Message"/>
-						</form>
+				</div>
 
+				<div id="contact" class="content hide" data-content="contact">
+					<h1>Contact Us</h1>
+					<hr>
+					<div class="contact_main">
+						<div class="contact_info contact_sub">
+							<a href="https://www.facebook.com/188thWing/" target="_blank">
+								<i title="Facebook" class="fab fa-facebook-square fa-3x"></i>
+							</a>
+							<a href="https://twitter.com/188thwg?lang=en" target="_blank">
+								<i title="Twitter" class="fab fa-twitter-square fa-3x"></i>
+							</a>
+							<a href="https://www.instagram.com/188thwing/" target="_blank">
+								<i title="Instagram" class="fab fa-instagram-square fa-3x"></i>
+							</a>
+							<a href="https://www.dvidshub.net/search?q=188th+wing&view=grid" target="_blank">
+								<i title="DIVIDS" class="fas fa-camera-retro fa-3x"></i>
+							</a>
+							<a href="https://www.188wg.ang.af.mil/" target="_blank">
+								<i title="AF Site" class="fas fa-globe fa-3x"></i>
+							</a>
+							<h3><a href = "mailto: 188wingpa@gmail.com">188WingPA@gmail.com</a></h3>
+							<h3><a href="tel:479-573-5167">(479) 573-5167</a></h3>
+						</div>
+						<div class="contact_form contact_sub">
+							<form class="forms" id="contact_form">
+								<p id="returnmessage"></p>
+								<label>Name: <span>*</span></label>
+								<input type="text" class="forms_input" id="contact_name" placeholder="Name"/>
+								<label>Email: <span>*</span></label>
+								<input type="text" class="forms_input" id="contact_email" placeholder="Email"/>
+								<label>Contact No: <span>*</span></label>
+								<input type="text" class="forms_input" id="contact_phone" placeholder="10 digit Mobile no."/>
+								<label>Message:</label>
+								<textarea class="forms_input" id="contact_message" placeholder="Message......."></textarea>
+								<input type="button" class="forms_button" id="submit_contact" value="Send Message"/>
+							</form>
+
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<div id="admin" class="content hide" data-content="admin">
+				<div id="admin" class="content hide" data-content="admin">
+
+					<h1>Admin Portal</h1>
+					<hr>
+					<ul class="tabs">
+						<li>
+							<a href="javascript:void(0); return false;" rel="#ServicesOut" class="tab active">
+								<span>
+									Service
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0); return false;" rel="#EquipmentOut" class="tab">
+								<span>
+									Equipment
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0); return false;" rel="#RHTC_out" class="tab">
+								<span>
+									RHTC
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0); return false;" rel="#CovidOut" class="tab">
+								<span>
+									COVID-19
+								</span>
+							</a>
+						</li>
+					</ul>
+
+					<div class="tab_content_container">
+						<div id="ServicesOut" class="tab_content tab_content_active">
+							<ul id="service_list">
+								<div id="loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></div>
+								<li id="listHead">
+									<span><h4>Date</h4></span>
+									<span><h4>Name</h4></span>
+									<span><h4>Grade</h4></span>
+									<span><h4>Phone</h4></span>
+									<span><h4>Email</h4></span>
+									<span><h4>State</h4></span>
+									<span><h4>Organization</h4></span>
+									<span><h4>Office Symbol</h4></span>
+									<span><h4>Support Type</h4></span>
+									<span><h4>Description</h4></span>
+									<span><h4></h4></span>
+								</li>
+							</ul>
+						</div>
+						<div id="EquipmentOut" class="tab_content">
+							<ul id="equipment_list">
+								<div id="loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></div>
+								<li id="listHead">
+									<span><h4>Date</h4></span>
+									<span><h4>Name</h4></span>
+									<span><h4>Grade</h4></span>
+									<span><h4>Phone</h4></span>
+									<span><h4>Email</h4></span>
+									<span><h4>Organization</h4></span>
+									<span><h4>Office Symbol</h4></span>
+									<span><h4>Equipment</h4></span>
+									<span><h4>Description</h4></span>
+									<span><h4></h4></span>
+								</li>
+							</ul>
+						</div>
+						<div id="RHTC_out" class="tab_content">
+							<ul id="rhtc_list">
+								<div id="loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></div>
+								<li id="listHead">
+									<span><h4>Date</h4></span>
+									<span><h4>Name</h4></span>
+									<span><h4>Grade</h4></span>
+									<span><h4>Phone</h4></span>
+									<span><h4>Email</h4></span>
+									<span><h4>Organization</h4></span>
+									<span><h4>Office Symbol</h4></span>
+									<span><h4>Use</h4></span>
+									<span><h4></h4></span>
+								</li>
+							</ul>
+						</div>
+						<div id="CovidOut" class="tab_content">
+							<ul id="covid_list">
+								<div id="loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></div>
+								<li id="listHead">
+									<span><h4>Date</h4></span>
+									<span><h4>Name</h4></span>
+									<span><h4>YOB</h4></span>
+									<span><h4>Gender</h4></span>
+									<span><h4>Temp</h4></span>
+									<span><h4>Symptoms</h4></span>
+									<span><h4>Squadron</h4></span>
+									<span><h4>Notes</h4></span>
+									<span><h4></h4></span>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+
+				</div>
+
 			</div>
 
 		</div>
-		<div class="push"></div>
-	</div>
 
-	<div class="footer">
-		<div class="footer_text">
-			USAF © All rights reserved - 188th Wing PA
-			<br>
-			<a href="188WingPA@gmail.com">188WingPA@gmail.com</a><a href="tel:479-573-5167">(479)573-5167</a>
+		<div class="footer">
+
+			<div class="footer_text">
+				USAF © All rights reserved - 188th Wing PA
+				<br>
+				<a href="188WingPA@gmail.com">188WingPA@gmail.com</a><a href="tel:479-573-5167">(479)573-5167</a>
+			</div>
+
+			<a href="https://www.facebook.com/188thWing/" target="_blank">
+				<i title="Facebook" class="fab fa-facebook-square fa-1x"></i>
+			</a>
+
+			<a href="https://twitter.com/188thwg?lang=en" target="_blank">
+				<i title="Twitter" class="fab fa-twitter-square fa-1x"></i>
+			</a>
+
+			<a href="https://www.instagram.com/188thwing/" target="_blank">
+				<i title="Instagram" class="fab fa-instagram-square fa-1x"></i>
+			</a>
+
+			<a href="https://www.dvidshub.net/search?q=188th+wing&view=grid" target="_blank">
+				<i title="DIVIDS" class="fas fa-camera-retro fa-1x"></i>
+			</a>
+
+			<a href="https://www.188wg.ang.af.mil/" target="_blank">
+				<i title="AF Site" class="fas fa-globe fa-1x"></i>
+			</a>
+
 		</div>
-		<a href="https://www.facebook.com/188thWing/" target="_blank">
-			<i title="Facebook" class="fab fa-facebook-square fa-1x"></i>
-		</a>
-		<a href="https://twitter.com/188thwg?lang=en" target="_blank">
-			<i title="Twitter" class="fab fa-twitter-square fa-1x"></i>
-		</a>
-		<a href="https://www.instagram.com/188thwing/" target="_blank">
-			<i title="Instagram" class="fab fa-instagram-square fa-1x"></i>
-		</a>
-		<a href="https://www.dvidshub.net/search?q=188th+wing&view=grid" target="_blank">
-			<i title="DIVIDS" class="fas fa-camera-retro fa-1x"></i>
-		</a>
-		<a href="https://www.188wg.ang.af.mil/" target="_blank">
-			<i title="AF Site" class="fas fa-globe fa-1x"></i>
-		</a>
 
-	</div>
+		<!--My JavaScript-->
 
-</body>
+		<script src="assets/scripts/script.js"></script>
+		<script src="assets/scripts/email.js"></script>
+		<script src="assets/scripts/config_firebase.js"></script>
+		<script src="assets/scripts/list_service.js"></script>
+		<script src="assets/scripts/list_equipment.js"></script>
+		<script src="assets/scripts/list_covid.js"></script>
+		<script src="assets/scripts/list_rhtc.js"></script>
 
-</html>
+	</body>
+
+	</html>

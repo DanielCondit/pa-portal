@@ -1,4 +1,4 @@
-/*STYLES FOR FORMS ON THE SITE*/
+/* GLOBAL STYLES FOR FORMS ON THE SITE */
 .forms_container {
 
 }
@@ -47,7 +47,17 @@
 	cursor: pointer;
 }
 
-/*CONTACT EMAIL FORM*/
+/* END GLOBAL STYLES FOR FORMS ON THE SITE */
+
+/* STYLES FOR THE COVID FORM */
+
+#add-covid-form {
+  
+}
+
+/* END STYLES FOR COVID FORM */
+
+/* CONTACT EMAIL FORM */
 
 #contact_form{
 	width: 100%;
@@ -76,6 +86,7 @@
 	color:green;
 	text-align:center;
 }
+/* END CONTACT EMAIL FORM */
 
 @media only screen and (max-width: 700px) {
 	.forms {
@@ -84,3 +95,4 @@
 	}
 
 }
+

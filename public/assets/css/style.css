@@ -17,18 +17,17 @@ body {
 }
 
 .full_wrap {
-  min-height: 100%;
   margin-bottom: -40px;
-}
-
-.footer, .push {
-  height: 40px;
 }
 
 .content {
   display: none;
   width: 75vw;
   margin: 0 auto;
+}
+
+.tab_content_container {
+  margin-bottom: 80px;
 }
 
 .notice {
@@ -48,8 +47,10 @@ body {
 }
 
 .footer {
-  width: 100%;
+  position: fixed;
+  bottom: 0;
   height: 40px;
+  width: 100%;
   text-align: center;
 }
 
@@ -310,6 +311,51 @@ ul.tabs li a:hover, ul.tabs li a.active {
 
 /* ^^ END STYLES FOR THE CONTACT PAGE ^^ */
 
+/* STYLES FOR ADMIN PAGE*/
+
+#service_list, #equipment_list, #covid_list , #rhtc_list{
+  display: table;
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+}
+
+#service_list li, #equipment_list li, #covid_list li, #rhtc_list li  {
+  display: table-row;
+  width: 100%;
+  
+}
+
+#service_list li span, #equipment_list li span, #covid_list li span, #rhtc_list li span {
+  display: table-cell;
+  white-space: nowrap;
+  overflow: scroll;
+  padding: 10px 0 10px 0;
+}
+
+#service_list #listHead span, #equipment_list #listHead span, #covid_list #listHead span, #rhtc_list #listHead span {
+  overflow: hidden;
+  padding: 0;
+}
+
+#service_list li button, #equipment_list li button, #covid_list li button, #rhtc_list li button {
+  background-color: yellow;
+  margin: 10px 0 10px 0;
+}
+
+#service_list li button:hover, #equipment_list li button:hover, #covid_list li button:hover, #rhtc_list li button:hover {
+  cursor: pointer;
+  background-color: red;
+}
+
+#loader {
+  text-align: center;
+  display: none;
+}
+
+/* ^^ END STYLES FOR ADMIN PAGE^^ */
+
 /* STYLES FOR MOBILE */
 
 @media only screen and (max-width: 700px) {
@@ -331,6 +377,7 @@ ul.tabs li a:hover, ul.tabs li a.active {
     height: 100%;
     padding:0;
     margin: 0;
+    margin-bottom: 25px;
     border: none;
     border-radius: 0;
   }
