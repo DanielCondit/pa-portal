@@ -11,28 +11,16 @@
 	<!--Page Styling-->
 
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-
 	<link href="assets/css/forms.css" rel="stylesheet" type="text/css" />
 
 	<!--JavaScript Libraries-->
 
 	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-	
 	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
-
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.js"></script>
-
 	<script src="https://kit.fontawesome.com/ef382a7536.js" crossorigin="anonymous"></script>
-
-	<!--My JavaScript-->
-
-	<script src="assets/scripts/script.js"></script>
-
-	<script src="assets/scripts/email.js"></script>
 
 </head>
 
@@ -96,12 +84,19 @@
 							</span>
 						</a>
 					</li>
+					<li>
+						<a href="javascript:void(0); return false;" rel="#Covid" class="tab">
+							<span>
+								COVID-19
+							</span>
+						</a>
+					</li>
 				</ul>
 
 				<div class="tab_content_container">
 					<div id="Services" class="tab_content tab_content_active">
 						<form class="forms" id="add-service-form" action="">
-							<input class="forms_input half_input" type="date" name="date" required>
+							<input class="forms_input half_input" type="datetime-local" name="date" required>
 							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
 							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
 							<select class="forms_input thirds_input" name='grade' required>
@@ -210,7 +205,7 @@
 						</form>
 					</div>
 					<div id="Equipment" class="tab_content">
-						<form class="forms" action="">
+						<form class="forms" id="add-equipment-form" action="">
 							<input class="forms_input half_input" type="datetime-local" name="date" required>
 							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
 							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
@@ -246,6 +241,11 @@
 							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" [formControl]="email" required>
 							<input class="forms_input thirds_input" type="text" name="org"  maxlength="20" placeholder="Organization" required>
 							<input class="forms_input thirds_input" type="text" name="osymbol" maxlength="20" placeholder="Office Symbol">
+							<select class="forms_input half_input" name='equipment' required>
+								<option value="" disabled selected>Select Equipment</option>
+								<option value="camera_kit">Camera Kit</option>
+								<option value="Other">Other</option>    
+							</select>
 							<textarea class="forms_input" type="textarea" name="desc" maxlength="200" placeholder="Description of Support" required></textarea>
 							<br>
 							<br>
@@ -362,6 +362,53 @@
 							<br>
 						</form>
 					</div>
+					<div id="Covid" class="tab_content">
+						<form class="forms" id="add-covid-form" action="">
+							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
+							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
+							<input class="forms_input half_input" type="datetime-local" name="date" required>
+							<input class="forms_input half_input" type="number" name="birth_year" placeholder="Birth Year" required>
+							<select class="forms_input thirds_input" name='gender' required>
+								<option value="" disabled selected>Gender</option>
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+								<option value="Other">Other</option>
+							</select>
+							<input class="forms_input half_input" type="number" name="temp" placeholder="Measured Temp" required>
+							<input type="checkbox" class="forms_input thirds_input" name='symptom1'>
+							<label for="symptom1">Dy Cough (change from baseline)</label><br>
+							<input type="checkbox" class="forms_input thirds_input" name='symptom2'>
+							<label for="symptom2">Shortness of breath (change from baseline)</label><br>
+							<input type="checkbox" class="forms_input thirds_input" name='symptom3'>
+							<label for="symptom3">Muscle Aches (myalgias)</label><br>
+							<input type="checkbox" class="forms_input thirds_input" name='symptom4'>
+							<label for="symptom4">Sore throat</label><br>
+							<input type="checkbox" class="forms_input thirds_input" name='symptom5'>
+							<label for="symptom5">Headache (influenza like illness)</label><br>
+							<input type="checkbox" class="forms_input thirds_input" name='symptom6'>
+							<label for="symptom6">Fatigue(influenza like illness)</label><br>
+							<input type="checkbox" class="forms_input thirds_input" name='symptom7'>
+							<label for="symptom7">Have you had close contact with anyone who has COVID-19 (close contact is defined as <6ft for >10 minutes)?</label><br>
+								<input type="checkbox" class="forms_input thirds_input" name='symptom8'>
+								<label for="symptom6">Other</label><br>
+							</input>
+							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" [formControl]="email" required>
+							<select class="forms_input thirds_input" name='squadron' required>
+								<option value="" disabled selected>Squadron</option>
+								<option value="ISRG">ISRG</option>
+								<option value="Ops">Ops</option>
+								<option value="Medical Group">Medical Group</option>
+								<option value="MSG">MSG</option>
+								<option value="Wing Staff">Wing Staff</option>
+							</select>
+							<textarea class="forms_input" type="textarea" name="notes" maxlength="200" placeholder="Notes"></textarea>
+							<br>
+							<br>
+							<input class="forms_button" type="submit" value="request">
+							<br>
+							<br>
+						</form>
+					</div>
 				</div>
 			</div>
 
@@ -410,22 +457,81 @@
 
 				<h1>Admin Portal</h1>
 				<hr>
-				<ul id="service_list">
-					<div id="loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></div>
-					<li id="listHead">
-						<span><h4>Date</h4></span>
-						<span><h4>Name</h4></span>
-						<span><h4>Grade</h4></span>
-						<span><h4>Phone</h4></span>
-						<span><h4>Email</h4></span>
-						<span><h4>State</h4></span>
-						<span><h4>Organization</h4></span>
-						<span><h4>Office Symbol</h4></span>
-						<span><h4>Support Type</h4></span>
-						<span><h4>Description</h4></span>
-						<span><h4>Delete</h4></span>
+				<ul class="tabs">
+					<li>
+						<a href="javascript:void(0); return false;" rel="#ServicesOut" class="tab active">
+							<span>
+								Service
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0); return false;" rel="#EquipmentOut" class="tab">
+							<span>
+								Equipment
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0); return false;" rel="#RHTC_out" class="tab">
+							<span>
+								RHTC
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0); return false;" rel="#CovidOut" class="tab">
+							<span>
+								COVID-19
+							</span>
+						</a>
 					</li>
 				</ul>
+
+				<div class="tab_content_container">
+					<div id="ServicesOut" class="tab_content tab_content_active">
+						<ul id="service_list">
+							<div id="loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></div>
+							<li id="listHead">
+								<span><h4>Date</h4></span>
+								<span><h4>Name</h4></span>
+								<span><h4>Grade</h4></span>
+								<span><h4>Phone</h4></span>
+								<span><h4>Email</h4></span>
+								<span><h4>State</h4></span>
+								<span><h4>Organization</h4></span>
+								<span><h4>Office Symbol</h4></span>
+								<span><h4>Support Type</h4></span>
+								<span><h4>Description</h4></span>
+								<span><h4></h4></span>
+							</li>
+						</ul>
+					</div>
+					<div id="EquipmentOut" class="tab_content">
+						<ul id="equipment_list">
+							<div id="loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></div>
+							<li id="listHead">
+								<span><h4>Date</h4></span>
+								<span><h4>Name</h4></span>
+								<span><h4>Grade</h4></span>
+								<span><h4>Phone</h4></span>
+								<span><h4>Email</h4></span>
+								<span><h4>Organization</h4></span>
+								<span><h4>Office Symbol</h4></span>
+								<span><h4>Equipment</h4></span>
+								<span><h4>Description</h4></span>
+								<span><h4></h4></span>
+							</li>
+						</ul>
+					</div>
+					<div id="RHTC_out" class="tab_content">
+						
+					</div>
+					<div id="CovidOut" class="tab_content">
+						
+					</div>
+
+				</div>
 
 			</div>
 
@@ -462,9 +568,14 @@
 		</a>
 
 	</div>
-	
-	<script src="assets/scripts/firebase.js"></script>
-	<script src="assets/scripts/requests.js"></script>
+
+	<!--My JavaScript-->
+
+	<script src="assets/scripts/script.js"></script>
+	<script src="assets/scripts/email.js"></script>
+	<script src="assets/scripts/config_firebase.js"></script>
+	<script src="assets/scripts/list_service.js"></script>
+	<script src="assets/scripts/list_equipment.js"></script>
 
 </body>
 
