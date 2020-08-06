@@ -99,11 +99,11 @@ document.getElementById('add-equipment-form').addEventListener("submit", e => {
 
 // Realtime listener
 function getRealtimeData() {
-  document.querySelector("#loader").style.display = "block";
+  document.querySelector("#equipment_loader").style.display = "block";
   db.collection("equipment")
   .orderBy("date")
   .onSnapshot(snapshot => {
-    document.querySelector("#loader").style.display = "none";
+    document.querySelector("#equipment_loader").style.display = "none";
     let changes = snapshot.docChanges();
     changes.forEach(change => {
       if (change.type === "added") {

@@ -104,11 +104,11 @@ document.getElementById('add-service-form').addEventListener("submit", e => {
 
 // Realtime listener
 function getRealtimeData() {
-  document.querySelector("#loader").style.display = "block";
+  document.querySelector("#service_loader").style.display = "block";
   db.collection("services")
   .orderBy("date")
   .onSnapshot(snapshot => {
-    document.querySelector("#loader").style.display = "none";
+    document.querySelector("#service_loader").style.display = "none";
     let changes = snapshot.docChanges();
     changes.forEach(change => {
       if (change.type === "added") {
