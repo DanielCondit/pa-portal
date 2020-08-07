@@ -74,7 +74,7 @@ body {
 }
 
 .footer_text a {
-  padding: 0 10px 0 0;  
+  padding: 0 10px 0 0;
   float: left;
 }
 
@@ -209,26 +209,26 @@ body {
 
 /* STYLES FOR SERVICES PAGE */
 
-ul.tabs { 
-  margin:0; 
-  padding:0; 
-  float:left; 
+ul.tabs {
+  margin:0;
+  padding:0;
+  float:left;
 }
 
-ul.tabs li { 
-  float:left; 
-  display:inline; 
-  margin-right:1px; 
-  cursor:pointer; 
-  font-weight:bold;  
+ul.tabs li {
+  float:left;
+  display:inline;
+  margin-right:1px;
+  cursor:pointer;
+  font-weight:bold;
 }
 
-ul.tabs li a { 
-  width:125px; 
-  line-height:30px; 
-  background:#FFD700;  
-  float:left; 
-  text-decoration:none; 
+ul.tabs li a {
+  width:125px;
+  line-height:30px;
+  background:#FFD700;
+  float:left;
+  text-decoration:none;
   color:#120A8F;
   border-top-right-radius: 30px;
 }
@@ -239,51 +239,50 @@ ul.tabs li a span {
   left: 5px;
 }
 
-ul.tabs li a:hover, ul.tabs li a.active { 
+ul.tabs li a:hover, ul.tabs li a.active {
   background-color: #120A8F;
   color: #FFD700 !important;
 }
 
 .tab_content_container {
-  width:100%; 
-  height:auto; 
-  float:left; 
-  background:white; 
-  padding:20px; 
-  margin-top:1px; 
-  font-size:14px; 
+  width:100%;
+  height:auto;
+  float:left;
+  background:white;
+  padding:20px;
+  margin-top:1px;
+  font-size:14px;
   border-radius:0 0 10px 10px;
   border-left: 2px solid black;
   border-bottom: 2px solid black;
-  -moz-border-radius:0 0 10px 10px; 
-  -webkit-border-radius:0 0 10px 10px; 
+  -moz-border-radius:0 0 10px 10px;
+  -webkit-border-radius:0 0 10px 10px;
   display:block;
-  
 }
 
-.tab_content { 
-  display:none; 
-  position:relative;  
-  width:1px; 
-  height:1px; 
-  overflow:auto; 
+.tab_content {
+  display:none;
+  position:relative;
+  width:1px;
+  height:1px;
+  overflow:auto;
   overflow-x:hidden;
 }
 
-.tab_content_active { 
-  display:block; 
-  position:relative; 
-  width:100%; 
-  height:auto; 
-  overflow:auto; 
+.tab_content_active {
+  display:block;
+  position:relative;
+  width:100%;
+  height:auto;
+  overflow:auto;
   overflow-x:hidden;
   margin: 0 auto;
 }
 
-.tab_content_active span { 
-  float:left; 
-  width:100px; 
-  margin-right:20px; 
+.tab_content_active span {
+  float:left;
+  width:100px;
+  margin-right:20px;
 }
 
 /* END STYLES FOR SERVICES PAGE */
@@ -333,7 +332,6 @@ ul.tabs li a:hover, ul.tabs li a.active {
 #service_list li, #equipment_list li, #covid_list li, #rhtc_list li  {
   display: table-row;
   width: 100%;
-  
 }
 
 #service_list li span, #equipment_list li span, #covid_list li span, #rhtc_list li span {
@@ -400,9 +398,9 @@ ul.tabs li a:hover, ul.tabs li a.active {
     max-width: 95%;
     margin: 0 auto;
   }
-  
+
   .contact_info, .contact_form h3 {
-    text-align: center; 
+    text-align: center;
   }
 }
 

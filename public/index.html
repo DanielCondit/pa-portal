@@ -13,18 +13,10 @@
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 	<link href="assets/css/forms.css" rel="stylesheet" type="text/css" />
 
-	<!--JavaScript Libraries-->
-
-	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.js"></script>
-	<script src="https://kit.fontawesome.com/ef382a7536.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
+
 	<div class="full_wrap">
 		<div id="menu-container">
 
@@ -38,13 +30,10 @@
 				<a data-content="contact" class="menu-link" href="#">Contact</a>
 				<a data-content="admin" class="menu-link" href="#">Admin</a>
 			</div>
-
 		</div>
 
 		<div id="splash">
-
-			<img class="icon_img" src="assets/images/188th_PA.svg" alt="logo" name="Logo">
-
+			<img class="icon_img" src="assets/images/188th_PA.svg" alt="logo" id="Logo">
 		</div>
 
 		<div class="notice">
@@ -55,7 +44,6 @@
 			<br>
 			<br>
 		</div>
-
 		<div id="content_pages">
 
 			<div id="service" class="content" data-content="service">
@@ -95,7 +83,7 @@
 
 				<div class="tab_content_container">
 					<div id="Services" class="tab_content tab_content_active">
-						<form class="forms" id="add-service-form" action="">
+						<form class="forms" id="add-service-form">
 							<input class="forms_input half_input" type="datetime-local" name="date" required>
 							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
 							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
@@ -128,8 +116,8 @@
 								<option value="Civilian">Civilian</option>
 							</select>
 							<input class="forms_input half_input" type="number" name="phone" placeholder="Phone Number" required>
-							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" [formControl]="email" required>
-							<select class="forms_input thirds_input" name='state' required>
+							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" required>
+							<select class="forms_input thirds_input" name="state" required>
 								<option value="" disabled selected>State</option>
 								<option value="Alabama - AL">Alabama - AL</option>
 								<option value="Alaska - AK">Alaska - AK</option>
@@ -196,7 +184,7 @@
 								<option value="Studio Photo">Studio Photo</option>
 								<option value="Other">Other</option>
 							</select>
-							<textarea class="forms_input" type="textarea" name="desc" maxlength="200" placeholder="Description of Support" required></textarea>
+							<textarea class="forms_input" name="desc" maxlength="200" placeholder="Description of Support" required></textarea>
 							<br>
 							<br>
 							<input class="forms_button" type="submit" value="request">
@@ -205,7 +193,7 @@
 						</form>
 					</div>
 					<div id="Equipment" class="tab_content">
-						<form class="forms" id="add-equipment-form" action="">
+						<form class="forms" id="add-equipment-form">
 							<input class="forms_input half_input" type="datetime-local" name="date" required>
 							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
 							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
@@ -238,15 +226,15 @@
 								<option value="Civilian">Civilian</option>
 							</select>
 							<input class="forms_input half_input" type="number" name="phone" placeholder="Phone Number" required>
-							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" [formControl]="email" required>
+							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" required>
 							<input class="forms_input thirds_input" type="text" name="org"  maxlength="20" placeholder="Organization" required>
 							<input class="forms_input thirds_input" type="text" name="osymbol" maxlength="20" placeholder="Office Symbol">
 							<select class="forms_input half_input" name='equipment' required>
 								<option value="" disabled selected>Select Equipment</option>
 								<option value="camera_kit">Camera Kit</option>
-								<option value="Other">Other</option>    
+								<option value="Other">Other</option>
 							</select>
-							<textarea class="forms_input" type="textarea" name="desc" maxlength="200" placeholder="Description of Support" required></textarea>
+							<textarea class="forms_input" name="desc" maxlength="200" placeholder="Description of Support" required></textarea>
 							<br>
 							<br>
 							<input class="forms_button" type="submit" value="request">
@@ -255,7 +243,7 @@
 						</form>
 					</div>
 					<div id="RHTC" class="tab_content">
-						<form class="forms" id="add-rhtc-form"action="">
+						<form class="forms" id="add-rhtc-form" >
 							<input class="forms_input half_input" type="datetime-local" name="date" required>
 							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
 							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
@@ -288,10 +276,10 @@
 								<option value="Civilian">Civilian</option>
 							</select>
 							<input class="forms_input half_input" type="number" name="phone" placeholder="Phone Number" required>
-							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" [formControl]="email" required>
+							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" required>
 							<input class="forms_input thirds_input" type="text" name="org"  maxlength="20" placeholder="Organization" required>
 							<input class="forms_input thirds_input" type="text" name="osymbol" maxlength="20" placeholder="Office Symbol">
-							<textarea class="forms_input" type="textarea" name="desc" maxlength="200" placeholder="Reason For Use" required></textarea>
+							<textarea class="forms_input" name="desc" maxlength="200" placeholder="Reason For Use" required></textarea>
 							<br>
 							<br>
 							<input class="forms_button" type="submit" value="request">
@@ -300,7 +288,7 @@
 						</form>
 					</div>
 					<div id="Covid" class="tab_content">
-						<form class="forms" id="add-covid-form" action="">
+						<form class="forms" id="add-covid-form">
 							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
 							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
 							<input class="forms_input half_input" type="datetime-local" name="date" required>
@@ -312,194 +300,185 @@
 								<option value="Other">Other</option>
 							</select>
 							<input class="forms_input half_input" type="number" name="temp" placeholder="Measured Temp" required>
-
-							<input type="checkbox" value="Dy Cough (change from baseline)"class="forms_input thirds_input" name='symptom1'>
-							<label for="symptom1">Dy Cough (change from baseline)</label><br>
-							<input type="checkbox" value="Shortness of breath (change from baseline)" class="forms_input thirds_input" name='symptom2'>
-							<label for="symptom2">Shortness of breath (change from baseline)</label><br>
-							<input type="checkbox" value="Muscle Aches (myalgias)" class="forms_input thirds_input" name='symptom3'>
-							<label for="symptom3">Muscle Aches (myalgias)</label><br>
-							<input type="checkbox" value="Sore throat" class="forms_input thirds_input" name='symptom4'>
+							<input type="checkbox" value="Dy Cough" class="forms_input thirds_input" id='symptom1'>
+							<label for="symptom1">Dy Cough</label><br>
+							<input type="checkbox" value="Shortness of breath" class="forms_input thirds_input" id='symptom2'>
+							<label for="symptom2">Shortness of breath</label><br>
+							<input type="checkbox" value="Muscle Aches" class="forms_input thirds_input" id='symptom3'>
+							<label for="symptom3">Muscle Aches</label><br>
+							<input type="checkbox" value="Sore throat" class="forms_input thirds_input" id='symptom4'>
 							<label for="symptom4">Sore throat</label><br>
-							<input type="checkbox" value="Headache (influenza like illness)" class="forms_input thirds_input" name='symptom5'>
-							<label for="symptom5">Headache (influenza like illness)</label><br>
-							<input type="checkbox" value="Fatigue(influenza like illness)" class="forms_input thirds_input" name='symptom6'>
-							<label for="symptom6">Fatigue(influenza like illness)</label><br>
-							<input type="checkbox" value="Have you had close contact with anyone who has COVID-19 (close contact is defined as <6ft for >10 minutes)?" class="forms_input thirds_input" name='symptom7'>
-							<label for="symptom7">Have you had close contact with anyone who has COVID-19 (close contact is defined as <6ft for >10 minutes)?</label><br>
-							<input type="checkbox" value="Other" class="forms_input thirds_input" name='symptom8'>
-							<label for="symptom8">Other</label></input>
-
+							<input type="checkbox" value="Headache" class="forms_input thirds_input" id='symptom5'>
+							<label for="symptom5">Headache</label><br>
+							<input type="checkbox" value="Fatigue" class="forms_input thirds_input" id='symptom6'>
+							<label for="symptom6">Fatigue</label><br>
+							<input type="checkbox" value="Have you had close contact with anyone who has COVID19" class="forms_input thirds_input" id='symptom7'>
+							<label for="symptom7">Have you had close contact with anyone who has COVID19</label><br>
+							<input type="checkbox" value="Other" class="forms_input thirds_input" id='symptom8'>
+							<label for="symptom8">Other</label>
 							<select class="forms_input thirds_input" name='squadron' required>
-									<option value="" disabled selected>Squadron</option>
-									<option value="ISRG">ISRG</option>
-									<option value="Ops">Ops</option>
-									<option value="Medical Group">Medical Group</option>
-									<option value="MSG">MSG</option>
-									<option value="Wing Staff">Wing Staff</option>
-								</select>
-								<textarea class="forms_input" type="textarea" name="notes" maxlength="200" placeholder="Notes"></textarea>
-								<br>
-								<br>
-								<input class="forms_button" type="submit" value="request">
-								<br>
-								<br>
-							</form>
-						</div>
+								<option value="" disabled selected>Squadron</option>
+								<option value="ISRG">ISRG</option>
+								<option value="Ops">Ops</option>
+								<option value="Medical Group">Medical Group</option>
+								<option value="MSG">MSG</option>
+								<option value="Wing Staff">Wing Staff</option>
+							</select>
+							<textarea class="forms_input" name="notes" maxlength="200" placeholder="Notes"></textarea>
+							<br>
+							<br>
+							<input class="forms_button" type="submit" value="request">
+							<br>
+							<br>
+						</form>
 					</div>
-				</div>
-
-				<div id="contact" class="content hide" data-content="contact">
-					<h1>Contact Us</h1>
-					<hr>
-					<div class="contact_main">
-						<div class="contact_info contact_sub">
-							<a href="https://www.facebook.com/188thWing/" target="_blank">
-								<i title="Facebook" class="fab fa-facebook-square fa-3x"></i>
-							</a>
-							<a href="https://twitter.com/188thwg?lang=en" target="_blank">
-								<i title="Twitter" class="fab fa-twitter-square fa-3x"></i>
-							</a>
-							<a href="https://www.instagram.com/188thwing/" target="_blank">
-								<i title="Instagram" class="fab fa-instagram-square fa-3x"></i>
-							</a>
-							<a href="https://www.dvidshub.net/search?q=188th+wing&view=grid" target="_blank">
-								<i title="DIVIDS" class="fas fa-camera-retro fa-3x"></i>
-							</a>
-							<a href="https://www.188wg.ang.af.mil/" target="_blank">
-								<i title="AF Site" class="fas fa-globe fa-3x"></i>
-							</a>
-							<h3><a href = "mailto: 188wingpa@gmail.com">188WingPA@gmail.com</a></h3>
-							<h3><a href="tel:479-573-5167">(479) 573-5167</a></h3>
-						</div>
-						<div class="contact_form contact_sub">
-							<form class="forms" id="contact_form">
-								<p id="returnmessage"></p>
-								<label>Name: <span>*</span></label>
-								<input type="text" class="forms_input" id="contact_name" placeholder="Name"/>
-								<label>Email: <span>*</span></label>
-								<input type="text" class="forms_input" id="contact_email" placeholder="Email"/>
-								<label>Contact No: <span>*</span></label>
-								<input type="text" class="forms_input" id="contact_phone" placeholder="10 digit Mobile no."/>
-								<label>Message:</label>
-								<textarea class="forms_input" id="contact_message" placeholder="Message......."></textarea>
-								<input type="button" class="forms_button" id="submit_contact" value="Send Message"/>
-							</form>
-
-						</div>
-					</div>
-				</div>
-
-				<div id="admin" class="content hide" data-content="admin">
-
-					<h1>Admin Portal</h1>
-					<hr>
-					<ul class="tabs">
-						<li>
-							<a href="javascript:void(0); return false;" rel="#ServicesOut" class="tab active">
-								<span>
-									Service
-								</span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0); return false;" rel="#EquipmentOut" class="tab">
-								<span>
-									Equipment
-								</span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0); return false;" rel="#RHTC_out" class="tab">
-								<span>
-									RHTC
-								</span>
-							</a>
-						</li>
-						<li>
-							<a href="javascript:void(0); return false;" rel="#CovidOut" class="tab">
-								<span>
-									COVID-19
-								</span>
-							</a>
-						</li>
-					</ul>
-
-					<div class="tab_content_container">
-						<div id="ServicesOut" class="tab_content tab_content_active">
-							<ul id="service_list">
-								<div id="loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></div>
-								<li id="listHead">
-									<span><h4>Date</h4></span>
-									<span><h4>Name</h4></span>
-									<span><h4>Grade</h4></span>
-									<span><h4>Phone</h4></span>
-									<span><h4>Email</h4></span>
-									<span><h4>State</h4></span>
-									<span><h4>Organization</h4></span>
-									<span><h4>Office Symbol</h4></span>
-									<span><h4>Support Type</h4></span>
-									<span><h4>Description</h4></span>
-									<span><h4></h4></span>
-								</li>
-							</ul>
-						</div>
-						<div id="EquipmentOut" class="tab_content">
-							<ul id="equipment_list">
-								<div id="loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></div>
-								<li id="listHead">
-									<span><h4>Date</h4></span>
-									<span><h4>Name</h4></span>
-									<span><h4>Grade</h4></span>
-									<span><h4>Phone</h4></span>
-									<span><h4>Email</h4></span>
-									<span><h4>Organization</h4></span>
-									<span><h4>Office Symbol</h4></span>
-									<span><h4>Equipment</h4></span>
-									<span><h4>Description</h4></span>
-									<span><h4></h4></span>
-								</li>
-							</ul>
-						</div>
-						<div id="RHTC_out" class="tab_content">
-							<ul id="rhtc_list">
-								<div id="loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></div>
-								<li id="listHead">
-									<span><h4>Date</h4></span>
-									<span><h4>Name</h4></span>
-									<span><h4>Grade</h4></span>
-									<span><h4>Phone</h4></span>
-									<span><h4>Email</h4></span>
-									<span><h4>Organization</h4></span>
-									<span><h4>Office Symbol</h4></span>
-									<span><h4>Use</h4></span>
-									<span><h4></h4></span>
-								</li>
-							</ul>
-						</div>
-						<div id="CovidOut" class="tab_content">
-							<ul id="covid_list">
-								<div id="loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></div>
-								<li id="listHead">
-									<span><h4>Date</h4></span>
-									<span><h4>Name</h4></span>
-									<span><h4>YOB</h4></span>
-									<span><h4>Gender</h4></span>
-									<span><h4>Temp</h4></span>
-									<span><h4>Symptoms</h4></span>
-									<span><h4>Squadron</h4></span>
-									<span><h4>Notes</h4></span>
-									<span><h4></h4></span>
-								</li>
-							</ul>
-						</div>
-
-					</div>
-
 				</div>
 
 			</div>
+			<div id="contact" class="content hide" data-content="contact">
+				<h1>Contact Us</h1>
+				<hr>
+				<div class="contact_main">
+					<div class="contact_info contact_sub">
+						<a href="https://www.facebook.com/188thWing/" target="_blank">
+							<i title="Facebook" class="fab fa-facebook-square fa-3x"></i>
+						</a>
+						<a href="https://twitter.com/188thwg?lang=en" target="_blank">
+							<i title="Twitter" class="fab fa-twitter-square fa-3x"></i>
+						</a>
+						<a href="https://www.instagram.com/188thwing/" target="_blank">
+							<i title="Instagram" class="fab fa-instagram-square fa-3x"></i>
+						</a>
+						<a href="https://www.dvidshub.net/search?q=188th+wing&view=grid" target="_blank">
+							<i title="DIVIDS" class="fas fa-camera-retro fa-3x"></i>
+						</a>
+						<a href="https://www.188wg.ang.af.mil/" target="_blank">
+							<i title="AF Site" class="fas fa-globe fa-3x"></i>
+						</a>
+						<h3><a href="mailto:188wingpa@gmail.com">188WingPA@gmail.com</a></h3>
+						<h3><a href="tel:479-573-5167">(479) 573-5167</a></h3>
+					</div>
+					<div class="contact_form contact_sub">
+						<form class="forms" id="contact_form">
+							<p id="returnmessage"></p>
+							<label>Name: <span>*</span></label>
+							<input type="text" class="forms_input" id="contact_name" placeholder="Name"/>
+							<label>Email: <span>*</span></label>
+							<input type="text" class="forms_input" id="contact_email" placeholder="Email"/>
+							<label>Contact No: <span>*</span></label>
+							<input type="text" class="forms_input" id="contact_phone" placeholder="10 digit Mobile no."/>
+							<label>Message:</label>
+							<textarea class="forms_input" id="contact_message" placeholder="Message......."></textarea>
+							<input type="button" class="forms_button" id="submit_contact" value="Send Message"/>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="admin" class="content hide" data-content="admin">
 
+				<h1>Admin Portal</h1>
+				<hr>
+				<ul class="tabs">
+					<li>
+						<a href="javascript:void(0); return false;" rel="#ServicesOut" class="tab active">
+							<span>
+								Service
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0); return false;" rel="#EquipmentOut" class="tab">
+							<span>
+								Equipment
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0); return false;" rel="#RHTC_out" class="tab">
+							<span>
+								RHTC
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0); return false;" rel="#CovidOut" class="tab">
+							<span>
+								COVID-19
+							</span>
+						</a>
+					</li>
+				</ul>
+
+				<div class="tab_content_container">
+					<div id="ServicesOut" class="tab_content tab_content_active">
+						<span id="service_loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></span>
+						<ul id="service_list">
+							<li class="listHead">
+								<span>Date</span>
+								<span>Name</span>
+								<span>Grade</span>
+								<span>Phone</span>
+								<span>Email</span>
+								<span>State</span>
+								<span>Organization</span>
+								<span>Office Symbol</span>
+								<span>Support Type</span>
+								<span>Description</span>
+								<span></span>
+							</li>
+						</ul>
+					</div>
+					<div id="EquipmentOut" class="tab_content">
+						<span id="equipment_loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></span>			
+						<ul id="equipment_list">
+							<li class="listHead">
+								<span>Date</span>
+								<span>Name</span>
+								<span>Grade</span>
+								<span>Phone</span>
+								<span>Email</span>
+								<span>Organization</span>
+								<span>Office Symbol</span>
+								<span>Equipment</span>
+								<span>Description</span>
+								<span></span>
+							</li>
+						</ul>
+					</div>
+					<div id="RHTC_out" class="tab_content">
+						<span id="rhtc_loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></span>
+						<ul id="rhtc_list">
+							<li class="listHead">
+								<span>Date</span>
+								<span>Name</span>
+								<span>Grade</span>
+								<span>Phone</span>
+								<span>Email</span>
+								<span>Organization</span>
+								<span>Office Symbol</span>
+								<span>Use</span>
+								<span></span>
+							</li>
+						</ul>
+					</div>
+					<div id="CovidOut" class="tab_content">
+						<span id="covid_loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></span>
+						<ul id="covid_list">
+							<li class="listHead">
+								<span>Date</span>
+								<span>Name</span>
+								<span>YOB</span>
+								<span>Gender</span>
+								<span>Temp</span>
+								<span>Symptoms</span>
+								<span>Squadron</span>
+								<span>Notes</span>
+								<span></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<div class="footer">
@@ -511,37 +490,45 @@
 			</div>
 
 			<a href="https://www.facebook.com/188thWing/" target="_blank">
-				<i title="Facebook" class="fab fa-facebook-square fa-1x"></i>
+				<i title="Facebook" class="fab fa-facebook-square fa-2x"></i>
 			</a>
 
 			<a href="https://twitter.com/188thwg?lang=en" target="_blank">
-				<i title="Twitter" class="fab fa-twitter-square fa-1x"></i>
+				<i title="Twitter" class="fab fa-twitter-square fa-2x"></i>
 			</a>
 
 			<a href="https://www.instagram.com/188thwing/" target="_blank">
-				<i title="Instagram" class="fab fa-instagram-square fa-1x"></i>
+				<i title="Instagram" class="fab fa-instagram-square fa-2x"></i>
 			</a>
 
 			<a href="https://www.dvidshub.net/search?q=188th+wing&view=grid" target="_blank">
-				<i title="DIVIDS" class="fas fa-camera-retro fa-1x"></i>
+				<i title="DIVIDS" class="fas fa-camera-retro fa-2x"></i>
 			</a>
 
 			<a href="https://www.188wg.ang.af.mil/" target="_blank">
-				<i title="AF Site" class="fas fa-globe fa-1x"></i>
+				<i title="AF Site" class="fas fa-globe fa-2x"></i>
 			</a>
-
 		</div>
+	</div>
 
-		<!--My JavaScript-->
+	<!--JavaScript Libraries-->
 
-		<script src="assets/scripts/script.js"></script>
-		<script src="assets/scripts/email.js"></script>
-		<script src="assets/scripts/config_firebase.js"></script>
-		<script src="assets/scripts/list_service.js"></script>
-		<script src="assets/scripts/list_equipment.js"></script>
-		<script src="assets/scripts/list_covid.js"></script>
-		<script src="assets/scripts/list_rhtc.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.js"></script>
+	<script src="https://kit.fontawesome.com/ef382a7536.js" crossorigin="anonymous"></script>
 
-	</body>
+	<!--My JavaScript-->
 
-	</html>
+	<script src="assets/scripts/config_firebase.js"></script>
+	<!-- <script src="assets/scripts/firebase_auth.js"></script> -->
+	<script src="assets/scripts/script.js"></script>
+	<script src="assets/scripts/email.js"></script>
+	<script src="assets/scripts/lists.js"></script>
+
+</body>
+
+</html>

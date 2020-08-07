@@ -9,7 +9,7 @@ export const servicesCSV = functions.firestore
         const tempFilePath = path.join(os.tmpdir(), fileName);
         const fields = ['date', 'fname', 'lname', 'grade', 'phone', 'emails', 'state', 'org', 'osymbol', 'support', 'desc'];
         const opts = { fields };
-        
+
         // Reference report in Firestore
         const reportRef = db.collection('reports').doc(reportId)
 
@@ -19,11 +19,11 @@ export const servicesCSV = functions.firestore
         // Instanciamiento objeto tipo Parser
         const parser = new Parser(opts);
 
-        // Step 2. Query collection 
+        // Step 2. Query collection
         return db.collection('users')
-                 .get() 
+                 .get()
                  .then(querySnapshot => {
-                    
+
                     /// Step 3. Creates CSV file from with orders collection
                     const users: any[] = []
 
@@ -33,7 +33,7 @@ export const servicesCSV = functions.firestore
                         users.push( doc.data() )
                     });
 
-                    
+
                     // return parser.parse({ data: users });
                     return parser.parse(users);
                  })

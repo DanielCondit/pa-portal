@@ -13,15 +13,6 @@
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 	<link href="assets/css/forms.css" rel="stylesheet" type="text/css" />
 
-	<!--JavaScript Libraries-->
-
-	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.js"></script>
-	<script src="https://kit.fontawesome.com/ef382a7536.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -241,7 +232,7 @@
 							<select class="forms_input half_input" name='equipment' required>
 								<option value="" disabled selected>Select Equipment</option>
 								<option value="camera_kit">Camera Kit</option>
-								<option value="Other">Other</option>    
+								<option value="Other">Other</option>
 							</select>
 							<textarea class="forms_input" name="desc" maxlength="200" placeholder="Description of Support" required></textarea>
 							<br>
@@ -520,18 +511,24 @@
 		</div>
 	</div>
 
+	<!--JavaScript Libraries-->
 
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.js"></script>
+	<script src="https://kit.fontawesome.com/ef382a7536.js" crossorigin="anonymous"></script>
 
 	<!--My JavaScript-->
 
+	<script src="assets/scripts/config_firebase.js"></script>
+	<!-- <script src="assets/scripts/firebase_auth.js"></script> -->
 	<script src="assets/scripts/script.js"></script>
 	<script src="assets/scripts/email.js"></script>
-	<script src="assets/scripts/config_firebase.js"></script>
-	<script src="assets/scripts/list_service.js"></script>
-	<script src="assets/scripts/list_equipment.js"></script>
-	<script src="assets/scripts/list_covid.js"></script>
-	<script src="assets/scripts/list_rhtc.js"></script>
-	
+	<script src="assets/scripts/lists.js"></script>
+
 </body>
 
 </html>

@@ -2,7 +2,7 @@ $(document).ready(function () {
 
   $("#submit_contact").click(function() {
     var name = $("#contact_name").val();
-    var email = $("#contact_email").val(); 
+    var email = $("#contact_email").val();
     var message = $("#contact_message").val();
     var contact = $("#contact_phone").val();
     $("#returnmessage").empty(); // To empty previous error/success message.
@@ -26,5 +26,5 @@ $(document).ready(function () {
       });
     }
   });
-  
+
 });
