@@ -14,9 +14,8 @@ firebase.auth().onAuthStateChanged(function(user) {
       "use strict";
       let li = document.createElement("li");
       let date = document.createElement("span");
+      let time = document.createElement("span");
       let name = document.createElement("span");
-      let birthYear = document.createElement("span");
-      let gender = document.createElement("span");
       let temp = document.createElement("span");
       let symptoms = document.createElement("span");
       let squadron = document.createElement("span");
@@ -26,9 +25,8 @@ firebase.auth().onAuthStateChanged(function(user) {
       li.setAttribute("data-id", doc.id);
 
       date.textContent = doc.data().date;
+      time.textContent = doc.data().time;
       name.textContent = [doc.data().lname, doc.data().fname];
-      birthYear.textContent = doc.data().birthYear;
-      gender.textContent = doc.data().gender;
       temp.textContent = doc.data().temp;
       symptoms.textContent = [doc.data().symptom1, doc.data().symptom2, doc.data().symptom3, doc.data().symptom4, doc.data().symptom5, doc.data().symptom6, doc.data().symptom7, doc.data().symptom8];
       squadron.textContent = doc.data().squadron;
@@ -36,16 +34,13 @@ firebase.auth().onAuthStateChanged(function(user) {
       cross.textContent = "DEL";
 
       li.appendChild(date);
+      li.appendChild(time);
       li.appendChild(name);
-      li.appendChild(birthYear);
-      li.appendChild(gender);
       li.appendChild(temp);
       li.appendChild(symptoms);
       li.appendChild(squadron);
       li.appendChild(notes);
       li.appendChild(cross);
-
-      // state.slice(-2);
 
       covidList.appendChild(li);
 
@@ -98,8 +93,6 @@ firebase.auth().onAuthStateChanged(function(user) {
       li.appendChild(desc);
       li.appendChild(cross);
 
-      // state.slice(-2);
-
       equipmentList.appendChild(li);
 
       // Deleting Data
@@ -147,8 +140,6 @@ firebase.auth().onAuthStateChanged(function(user) {
       li.appendChild(osymbol);
       li.appendChild(desc);
       li.appendChild(cross);
-
-      // state.slice(-2);
 
       rhtcList.appendChild(li);
 
@@ -203,8 +194,6 @@ firebase.auth().onAuthStateChanged(function(user) {
       li.appendChild(support);
       li.appendChild(desc);
       li.appendChild(cross);
-
-      // state.slice(-2);
 
       serviceList.appendChild(li);
 
@@ -285,9 +274,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
     getRealtimeData();
 
-  } else {
-    // User is signed out.
-    // ...
   }
 });
 
@@ -341,8 +327,7 @@ document.getElementById('add-covid-form').addEventListener("submit", e => {
     lname: document.getElementById('add-covid-form').lname.value,
     fname: document.getElementById('add-covid-form').fname.value,
     date: document.getElementById('add-covid-form').date.value,
-    birthYear: document.getElementById('add-covid-form').birthYear.value,
-    gender: document.getElementById('add-covid-form').gender.value,
+    time: document.getElementById('add-covid-form').time.value,
     temp: document.getElementById('add-covid-form').temp.value,
     symptom1: document.getElementById('add-covid-form').symptom1.value,
     symptom2: document.getElementById('add-covid-form').symptom2.value,
@@ -358,8 +343,7 @@ document.getElementById('add-covid-form').addEventListener("submit", e => {
   document.getElementById('add-covid-form').lname.value = "";
   document.getElementById('add-covid-form').fname.value = "";
   document.getElementById('add-covid-form').date.value = "";
-  document.getElementById('add-covid-form').birthYear.value = "";
-  document.getElementById('add-covid-form').gender.value = "";
+  document.getElementById('add-covid-form').time.value = "";
   document.getElementById('add-covid-form').temp.value = "";
   document.getElementById('add-covid-form').symptom1.value = "";
   document.getElementById('add-covid-form').symptom2.value = "";
@@ -371,6 +355,8 @@ document.getElementById('add-covid-form').addEventListener("submit", e => {
   document.getElementById('add-covid-form').symptom8.value = "";
   document.getElementById('add-covid-form').squadron.value = "";
   document.getElementById('add-covid-form').notes.value = "";
+
+  document.getElementById("add-covid-form").reset();
 });
 
 document.getElementById('add-equipment-form').addEventListener("submit", e => {
@@ -398,6 +384,8 @@ document.getElementById('add-equipment-form').addEventListener("submit", e => {
   document.getElementById('add-equipment-form').osymbol.value = "";
   document.getElementById('add-equipment-form').equipment.value = "";
   document.getElementById('add-equipment-form').desc.value = "";
+
+  document.getElementById("add-equipment-form").reset();
 });
 
 document.getElementById('add-rhtc-form').addEventListener("submit", e => {
@@ -423,6 +411,8 @@ document.getElementById('add-rhtc-form').addEventListener("submit", e => {
   document.getElementById('add-rhtc-form').org.value = "";
   document.getElementById('add-rhtc-form').osymbol.value = "";
   document.getElementById('add-rhtc-form').desc.value = "";
+
+  document.getElementById("add-rhtc-form").reset();
 });
 
 document.getElementById('add-service-form').addEventListener("submit", e => {
@@ -452,4 +442,6 @@ document.getElementById('add-service-form').addEventListener("submit", e => {
   document.getElementById('add-service-form').osymbol.value = "";
   document.getElementById('add-service-form').support.value = "";
   document.getElementById('add-service-form').desc.value = "";
+
+  document.getElementById("add-service-form").reset();
 });

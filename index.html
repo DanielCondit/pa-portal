@@ -10,10 +10,9 @@
 
 	<!--Page Styling-->
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 	<link href="assets/css/forms.css" rel="stylesheet" type="text/css" />
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 </head>
 
@@ -89,103 +88,109 @@
 							<input class="forms_input half_input" type="datetime-local" name="date" required>
 							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
 							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
-							<select class="forms_input thirds_input" name='grade' required>
-								<option value="" disabled selected>Grade</option>
-								<option value="E-1">E-1</option>
-								<option value="E-2">E-2</option>
-								<option value="E-3">E-3</option>
-								<option value="E-4">E-4</option>
-								<option value="E-5">E-5</option>
-								<option value="E-6">E-6</option>
-								<option value="E-7">E-7</option>
-								<option value="E-8">E-8</option>
-								<option value="E-9">E-9</option>
-								<option value="W-1">W-1</option>
-								<option value="w-2">w-2</option>
-								<option value="W-3">W-3</option>
-								<option value="W-4">W-4</option>
-								<option value="W-5">W-5</option>
-								<option value="O-1">O-1</option>
-								<option value="O-2">O-2</option>
-								<option value="O-3">O-3</option>
-								<option value="O-4">O-4</option>
-								<option value="O-5">O-5</option>
-								<option value="O-6">O-6</option>
-								<option value="O-7">O-7</option>
-								<option value="O-8">O-8</option>
-								<option value="O-9">O-9</option>
-								<option value="O-10">O-10</option>
-								<option value="Civilian">Civilian</option>
-							</select>
+							<div class="input-field col s12">
+								<select class="forms_input thirds_input" name='grade' required>
+									<option value="" disabled selected>Grade</option>
+									<option value="E-1">E-1</option>
+									<option value="E-2">E-2</option>
+									<option value="E-3">E-3</option>
+									<option value="E-4">E-4</option>
+									<option value="E-5">E-5</option>
+									<option value="E-6">E-6</option>
+									<option value="E-7">E-7</option>
+									<option value="E-8">E-8</option>
+									<option value="E-9">E-9</option>
+									<option value="W-1">W-1</option>
+									<option value="w-2">w-2</option>
+									<option value="W-3">W-3</option>
+									<option value="W-4">W-4</option>
+									<option value="W-5">W-5</option>
+									<option value="O-1">O-1</option>
+									<option value="O-2">O-2</option>
+									<option value="O-3">O-3</option>
+									<option value="O-4">O-4</option>
+									<option value="O-5">O-5</option>
+									<option value="O-6">O-6</option>
+									<option value="O-7">O-7</option>
+									<option value="O-8">O-8</option>
+									<option value="O-9">O-9</option>
+									<option value="O-10">O-10</option>
+									<option value="Civilian">Civilian</option>
+								</select>
+							</div>
 							<input class="forms_input half_input" type="number" name="phone" placeholder="Phone Number" required>
 							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" required>
-							<select class="forms_input thirds_input" name="state" required>
-								<option value="" disabled selected>State</option>
-								<option value="Alabama - AL">Alabama - AL</option>
-								<option value="Alaska - AK">Alaska - AK</option>
-								<option value="Arizona - AZ">Arizona - AZ</option>
-								<option value="Arkansas - AR">Arkansas - AR</option>
-								<option value="California - CA">California - CA</option>
-								<option value="Canal Zone - CZ">Canal Zone - CZ</option>
-								<option value="Colorado - CO">Colorado - CO</option>
-								<option value="Connecticut - CT">Connecticut - CT</option>
-								<option value="Delaware - DE">Delaware - DE</option>
-								<option value="District of Columbia - DC">District of Columbia - DC</option>
-								<option value="Florida - FL">Florida - FL</option>
-								<option value="Georgia - GA">Georgia - GA</option>
-								<option value="Guam - GU">Guam - GU</option>
-								<option value="Hawaii - HI">Hawaii - HI</option>
-								<option value="Idaho - ID">Idaho - ID</option>
-								<option value="Illinois - IL">Illinois - IL</option>
-								<option value="Indiana - IN">Indiana - IN</option>
-								<option value="Iowa - IA">Iowa - IA</option>
-								<option value="Kansas - KS">Kansas - KS</option>
-								<option value="Kentucky - KY">Kentucky - KY</option>
-								<option value="Louisiana - LA">Louisiana - LA</option>
-								<option value="Maine - ME">Maine - ME</option>
-								<option value="Maryland - MD">Maryland - MD</option>
-								<option value="Massachusetts - MA">Massachusetts - MA</option>
-								<option value="Michigan - MI">Michigan - MI</option>
-								<option value="Minnesota - MN">Minnesota - MN</option>
-								<option value="Mississippi - MS">Mississippi - MS</option>
-								<option value="Missouri - MO">Missouri - MO</option>
-								<option value="Montana - MT">Montana - MT</option>
-								<option value="Nebraska - NE">Nebraska - NE</option>
-								<option value="Nevada - NV">Nevada - NV</option>
-								<option value="New Hampshire - NH">New Hampshire - NH</option>
-								<option value="New Jersey - NJ">New Jersey - NJ</option>
-								<option value="New Mexico - NM">New Mexico - NM</option>
-								<option value="New York - NY">New York - NY</option>
-								<option value="North Carolina - NC">North Carolina - NC</option>
-								<option value="North Dakota - ND">North Dakota - ND</option>
-								<option value="Ohio - OH">Ohio - OH</option>
-								<option value="Oklahoma - OK">Oklahoma - OK</option>
-								<option value="Oregon - OR">Oregon - OR</option>
-								<option value="Pennsylvania - PA">Pennsylvania - PA</option>
-								<option value="Puerto Rico - PR">Puerto Rico - PR</option>
-								<option value="Rhode Island - RI">Rhode Island - RI</option>
-								<option value="South Carolina - SC">South Carolina - SC</option>
-								<option value="South Dakota - SD">South Dakota - SD</option>
-								<option value="Tennessee - TN">Tennessee - TN</option>
-								<option value="Texas - TX">Texas - TX</option>
-								<option value="Utah - UT">Utah - UT</option>
-								<option value="Vermont - VT">Vermont - VT</option>
-								<option value="Virgin Islands - VI">Virgin Islands - VI</option>
-								<option value="Virginia - VA">Virginia - VA</option>
-								<option value="Washington - WA">Washington - WA</option>
-								<option value="West Virginia - WV">West Virginia - WV</option>
-								<option value="Wisconsin - WI">Wisconsin - WI</option>
-								<option value="Wyoming - WY">Wyoming - WY</option>
-							</select>
+							<div class="input-field">
+								<select class="forms_input thirds_input" name="state" required>
+									<option value="" disabled selected>State</option>
+									<option value="Alabama - AL">Alabama - AL</option>
+									<option value="Alaska - AK">Alaska - AK</option>
+									<option value="Arizona - AZ">Arizona - AZ</option>
+									<option value="Arkansas - AR">Arkansas - AR</option>
+									<option value="California - CA">California - CA</option>
+									<option value="Canal Zone - CZ">Canal Zone - CZ</option>
+									<option value="Colorado - CO">Colorado - CO</option>
+									<option value="Connecticut - CT">Connecticut - CT</option>
+									<option value="Delaware - DE">Delaware - DE</option>
+									<option value="District of Columbia - DC">District of Columbia - DC</option>
+									<option value="Florida - FL">Florida - FL</option>
+									<option value="Georgia - GA">Georgia - GA</option>
+									<option value="Guam - GU">Guam - GU</option>
+									<option value="Hawaii - HI">Hawaii - HI</option>
+									<option value="Idaho - ID">Idaho - ID</option>
+									<option value="Illinois - IL">Illinois - IL</option>
+									<option value="Indiana - IN">Indiana - IN</option>
+									<option value="Iowa - IA">Iowa - IA</option>
+									<option value="Kansas - KS">Kansas - KS</option>
+									<option value="Kentucky - KY">Kentucky - KY</option>
+									<option value="Louisiana - LA">Louisiana - LA</option>
+									<option value="Maine - ME">Maine - ME</option>
+									<option value="Maryland - MD">Maryland - MD</option>
+									<option value="Massachusetts - MA">Massachusetts - MA</option>
+									<option value="Michigan - MI">Michigan - MI</option>
+									<option value="Minnesota - MN">Minnesota - MN</option>
+									<option value="Mississippi - MS">Mississippi - MS</option>
+									<option value="Missouri - MO">Missouri - MO</option>
+									<option value="Montana - MT">Montana - MT</option>
+									<option value="Nebraska - NE">Nebraska - NE</option>
+									<option value="Nevada - NV">Nevada - NV</option>
+									<option value="New Hampshire - NH">New Hampshire - NH</option>
+									<option value="New Jersey - NJ">New Jersey - NJ</option>
+									<option value="New Mexico - NM">New Mexico - NM</option>
+									<option value="New York - NY">New York - NY</option>
+									<option value="North Carolina - NC">North Carolina - NC</option>
+									<option value="North Dakota - ND">North Dakota - ND</option>
+									<option value="Ohio - OH">Ohio - OH</option>
+									<option value="Oklahoma - OK">Oklahoma - OK</option>
+									<option value="Oregon - OR">Oregon - OR</option>
+									<option value="Pennsylvania - PA">Pennsylvania - PA</option>
+									<option value="Puerto Rico - PR">Puerto Rico - PR</option>
+									<option value="Rhode Island - RI">Rhode Island - RI</option>
+									<option value="South Carolina - SC">South Carolina - SC</option>
+									<option value="South Dakota - SD">South Dakota - SD</option>
+									<option value="Tennessee - TN">Tennessee - TN</option>
+									<option value="Texas - TX">Texas - TX</option>
+									<option value="Utah - UT">Utah - UT</option>
+									<option value="Vermont - VT">Vermont - VT</option>
+									<option value="Virgin Islands - VI">Virgin Islands - VI</option>
+									<option value="Virginia - VA">Virginia - VA</option>
+									<option value="Washington - WA">Washington - WA</option>
+									<option value="West Virginia - WV">West Virginia - WV</option>
+									<option value="Wisconsin - WI">Wisconsin - WI</option>
+									<option value="Wyoming - WY">Wyoming - WY</option>
+								</select>
+							</div>
 							<input class="forms_input thirds_input" type="text" name="org"  maxlength="20" placeholder="Organization" required>
 							<input class="forms_input thirds_input" type="text" name="osymbol" maxlength="20" placeholder="Office Symbol">
-							<select class="forms_input half_input" name='support' required>
-								<option value="" disabled selected>Select Support Type</option>
-								<option value="Photo Support">Photo Support</option>
-								<option value="Video">Video</option>
-								<option value="Studio Photo">Studio Photo</option>
-								<option value="Other">Other</option>
-							</select>
+							<div class="input-field col s12">
+								<select class="forms_input half_input" name='support' required>
+									<option value="" disabled selected>Select Support Type</option>
+									<option value="Photo Support">Photo Support</option>
+									<option value="Video">Video</option>
+									<option value="Studio Photo">Studio Photo</option>
+									<option value="Other">Other</option>
+								</select>
+							</div>
 							<textarea class="forms_input" name="desc" maxlength="200" placeholder="Description of Support" required></textarea>
 							<br>
 							<br>
@@ -199,43 +204,47 @@
 							<input class="forms_input half_input" type="datetime-local" name="date" required>
 							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
 							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
-							<select class="forms_input thirds_input" name='grade' required>
-								<option value="" disabled selected>Grade</option>
-								<option value="E-1">E-1</option>
-								<option value="E-2">E-2</option>
-								<option value="E-3">E-3</option>
-								<option value="E-4">E-4</option>
-								<option value="E-5">E-5</option>
-								<option value="E-6">E-6</option>
-								<option value="E-7">E-7</option>
-								<option value="E-8">E-8</option>
-								<option value="E-9">E-9</option>
-								<option value="W-1">W-1</option>
-								<option value="w-2">w-2</option>
-								<option value="W-3">W-3</option>
-								<option value="W-4">W-4</option>
-								<option value="W-5">W-5</option>
-								<option value="O-1">O-1</option>
-								<option value="O-2">O-2</option>
-								<option value="O-3">O-3</option>
-								<option value="O-4">O-4</option>
-								<option value="O-5">O-5</option>
-								<option value="O-6">O-6</option>
-								<option value="O-7">O-7</option>
-								<option value="O-8">O-8</option>
-								<option value="O-9">O-9</option>
-								<option value="O-10">O-10</option>
-								<option value="Civilian">Civilian</option>
-							</select>
+							<div class="input-field col s12">
+								<select class="forms_input thirds_input" name='grade' required>
+									<option value="" disabled selected>Grade</option>
+									<option value="E-1">E-1</option>
+									<option value="E-2">E-2</option>
+									<option value="E-3">E-3</option>
+									<option value="E-4">E-4</option>
+									<option value="E-5">E-5</option>
+									<option value="E-6">E-6</option>
+									<option value="E-7">E-7</option>
+									<option value="E-8">E-8</option>
+									<option value="E-9">E-9</option>
+									<option value="W-1">W-1</option>
+									<option value="w-2">w-2</option>
+									<option value="W-3">W-3</option>
+									<option value="W-4">W-4</option>
+									<option value="W-5">W-5</option>
+									<option value="O-1">O-1</option>
+									<option value="O-2">O-2</option>
+									<option value="O-3">O-3</option>
+									<option value="O-4">O-4</option>
+									<option value="O-5">O-5</option>
+									<option value="O-6">O-6</option>
+									<option value="O-7">O-7</option>
+									<option value="O-8">O-8</option>
+									<option value="O-9">O-9</option>
+									<option value="O-10">O-10</option>
+									<option value="Civilian">Civilian</option>
+								</select>
+							</div>
 							<input class="forms_input half_input" type="number" name="phone" placeholder="Phone Number" required>
 							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" required>
 							<input class="forms_input thirds_input" type="text" name="org"  maxlength="20" placeholder="Organization" required>
 							<input class="forms_input thirds_input" type="text" name="osymbol" maxlength="20" placeholder="Office Symbol">
-							<select class="forms_input half_input" name='equipment' required>
-								<option value="" disabled selected>Select Equipment</option>
-								<option value="camera_kit">Camera Kit</option>
-								<option value="Other">Other</option>
-							</select>
+							<div class="input-field col s12">
+								<select class="forms_input half_input" name='equipment' required>
+									<option value="" disabled selected>Select Equipment</option>
+									<option value="camera_kit">Camera Kit</option>
+									<option value="Other">Other</option>
+								</select>
+							</div>
 							<textarea class="forms_input" name="desc" maxlength="200" placeholder="Description of Support" required></textarea>
 							<br>
 							<br>
@@ -249,34 +258,36 @@
 							<input class="forms_input half_input" type="datetime-local" name="date" required>
 							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
 							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
-							<select class="forms_input thirds_input" name='grade' required>
-								<option value="" disabled selected>Grade</option>
-								<option value="E-1">E-1</option>
-								<option value="E-2">E-2</option>
-								<option value="E-3">E-3</option>
-								<option value="E-4">E-4</option>
-								<option value="E-5">E-5</option>
-								<option value="E-6">E-6</option>
-								<option value="E-7">E-7</option>
-								<option value="E-8">E-8</option>
-								<option value="E-9">E-9</option>
-								<option value="W-1">W-1</option>
-								<option value="w-2">w-2</option>
-								<option value="W-3">W-3</option>
-								<option value="W-4">W-4</option>
-								<option value="W-5">W-5</option>
-								<option value="O-1">O-1</option>
-								<option value="O-2">O-2</option>
-								<option value="O-3">O-3</option>
-								<option value="O-4">O-4</option>
-								<option value="O-5">O-5</option>
-								<option value="O-6">O-6</option>
-								<option value="O-7">O-7</option>
-								<option value="O-8">O-8</option>
-								<option value="O-9">O-9</option>
-								<option value="O-10">O-10</option>
-								<option value="Civilian">Civilian</option>
-							</select>
+							<div class="input-field col s12">
+								<select class="forms_input thirds_input" name='grade' required>
+									<option value="" disabled selected>Grade</option>
+									<option value="E-1">E-1</option>
+									<option value="E-2">E-2</option>
+									<option value="E-3">E-3</option>
+									<option value="E-4">E-4</option>
+									<option value="E-5">E-5</option>
+									<option value="E-6">E-6</option>
+									<option value="E-7">E-7</option>
+									<option value="E-8">E-8</option>
+									<option value="E-9">E-9</option>
+									<option value="W-1">W-1</option>
+									<option value="w-2">w-2</option>
+									<option value="W-3">W-3</option>
+									<option value="W-4">W-4</option>
+									<option value="W-5">W-5</option>
+									<option value="O-1">O-1</option>
+									<option value="O-2">O-2</option>
+									<option value="O-3">O-3</option>
+									<option value="O-4">O-4</option>
+									<option value="O-5">O-5</option>
+									<option value="O-6">O-6</option>
+									<option value="O-7">O-7</option>
+									<option value="O-8">O-8</option>
+									<option value="O-9">O-9</option>
+									<option value="O-10">O-10</option>
+									<option value="Civilian">Civilian</option>
+								</select>
+							</div>
 							<input class="forms_input half_input" type="number" name="phone" placeholder="Phone Number" required>
 							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" required>
 							<input class="forms_input thirds_input" type="text" name="org"  maxlength="20" placeholder="Organization" required>
@@ -293,39 +304,75 @@
 						<form class="forms" id="add-covid-form">
 							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
 							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
-							<input class="forms_input half_input" type="datetime-local" name="date" required>
-							<input class="forms_input half_input" type="number" name="birthYear" placeholder="Birth Year" required>
-							<select class="forms_input thirds_input" name='gender' required>
-								<option value="" disabled selected>Gender</option>
-								<option value="Male">Male</option>
-								<option value="Female">Female</option>
-								<option value="Other">Other</option>
-							</select>
+							<input type="text" class="datepicker forms_input half_input" name="date" value="Date" required>
+							<input type="text" class="timepicker forms_input half_input" name="time" value="Time">
 							<input class="forms_input half_input" type="number" name="temp" placeholder="Measured Temp" required>
-							<input type="checkbox" value="Dy Cough" class="forms_input thirds_input" id='symptom1'>
-							<label for="symptom1">Dy Cough</label><br>
-							<input type="checkbox" value="Shortness of breath" class="forms_input thirds_input" id='symptom2'>
-							<label for="symptom2">Shortness of breath</label><br>
-							<input type="checkbox" value="Muscle Aches" class="forms_input thirds_input" id='symptom3'>
-							<label for="symptom3">Muscle Aches</label><br>
-							<input type="checkbox" value="Sore throat" class="forms_input thirds_input" id='symptom4'>
-							<label for="symptom4">Sore throat</label><br>
-							<input type="checkbox" value="Headache" class="forms_input thirds_input" id='symptom5'>
-							<label for="symptom5">Headache</label><br>
-							<input type="checkbox" value="Fatigue" class="forms_input thirds_input" id='symptom6'>
-							<label for="symptom6">Fatigue</label><br>
-							<input type="checkbox" value="Have you had close contact with anyone who has COVID19" class="forms_input thirds_input" id='symptom7'>
-							<label for="symptom7">Have you had close contact with anyone who has COVID19</label><br>
-							<input type="checkbox" value="Other" class="forms_input thirds_input" id='symptom8'>
-							<label for="symptom8">Other</label>
-							<select class="forms_input thirds_input" name='squadron' required>
-								<option value="" disabled selected>Squadron</option>
-								<option value="ISRG">ISRG</option>
-								<option value="Ops">Ops</option>
-								<option value="Medical Group">Medical Group</option>
-								<option value="MSG">MSG</option>
-								<option value="Wing Staff">Wing Staff</option>
-							</select>
+							<p>
+								<label>
+									<input type="checkbox" value="Dry Cough" class="forms_input thirds_input" id='symptom1' />
+									<span>Dry Cough (change from baseline)</span>
+								</label>
+							</p>
+							<br>
+							<p>
+								<label>
+									<input type="checkbox" value="Shortness of breath" class="forms_input thirds_input" id='symptom2' />
+									<span>Shortness of breath (change from baseline)</span>
+								</label>
+							</p>
+							<br>
+							<p>
+								<label>
+									<input type="checkbox" value="Muscle Aches" class="forms_input thirds_input" id='symptom3' />
+									<span>Muscle Aches (myalgias)</span>
+								</label>
+							</p>
+							<br>
+							<p>
+								<label>
+									<input type="checkbox" value="Sore throat" class="forms_input thirds_input" id='symptom4' />
+									<span>Sore throat</span>
+								</label>
+							</p>
+							<br>
+							<p>
+								<label>
+									<input type="checkbox" value="Headache" class="forms_input thirds_input" id='symptom5' />
+									<span>Headache (influenza like illness)</span>
+								</label>
+							</p>
+							<br>
+							<p>
+								<label>
+									<input type="checkbox" value="Fatigue" class="forms_input thirds_input" id='symptom6' />
+									<span>Fatigue(influenza like illness)</label</span>
+								</label>
+							</p>
+							<br>
+							<p>
+								<label>
+									<input type="checkbox" value="Had close contact with some who has COVID-19." class="forms_input thirds_input" id='symptom7'/>
+									<span>Have you had close contact with anyone who has COVID-19</span>
+								</label>
+							</p>
+							<br>
+							<p>
+								<label>
+									<input type="checkbox" value="Other" class="forms_input thirds_input" onclick="if (this.checked){ document.getElementById('symptomOther').removeAttribute('disabled');}" />
+									<span>Please enter other syptoms below.</span>
+								</label>
+							</p>
+							<input type="text" id="symptomOther" name="symptom8" disabled="disabled" />
+							<div class="input-field col s12">
+								<select class="forms_input thirds_input" name='squadron' required>
+									<option value="" disabled selected>Select Squadron</option>
+									<option value="ISRG">ISRG</option>
+									<option value="Ops">Ops</option>
+									<option value="Medical Group">Medical Group</option>
+									<option value="MSG">MSG</option>
+									<option value="Wing Staff">Wing Staff</option>
+								</select>
+							</div>
 							<textarea class="forms_input" name="notes" maxlength="200" placeholder="Notes"></textarea>
 							<br>
 							<br>
@@ -499,6 +546,7 @@
 						<ul id="covid_list">
 							<li class="listHead">
 								<span>Date</span>
+								<span>Time</span>
 								<span>Name</span>
 								<span>YOB</span>
 								<span>Gender</span>
