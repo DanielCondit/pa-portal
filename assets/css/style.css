@@ -356,9 +356,9 @@ ul.tabs li a:hover, ul.tabs li a.active {
   background-color: red;
 }
 
-#loader {
+.loader {
   text-align: center;
-  display: none;
+  width: 100% !important;
 }
 
 /* ^^ END STYLES FOR ADMIN PAGE^^ */

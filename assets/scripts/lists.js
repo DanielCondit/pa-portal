@@ -7,214 +7,289 @@ const equipmentForm = document.querySelector("#add-equipment-form");
 const rhtcForm = document.querySelector("#add-rhtc-form");
 const serviceForm = document.querySelector("#add-service-form");
 
-function renderCovid(doc) {
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    function renderCovid(doc) {
 
-  "use strict";
-  let li = document.createElement("li");
-  let date = document.createElement("span");
-  let name = document.createElement("span");
-  let birthYear = document.createElement("span");
-  let gender = document.createElement("span");
-  let temp = document.createElement("span");
-  let symptoms = document.createElement("span");
-  let squadron = document.createElement("span");
-  let notes = document.createElement("span");
-  let cross = document.createElement("button");
+      "use strict";
+      let li = document.createElement("li");
+      let date = document.createElement("span");
+      let name = document.createElement("span");
+      let birthYear = document.createElement("span");
+      let gender = document.createElement("span");
+      let temp = document.createElement("span");
+      let symptoms = document.createElement("span");
+      let squadron = document.createElement("span");
+      let notes = document.createElement("span");
+      let cross = document.createElement("button");
 
-  li.setAttribute("data-id", doc.id);
+      li.setAttribute("data-id", doc.id);
 
-  date.textContent = doc.data().date;
-  name.textContent = [doc.data().lname, doc.data().fname];
-  birthYear.textContent = doc.data().birthYear;
-  gender.textContent = doc.data().gender;
-  temp.textContent = doc.data().temp;
-  symptoms.textContent = [doc.data().symptom1, doc.data().symptom2, doc.data().symptom3, doc.data().symptom4, doc.data().symptom5, doc.data().symptom6, doc.data().symptom7, doc.data().symptom8];
-  squadron.textContent = doc.data().squadron;
-  notes.textContent = doc.data().notes;
-  cross.textContent = "DEL";
+      date.textContent = doc.data().date;
+      name.textContent = [doc.data().lname, doc.data().fname];
+      birthYear.textContent = doc.data().birthYear;
+      gender.textContent = doc.data().gender;
+      temp.textContent = doc.data().temp;
+      symptoms.textContent = [doc.data().symptom1, doc.data().symptom2, doc.data().symptom3, doc.data().symptom4, doc.data().symptom5, doc.data().symptom6, doc.data().symptom7, doc.data().symptom8];
+      squadron.textContent = doc.data().squadron;
+      notes.textContent = doc.data().notes;
+      cross.textContent = "DEL";
 
-  li.appendChild(date);
-  li.appendChild(name);
-  li.appendChild(birthYear);
-  li.appendChild(gender);
-  li.appendChild(temp);
-  li.appendChild(symptoms);
-  li.appendChild(squadron);
-  li.appendChild(notes);
-  li.appendChild(cross);
+      li.appendChild(date);
+      li.appendChild(name);
+      li.appendChild(birthYear);
+      li.appendChild(gender);
+      li.appendChild(temp);
+      li.appendChild(symptoms);
+      li.appendChild(squadron);
+      li.appendChild(notes);
+      li.appendChild(cross);
 
-  // state.slice(-2);
+      // state.slice(-2);
 
-  covidList.appendChild(li);
+      covidList.appendChild(li);
 
-  // Deleting Data
-  cross.addEventListener("click", e => {
-    e.stopPropagation();
-    let id = e.target.parentElement.getAttribute("data-id");
-    db.collection("covid_screen")
-      .doc(id)
-      .delete();
-  });
-}
+      // Deleting Data
+      cross.addEventListener("click", e => {
+        e.stopPropagation();
+        let id = e.target.parentElement.getAttribute("data-id");
+        db.collection("covid_screen")
+          .doc(id)
+          .delete();
+      });
+    }
 
-function renderEquipment(doc) {
+    function renderEquipment(doc) {
 
-  "use strict";
-  let li = document.createElement("li");
-  let date = document.createElement("span");
-  let name = document.createElement("span");
-  let grade = document.createElement("span");
-  let phone = document.createElement("span");
-  let emails = document.createElement("span");
-  let org = document.createElement("span");
-  let osymbol = document.createElement("span");
-  let equipment = document.createElement("span");
-  let desc = document.createElement("span");
-  let cross = document.createElement("button");
+      "use strict";
+      let li = document.createElement("li");
+      let date = document.createElement("span");
+      let name = document.createElement("span");
+      let grade = document.createElement("span");
+      let phone = document.createElement("span");
+      let emails = document.createElement("span");
+      let org = document.createElement("span");
+      let osymbol = document.createElement("span");
+      let equipment = document.createElement("span");
+      let desc = document.createElement("span");
+      let cross = document.createElement("button");
 
-  li.setAttribute("data-id", doc.id);
+      li.setAttribute("data-id", doc.id);
 
-  date.textContent = doc.data().date;
-  name.textContent = [doc.data().lname, doc.data().fname];
-  grade.textContent = doc.data().grade;
-  phone.textContent = doc.data().phone;
-  emails.textContent = doc.data().emails;
-  org.textContent = doc.data().org;
-  osymbol.textContent = doc.data().osymbol;
-  equipment.textContent = doc.data().osymbol;
-  desc.textContent = doc.data().desc;
-  cross.textContent = "DELETE";
+      date.textContent = doc.data().date;
+      name.textContent = [doc.data().lname, doc.data().fname];
+      grade.textContent = doc.data().grade;
+      phone.textContent = doc.data().phone;
+      emails.textContent = doc.data().emails;
+      org.textContent = doc.data().org;
+      osymbol.textContent = doc.data().osymbol;
+      equipment.textContent = doc.data().osymbol;
+      desc.textContent = doc.data().desc;
+      cross.textContent = "DELETE";
 
-  li.appendChild(date);
-  li.appendChild(name);
-  li.appendChild(grade);
-  li.appendChild(phone);
-  li.appendChild(emails);
-  li.appendChild(org);
-  li.appendChild(osymbol);
-  li.appendChild(equipment);
-  li.appendChild(desc);
-  li.appendChild(cross);
+      li.appendChild(date);
+      li.appendChild(name);
+      li.appendChild(grade);
+      li.appendChild(phone);
+      li.appendChild(emails);
+      li.appendChild(org);
+      li.appendChild(osymbol);
+      li.appendChild(equipment);
+      li.appendChild(desc);
+      li.appendChild(cross);
 
-  // state.slice(-2);
+      // state.slice(-2);
 
-  equipmentList.appendChild(li);
+      equipmentList.appendChild(li);
 
-  // Deleting Data
-  cross.addEventListener("click", e => {
-    e.stopPropagation();
-    let id = e.target.parentElement.getAttribute("data-id");
-    db.collection("equipment")
-      .doc(id)
-      .delete();
-  });
-}
+      // Deleting Data
+      cross.addEventListener("click", e => {
+        e.stopPropagation();
+        let id = e.target.parentElement.getAttribute("data-id");
+        db.collection("equipment")
+          .doc(id)
+          .delete();
+      });
+    }
 
-function renderRHTC(doc) {
+    function renderRHTC(doc) {
 
-  "use strict";
-  let li = document.createElement("li");
-  let date = document.createElement("span");
-  let name = document.createElement("span");
-  let grade = document.createElement("span");
-  let phone = document.createElement("span");
-  let emails = document.createElement("span");
-  let org = document.createElement("span");
-  let osymbol = document.createElement("span");
-  let desc = document.createElement("span");
-  let cross = document.createElement("button");
+      "use strict";
+      let li = document.createElement("li");
+      let date = document.createElement("span");
+      let name = document.createElement("span");
+      let grade = document.createElement("span");
+      let phone = document.createElement("span");
+      let emails = document.createElement("span");
+      let org = document.createElement("span");
+      let osymbol = document.createElement("span");
+      let desc = document.createElement("span");
+      let cross = document.createElement("button");
 
-  li.setAttribute("data-id", doc.id);
+      li.setAttribute("data-id", doc.id);
 
-  date.textContent = doc.data().date;
-  name.textContent = [doc.data().lname, doc.data().fname];
-  grade.textContent = doc.data().grade;
-  phone.textContent = doc.data().phone;
-  emails.textContent = doc.data().emails;
-  org.textContent = doc.data().org;
-  osymbol.textContent = doc.data().osymbol;
-  desc.textContent = doc.data().desc;
-  cross.textContent = "DELETE";
+      date.textContent = doc.data().date;
+      name.textContent = [doc.data().lname, doc.data().fname];
+      grade.textContent = doc.data().grade;
+      phone.textContent = doc.data().phone;
+      emails.textContent = doc.data().emails;
+      org.textContent = doc.data().org;
+      osymbol.textContent = doc.data().osymbol;
+      desc.textContent = doc.data().desc;
+      cross.textContent = "DELETE";
 
-  li.appendChild(date);
-  li.appendChild(name);
-  li.appendChild(grade);
-  li.appendChild(phone);
-  li.appendChild(emails);
-  li.appendChild(org);
-  li.appendChild(osymbol);
-  li.appendChild(desc);
-  li.appendChild(cross);
+      li.appendChild(date);
+      li.appendChild(name);
+      li.appendChild(grade);
+      li.appendChild(phone);
+      li.appendChild(emails);
+      li.appendChild(org);
+      li.appendChild(osymbol);
+      li.appendChild(desc);
+      li.appendChild(cross);
 
-  // state.slice(-2);
+      // state.slice(-2);
 
-  rhtcList.appendChild(li);
+      rhtcList.appendChild(li);
 
-  // Deleting Data
-  cross.addEventListener("click", e => {
-    e.stopPropagation();
-    let id = e.target.parentElement.getAttribute("data-id");
-    db.collection("rhtc")
-      .doc(id)
-      .delete();
-  });
-}
+      // Deleting Data
+      cross.addEventListener("click", e => {
+        e.stopPropagation();
+        let id = e.target.parentElement.getAttribute("data-id");
+        db.collection("rhtc")
+          .doc(id)
+          .delete();
+      });
+    }
 
-function renderService(doc) {
+    function renderService(doc) {
 
-  "use strict";
-  let li = document.createElement("li");
-  let date = document.createElement("span");
-  let name = document.createElement("span");
-  let grade = document.createElement("span");
-  let phone = document.createElement("span");
-  let emails = document.createElement("span");
-  let state = document.createElement("span");
-  let org = document.createElement("span");
-  let osymbol = document.createElement("span");
-  let support = document.createElement("span");
-  let desc = document.createElement("span");
-  let cross = document.createElement("button");
+      "use strict";
+      let li = document.createElement("li");
+      let date = document.createElement("span");
+      let name = document.createElement("span");
+      let grade = document.createElement("span");
+      let phone = document.createElement("span");
+      let emails = document.createElement("span");
+      let state = document.createElement("span");
+      let org = document.createElement("span");
+      let osymbol = document.createElement("span");
+      let support = document.createElement("span");
+      let desc = document.createElement("span");
+      let cross = document.createElement("button");
 
-  li.setAttribute("data-id", doc.id);
+      li.setAttribute("data-id", doc.id);
 
-  date.textContent = doc.data().date;
-  name.textContent = [doc.data().lname, doc.data().fname];
-  grade.textContent = doc.data().grade;
-  phone.textContent = doc.data().phone;
-  emails.textContent = doc.data().emails;
-  state.textContent = doc.data().state.slice(-2);
-  org.textContent = doc.data().org;
-  osymbol.textContent = doc.data().osymbol;
-  support.textContent = doc.data().support;
-  desc.textContent = doc.data().desc;
-  cross.textContent = "DELETE";
+      date.textContent = doc.data().date;
+      name.textContent = [doc.data().lname, doc.data().fname];
+      grade.textContent = doc.data().grade;
+      phone.textContent = doc.data().phone;
+      emails.textContent = doc.data().emails;
+      state.textContent = doc.data().state.slice(-2);
+      org.textContent = doc.data().org;
+      osymbol.textContent = doc.data().osymbol;
+      support.textContent = doc.data().support;
+      desc.textContent = doc.data().desc;
+      cross.textContent = "DELETE";
 
-  li.appendChild(date);
-  li.appendChild(name);
-  li.appendChild(grade);
-  li.appendChild(phone);
-  li.appendChild(emails);
-  li.appendChild(state);
-  li.appendChild(org);
-  li.appendChild(osymbol);
-  li.appendChild(support);
-  li.appendChild(desc);
-  li.appendChild(cross);
+      li.appendChild(date);
+      li.appendChild(name);
+      li.appendChild(grade);
+      li.appendChild(phone);
+      li.appendChild(emails);
+      li.appendChild(state);
+      li.appendChild(org);
+      li.appendChild(osymbol);
+      li.appendChild(support);
+      li.appendChild(desc);
+      li.appendChild(cross);
 
-  // state.slice(-2);
+      // state.slice(-2);
 
-  serviceList.appendChild(li);
+      serviceList.appendChild(li);
 
-  // Deleting Data
-  cross.addEventListener("click", e => {
-    e.stopPropagation();
-    let id = e.target.parentElement.getAttribute("data-id");
-    db.collection("services")
-      .doc(id)
-      .delete();
-  });
-}
+      // Deleting Data
+      cross.addEventListener("click", e => {
+        e.stopPropagation();
+        let id = e.target.parentElement.getAttribute("data-id");
+        db.collection("services")
+          .doc(id)
+          .delete();
+      });
+    }
+    // Realtime listener
+    function getRealtimeData() {
+      document.querySelector("#covid_loader").style.display = "block";
+      db.collection("covid_screen")
+        .orderBy("date")
+        .onSnapshot(snapshot => {
+          document.querySelector("#covid_loader").style.display = "none";
+          let changes = snapshot.docChanges();
+          changes.forEach(change => {
+            if (change.type === "added") {
+              renderCovid(change.doc);
+            } else if (change.type === "removed") {
+              let li = covidList.querySelector(`[data-id=${change.doc.id}]`);
+              covidList.removeChild(li);
+            }
+          });
+        });
+
+      document.querySelector("#equipment_loader").style.display = "block";
+      db.collection("equipment")
+        .orderBy("date")
+        .onSnapshot(snapshot => {
+          document.querySelector("#equipment_loader").style.display = "none";
+          let changes = snapshot.docChanges();
+          changes.forEach(change => {
+            if (change.type === "added") {
+              renderEquipment(change.doc);
+            } else if (change.type === "removed") {
+              let li = equipmentList.querySelector(`[data-id=${change.doc.id}]`);
+              equipmentList.removeChild(li);
+            }
+          });
+        });
+
+      document.querySelector("#rhtc_loader").style.display = "block";
+      db.collection("rhtc")
+        .orderBy("date")
+        .onSnapshot(snapshot => {
+          document.querySelector("#rhtc_loader").style.display = "none";
+          let changes = snapshot.docChanges();
+          changes.forEach(change => {
+            if (change.type === "added") {
+              renderRHTC(change.doc);
+            } else if (change.type === "removed") {
+              let li = rhtcList.querySelector(`[data-id=${change.doc.id}]`);
+              rhtcList.removeChild(li);
+            }
+          });
+        });
+
+      document.querySelector("#service_loader").style.display = "block";
+      db.collection("services")
+        .orderBy("date")
+        .onSnapshot(snapshot => {
+          document.querySelector("#service_loader").style.display = "none";
+          let changes = snapshot.docChanges();
+          changes.forEach(change => {
+            if (change.type === "added") {
+              renderService(change.doc);
+            } else if (change.type === "removed") {
+              let li = serviceList.querySelector(`[data-id=${change.doc.id}]`);
+              serviceList.removeChild(li);
+            }
+          });
+        });
+    }
+    getRealtimeData();
+
+  } else {
+    // User is signed out.
+    // ...
+  }
+});
 
 // Getting Data
 function getData() {
@@ -378,71 +453,3 @@ document.getElementById('add-service-form').addEventListener("submit", e => {
   document.getElementById('add-service-form').support.value = "";
   document.getElementById('add-service-form').desc.value = "";
 });
-
-// Realtime listener
-function getRealtimeData() {
-  document.querySelector("#covid_loader").style.display = "block";
-  db.collection("covid_screen")
-    .orderBy("date")
-    .onSnapshot(snapshot => {
-      document.querySelector("#covid_loader").style.display = "none";
-      let changes = snapshot.docChanges();
-      changes.forEach(change => {
-        if (change.type === "added") {
-          renderCovid(change.doc);
-        } else if (change.type === "removed") {
-          let li = covidList.querySelector(`[data-id=${change.doc.id}]`);
-          covidList.removeChild(li);
-        }
-      });
-    });
-
-  document.querySelector("#equipment_loader").style.display = "block";
-  db.collection("equipment")
-    .orderBy("date")
-    .onSnapshot(snapshot => {
-      document.querySelector("#equipment_loader").style.display = "none";
-      let changes = snapshot.docChanges();
-      changes.forEach(change => {
-        if (change.type === "added") {
-          renderEquipment(change.doc);
-        } else if (change.type === "removed") {
-          let li = equipmentList.querySelector(`[data-id=${change.doc.id}]`);
-          equipmentList.removeChild(li);
-        }
-      });
-    });
-
-  document.querySelector("#rhtc_loader").style.display = "block";
-  db.collection("rhtc")
-    .orderBy("date")
-    .onSnapshot(snapshot => {
-      document.querySelector("#rhtc_loader").style.display = "none";
-      let changes = snapshot.docChanges();
-      changes.forEach(change => {
-        if (change.type === "added") {
-          renderRHTC(change.doc);
-        } else if (change.type === "removed") {
-          let li = rhtcList.querySelector(`[data-id=${change.doc.id}]`);
-          rhtcList.removeChild(li);
-        }
-      });
-    });
-
-  document.querySelector("#service_loader").style.display = "block";
-  db.collection("services")
-    .orderBy("date")
-    .onSnapshot(snapshot => {
-      document.querySelector("#service_loader").style.display = "none";
-      let changes = snapshot.docChanges();
-      changes.forEach(change => {
-        if (change.type === "added") {
-          renderService(change.doc);
-        } else if (change.type === "removed") {
-          let li = serviceList.querySelector(`[data-id=${change.doc.id}]`);
-          serviceList.removeChild(li);
-        }
-      });
-    });
-}
-getRealtimeData();

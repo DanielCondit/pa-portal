@@ -10,8 +10,10 @@
 
 	<!--Page Styling-->
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 	<link href="assets/css/forms.css" rel="stylesheet" type="text/css" />
+
 
 </head>
 
@@ -375,6 +377,37 @@
 				</div>
 			</div>
 			<div id="admin" class="content hide" data-content="admin">
+				<!-- NAVBAR -->
+				<nav class="z-depth-0 grey lighten-4">
+					<div class="nav-wrapper container">
+						<ul id="nav-mobile" class="right hide-on-med-and-down">
+							<li class="logged-in">
+								<a href="#" class="grey-text" id="logout">Logout</a>
+							</li>
+							<li class="logged-out">
+								<a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+
+				<!-- LOGIN MODAL -->
+				<div id="modal-login" class="modal">
+					<div class="modal-content">
+						<h4>Login</h4><br />
+						<form id="login-form">
+							<div class="input-field">
+								<input type="email" id="login-email" required />
+								<label for="login-email">Email address</label>
+							</div>
+							<div class="input-field">
+								<input type="password" id="login-password" required />
+								<label for="login-password">Your password</label>
+							</div>
+							<button class="btn yellow darken-2 z-depth-0">Login</button>
+						</form>
+					</div>
+				</div>
 
 				<h1>Admin Portal</h1>
 				<hr>
@@ -411,7 +444,7 @@
 
 				<div class="tab_content_container">
 					<div id="ServicesOut" class="tab_content tab_content_active">
-						<span id="service_loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></span>
+						<h4 class="loader" id="service_loader">Please log in...</h4>
 						<ul id="service_list">
 							<li class="listHead">
 								<span>Date</span>
@@ -429,7 +462,7 @@
 						</ul>
 					</div>
 					<div id="EquipmentOut" class="tab_content">
-						<span id="equipment_loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></span>			
+						<h4 class="loader" id="equipment_loader">Please log in...</h4>
 						<ul id="equipment_list">
 							<li class="listHead">
 								<span>Date</span>
@@ -446,7 +479,7 @@
 						</ul>
 					</div>
 					<div id="RHTC_out" class="tab_content">
-						<span id="rhtc_loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></span>
+						<h4 class="loader" id="rhtc_loader">Please log in...</h4>
 						<ul id="rhtc_list">
 							<li class="listHead">
 								<span>Date</span>
@@ -462,7 +495,7 @@
 						</ul>
 					</div>
 					<div id="CovidOut" class="tab_content">
-						<span id="covid_loader"><img src="assets/images/loader-ring.gif" alt="Loading..."></span>
+						<h4 class="loader" id="covid_loader">Please log in...</h4>
 						<ul id="covid_list">
 							<li class="listHead">
 								<span>Date</span>
@@ -520,11 +553,12 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.js"></script>
 	<script src="https://kit.fontawesome.com/ef382a7536.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 	<!--My JavaScript-->
 
 	<script src="assets/scripts/config_firebase.js"></script>
-	<!-- <script src="assets/scripts/firebase_auth.js"></script> -->
+	<script src="assets/scripts/firebase_auth.js"></script>
 	<script src="assets/scripts/script.js"></script>
 	<script src="assets/scripts/email.js"></script>
 	<script src="assets/scripts/lists.js"></script>
