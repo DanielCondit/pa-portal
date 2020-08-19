@@ -1,697 +1,710 @@
-<!DOCTYPE html>
-<html lang="en">
+	<!DOCTYPE html>
+	<html lang="en">
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	<title>188th PA Portal</title>
-	<meta name="Description" content="188th PA Portal">
-	<meta name="Authors" content="Daniel Condit">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>188th PA Portal</title>
+		<meta name="Description" content="188th PA Portal">
+		<meta name="Authors" content="Daniel Condit">
 
-	<!--Page Styling-->
+		<!--Page Styling-->
 
-	<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-	<link href="assets/css/forms.css" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/forms.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-</head>
+	</head>
 
-<body>
+	<body>
 
-	<div class="full_wrap">
-		<div id="menu-container">
+		<div class="full_wrap">
+			<div id="menu-container">
 
-			<div id="menu-wrapper">
-				<div id="hamburger-menu"><span></span><span></span><span></span></div>
-			</div>
-
-			<div id="menu-list">
-				<a class="menu-link" href="index.html">Home</a>
-				<a data-content="service" class="menu-link" href="#">Support Request</a>
-				<a data-content="contact" class="menu-link" href="#">Contact</a>
-				<a data-content="admin" class="menu-link" href="#">Admin</a>
-			</div>
-		</div>
-
-		<div id="splash">
-			<img class="icon_img" src="assets/images/188th_PA.svg" alt="logo" id="Logo">
-		</div>
-
-		<div class="notice">
-			<h1>NOTICE</h1>
-			<p>This system is not secured. Do not upload information considered FOR OFFICIAL USE ONLY (FOUO) or PERSONALLY IDENTIFIABLE INFORMATION (PII), which must be protected under the Freedom of Information Act (5 U.S.C. 552) and/or the Privacy Act of 1974 (5 U.S.C. 552a). Unauthorized disclosure or misuse of such information may result in disciplinary action, criminal and/or civil penalties.</p>
-
-			<button class="forms_button">ACKNOWLEDGE</button>
-			<br>
-			<br>
-		</div>
-		<div id="content_pages">
-
-			<div id="service" class="content" data-content="service">
-
-				<h1>Support Request</h1>
-				<hr>
-				<ul class="tabs">
-					<li>
-						<a href="javascript:void(0); return false;" rel="#Services" class="tab active">
-							<span>
-								Service
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void(0); return false;" rel="#Equipment" class="tab">
-							<span>
-								Equipment
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void(0); return false;" rel="#RHTC" class="tab">
-							<span>
-								RHTC
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void(0); return false;" rel="#Covid" class="tab">
-							<span>
-								COVID-19
-							</span>
-						</a>
-					</li>
-				</ul>
-
-				<div class="tab_content_container">
-					<div id="Services" class="tab_content tab_content_active">
-						<form class="forms" id="add-service-form">
-							<div class="input-field col s12">
-								<input type="text" class="datepicker forms_input" name="date" required>
-								<label for="">Date of Service</label>
-							</div>
-							<div class="input-field col s12">
-								<input type="text" class="timepicker forms_input" name="time">
-								<label for="">Time of Service</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="text" name="fname" required>
-								<label for="">First Name</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="text" name="lname" required>
-								<label for="">Last Name</label>
-							</div>
-							<div class="input-field col s12">
-								<select class="forms_input" name='grade' required>
-									<option value="" disabled selected></option>
-									<option value="E-1">E-1</option>
-									<option value="E-2">E-2</option>
-									<option value="E-3">E-3</option>
-									<option value="E-4">E-4</option>
-									<option value="E-5">E-5</option>
-									<option value="E-6">E-6</option>
-									<option value="E-7">E-7</option>
-									<option value="E-8">E-8</option>
-									<option value="E-9">E-9</option>
-									<option value="W-1">W-1</option>
-									<option value="w-2">w-2</option>
-									<option value="W-3">W-3</option>
-									<option value="W-4">W-4</option>
-									<option value="W-5">W-5</option>
-									<option value="O-1">O-1</option>
-									<option value="O-2">O-2</option>
-									<option value="O-3">O-3</option>
-									<option value="O-4">O-4</option>
-									<option value="O-5">O-5</option>
-									<option value="O-6">O-6</option>
-									<option value="O-7">O-7</option>
-									<option value="O-8">O-8</option>
-									<option value="O-9">O-9</option>
-									<option value="O-10">O-10</option>
-									<option value="Civilian">Civilian</option>
-								</select>
-								<label for="">Select Grade</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="number" name="phone" required>
-								<label for="">Phone Number</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="email" name="emails" required>
-								<label for="">Email</label>
-							</div>
-							<div class="input-field col s12">
-								<select class="forms_input" name="state" required>
-									<option value="" disabled selected></option>
-									<option value="Alabama - AL">Alabama - AL</option>
-									<option value="Alaska - AK">Alaska - AK</option>
-									<option value="Arizona - AZ">Arizona - AZ</option>
-									<option value="Arkansas - AR">Arkansas - AR</option>
-									<option value="California - CA">California - CA</option>
-									<option value="Canal Zone - CZ">Canal Zone - CZ</option>
-									<option value="Colorado - CO">Colorado - CO</option>
-									<option value="Connecticut - CT">Connecticut - CT</option>
-									<option value="Delaware - DE">Delaware - DE</option>
-									<option value="District of Columbia - DC">District of Columbia - DC</option>
-									<option value="Florida - FL">Florida - FL</option>
-									<option value="Georgia - GA">Georgia - GA</option>
-									<option value="Guam - GU">Guam - GU</option>
-									<option value="Hawaii - HI">Hawaii - HI</option>
-									<option value="Idaho - ID">Idaho - ID</option>
-									<option value="Illinois - IL">Illinois - IL</option>
-									<option value="Indiana - IN">Indiana - IN</option>
-									<option value="Iowa - IA">Iowa - IA</option>
-									<option value="Kansas - KS">Kansas - KS</option>
-									<option value="Kentucky - KY">Kentucky - KY</option>
-									<option value="Louisiana - LA">Louisiana - LA</option>
-									<option value="Maine - ME">Maine - ME</option>
-									<option value="Maryland - MD">Maryland - MD</option>
-									<option value="Massachusetts - MA">Massachusetts - MA</option>
-									<option value="Michigan - MI">Michigan - MI</option>
-									<option value="Minnesota - MN">Minnesota - MN</option>
-									<option value="Mississippi - MS">Mississippi - MS</option>
-									<option value="Missouri - MO">Missouri - MO</option>
-									<option value="Montana - MT">Montana - MT</option>
-									<option value="Nebraska - NE">Nebraska - NE</option>
-									<option value="Nevada - NV">Nevada - NV</option>
-									<option value="New Hampshire - NH">New Hampshire - NH</option>
-									<option value="New Jersey - NJ">New Jersey - NJ</option>
-									<option value="New Mexico - NM">New Mexico - NM</option>
-									<option value="New York - NY">New York - NY</option>
-									<option value="North Carolina - NC">North Carolina - NC</option>
-									<option value="North Dakota - ND">North Dakota - ND</option>
-									<option value="Ohio - OH">Ohio - OH</option>
-									<option value="Oklahoma - OK">Oklahoma - OK</option>
-									<option value="Oregon - OR">Oregon - OR</option>
-									<option value="Pennsylvania - PA">Pennsylvania - PA</option>
-									<option value="Puerto Rico - PR">Puerto Rico - PR</option>
-									<option value="Rhode Island - RI">Rhode Island - RI</option>
-									<option value="South Carolina - SC">South Carolina - SC</option>
-									<option value="South Dakota - SD">South Dakota - SD</option>
-									<option value="Tennessee - TN">Tennessee - TN</option>
-									<option value="Texas - TX">Texas - TX</option>
-									<option value="Utah - UT">Utah - UT</option>
-									<option value="Vermont - VT">Vermont - VT</option>
-									<option value="Virgin Islands - VI">Virgin Islands - VI</option>
-									<option value="Virginia - VA">Virginia - VA</option>
-									<option value="Washington - WA">Washington - WA</option>
-									<option value="West Virginia - WV">West Virginia - WV</option>
-									<option value="Wisconsin - WI">Wisconsin - WI</option>
-									<option value="Wyoming - WY">Wyoming - WY</option>
-								</select>
-								<label for="">Select State</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="text" name="org" required>
-								<label for="">Organization</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="text" name="osymbol">
-								<label for="">Office Symbol</label>
-							</div>
-							<div class="input-field col s12">
-								<select class="forms_input" name='support' required>
-									<option value="" disabled selected></option>
-									<option value="Photo Support">Photo Support</option>
-									<option value="Video">Video</option>
-									<option value="Studio Photo">Studio Photo</option>
-									<option value="Other">Other</option>
-								</select>
-								<label for="">Select Support Type</label>
-							</div>
-							<div class="input-field col s12">
-								<textarea class="forms_input materialize-textarea" name="desc" required></textarea>
-								<label for="">Description of Support</label>
-							</div>
-							<br>
-							<br>
-							<input class="forms_button" type="submit" value="request">
-							<br>
-							<br>
-						</form>
-					</div>
-					<div id="Equipment" class="tab_content">
-						<form class="forms" id="add-equipment-form">
-							<div class="input-field col s12">
-								<input type="text" class="datepicker forms_input" name="date" required>
-								<label for="">Date Out</label>
-							</div>
-							<div class="input-field col s12">
-								<input type="text" class="timepicker forms_input" name="time">
-								<label for="">Time Out</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="text" name="fname" required>
-								<label for="">First Name</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="text" name="lname" required>
-								<label for="">Last Name</label>
-							</div>
-							<div class="input-field col s12">
-								<select class="forms_input" name='grade' required>
-									<option value="" disabled selected></option>
-									<option value="E-1">E-1</option>
-									<option value="E-2">E-2</option>
-									<option value="E-3">E-3</option>
-									<option value="E-4">E-4</option>
-									<option value="E-5">E-5</option>
-									<option value="E-6">E-6</option>
-									<option value="E-7">E-7</option>
-									<option value="E-8">E-8</option>
-									<option value="E-9">E-9</option>
-									<option value="W-1">W-1</option>
-									<option value="w-2">w-2</option>
-									<option value="W-3">W-3</option>
-									<option value="W-4">W-4</option>
-									<option value="W-5">W-5</option>
-									<option value="O-1">O-1</option>
-									<option value="O-2">O-2</option>
-									<option value="O-3">O-3</option>
-									<option value="O-4">O-4</option>
-									<option value="O-5">O-5</option>
-									<option value="O-6">O-6</option>
-									<option value="O-7">O-7</option>
-									<option value="O-8">O-8</option>
-									<option value="O-9">O-9</option>
-									<option value="O-10">O-10</option>
-									<option value="Civilian">Civilian</option>
-								</select>
-								<label for="">Select Grade</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="number" name="phone" required>
-								<label for="">Phone Number</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="email" name="emails" required>
-								<label for="">Email</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="text" name="org" required>
-								<label for="">Organization</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="text" name="osymbol">
-								<label for="">Office Symbol</label>
-							</div>
-							<div class="input-field col s12">
-								<select class="forms_input" name='equipment' required>
-									<option value="" disabled selected></option>
-									<option value="camera_kit">Camera Kit</option>
-									<option value="Other">Other</option>
-								</select>
-								<label for="">Equipment Type</label>
-							</div>
-							<div class="input-field col s12">
-								<textarea class="forms_input materialize-textarea" name="desc" required></textarea>
-								<label for="">Description of Support</label>
-							</div>
-							<br>
-							<br>
-							<input class="forms_button" type="submit" value="request">
-							<br>
-							<br>
-						</form>
-					</div>
-					<div id="RHTC" class="tab_content">
-						<form class="forms" id="add-rhtc-form" >
-							<div class="input-field col s12">
-								<input type="text" class="datepicker forms_input" name="date" required>
-								<label for="">Date Requested</label>
-							</div>
-							<div class="input-field col s12">
-								<input type="text" class="timepicker forms_input" name="time">
-								<label for="">Time Requested</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="text" name="fname" required>
-								<label for="">First Name</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="text" name="lname" required>
-								<label for="">Last Name</label>
-							</div>
-							<div class="input-field col s12">
-								<select class="forms_input" name='grade' required>
-									<option value="" disabled selected></option>
-									<option value="E-1">E-1</option>
-									<option value="E-2">E-2</option>
-									<option value="E-3">E-3</option>
-									<option value="E-4">E-4</option>
-									<option value="E-5">E-5</option>
-									<option value="E-6">E-6</option>
-									<option value="E-7">E-7</option>
-									<option value="E-8">E-8</option>
-									<option value="E-9">E-9</option>
-									<option value="W-1">W-1</option>
-									<option value="w-2">w-2</option>
-									<option value="W-3">W-3</option>
-									<option value="W-4">W-4</option>
-									<option value="W-5">W-5</option>
-									<option value="O-1">O-1</option>
-									<option value="O-2">O-2</option>
-									<option value="O-3">O-3</option>
-									<option value="O-4">O-4</option>
-									<option value="O-5">O-5</option>
-									<option value="O-6">O-6</option>
-									<option value="O-7">O-7</option>
-									<option value="O-8">O-8</option>
-									<option value="O-9">O-9</option>
-									<option value="O-10">O-10</option>
-									<option value="Civilian">Civilian</option>
-								</select>
-								<label for="">Select Grade</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="number" name="phone" required>
-								<label for="">Phone Number</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="email" name="emails" required>
-								<label for="">Email</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="text" name="org"  required>
-								<label for="">Organization</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="text" name="osymbol">
-								<label for="">Office Symbol</label>
-							</div>
-							<div class="input-field col s12">
-								<textarea class="forms_input materialize-textarea" name="desc" required></textarea>
-								<label for="">Reason For Use</label>
-							</div>
-							<br>
-							<br>
-							<input class="forms_button" type="submit" value="request">
-							<br>
-							<br>
-						</form>
-					</div>
-					<div id="Covid" class="tab_content">
-						<form class="forms" id="add-covid-form">
-							<div class="input-field col s12">
-								<input class="forms_input" type="text" name="lname" required>
-								<label for="">Last Name</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="text" name="fname" required>
-								<label for="">First Name</label>
-							</div>
-							<div class="input-field col s12">
-								<input type="text" class="datepicker forms_input" name="date" required>
-								<label for="">Date In</label>
-							</div>
-							<div class="input-field col s12">
-								<input type="text" class="timepicker forms_input" name="time">
-								<label for="">Time In</label>
-							</div>
-							<div class="input-field col s12">
-								<input class="forms_input" type="number" name="temp" required>
-								<label for="">Measured Temp</label>
-							</div>
-							<div class="input-field col s12">
-								<select multiple class="forms_input" name='symptoms' required>
-									<option value="" disabled selected></option>
-									<option value="Dry Cough">Dry Cough (change from baseline)</option>
-									<option value="Shortness of breath">Shortness of breath (change from baseline)</option>
-									<option value="Muscle Aches">Muscle Aches (myalgias)</option>
-									<option value="Sore throat">Sore throat</option>
-									<option value="Headache">Headache (influenza like illness)</option>
-									<option value="Fatigue">Fatigue(influenza like illness)</option>
-									<option value="Had close contact with some who has COVID-19.">Have you had close contact with anyone who has COVID-19</option>
-									<option value="Other">Please enter other syptoms below.</option>
-								</select>
-								<label for="">Select Symtoms</label>
-							</div>
-							<div class="input-field col s12">
-								<input type="text" id="symptomOther" name="symptom8" disabled="disabled" />
-								<label for="">Other Symptoms</label>
-							</div>
-							<div class="input-field col s12">
-								<select class="forms_input" name='squadron' required>
-									<option value="" disabled selected></option>
-									<option value="ISRG">ISRG</option>
-									<option value="Ops">Ops</option>
-									<option value="Medical Group">Medical Group</option>
-									<option value="MSG">MSG</option>
-									<option value="Wing Staff">Wing Staff</option>
-								</select>
-								<label for="">Select Squadron</label>
-							</div>
-							<div class="input-field col s12">
-								<textarea class="forms_input materialize-textarea" name="notes"></textarea>
-								<label for="">Notes</label>
-							</div>
-							<br>
-							<br>
-							<input class="forms_button" type="submit" value="request">
-							<br>
-							<br>
-						</form>
-					</div>
-				</div>
-			</div>
-			<div id="contact" class="content hide" data-content="contact">
-				<h1>Contact Us</h1>
-				<hr>
-				<div class="contact_main">
-					<div class="contact_info contact_sub">
-						<a href="https://www.facebook.com/188thWing/" target="_blank">
-							<i title="Facebook" class="fab fa-facebook-square fa-3x"></i>
-						</a>
-						<a href="https://twitter.com/188thwg?lang=en" target="_blank">
-							<i title="Twitter" class="fab fa-twitter-square fa-3x"></i>
-						</a>
-						<a href="https://www.instagram.com/188thwing/" target="_blank">
-							<i title="Instagram" class="fab fa-instagram-square fa-3x"></i>
-						</a>
-						<a href="https://www.dvidshub.net/search?q=188th+wing&view=grid" target="_blank">
-							<i title="DIVIDS" class="fas fa-camera-retro fa-3x"></i>
-						</a>
-						<a href="https://www.188wg.ang.af.mil/" target="_blank">
-							<i title="AF Site" class="fas fa-globe fa-3x"></i>
-						</a>
-						<h3><a href="mailto:188wingpa@gmail.com">188WingPA@gmail.com</a></h3>
-						<h3><a href="tel:479-573-5167">(479) 573-5167</a></h3>
-					</div>
-					<div class="contact_form contact_sub">
-						<form class="forms" id="contact_form">
-							<p id="returnmessage"></p>
-							<label>Name: <span>*</span></label>
-							<input type="text" class="forms_input" id="contact_name" placeholder="Name"/>
-							<label>Email: <span>*</span></label>
-							<input type="text" class="forms_input" id="contact_email" placeholder="Email"/>
-							<label>Contact No: <span>*</span></label>
-							<input type="text" class="forms_input" id="contact_phone" placeholder="10 digit Mobile no."/>
-							<label>Message:</label>
-							<textarea class="forms_input" id="contact_message" placeholder="Message......."></textarea>
-							<input type="button" class="forms_button" id="submit_contact" value="Send Message"/>
-						</form>
-					</div>
-				</div>
-			</div>
-			<div id="admin" class="content hide" data-content="admin">
-				<!-- NAVBAR -->
-				<nav class="z-depth-0 grey lighten-4">
-					<div class="nav-wrapper container">
-						<ul id="nav-mobile" class="right hide-on-med-and-down">
-							<li class="logged-in">
-								<a href="#" class="grey-text" id="logout">Logout</a>
-							</li>
-							<li class="logged-out">
-								<a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
-							</li>
-						</ul>
-					</div>
-				</nav>
-
-				<!-- LOGIN MODAL -->
-				<div id="modal-login" class="modal">
-					<div class="modal-content">
-						<h4>Login</h4><br />
-						<form id="login-form">
-							<div class="input-field">
-								<input type="email" id="login-email" required />
-								<label for="login-email">Email address</label>
-							</div>
-							<div class="input-field">
-								<input type="password" id="login-password" required />
-								<label for="login-password">Your password</label>
-							</div>
-							<button class="btn yellow darken-2 z-depth-0">Login</button>
-						</form>
-					</div>
+				<div id="menu-wrapper">
+					<div id="hamburger-menu"><span></span><span></span><span></span></div>
 				</div>
 
-				<h1>Admin Portal</h1>
-				<hr>
-				<ul class="tabs">
-					<li>
-						<a href="javascript:void(0); return false;" rel="#ServicesOut" class="tab active">
-							<span>
-								Service
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void(0); return false;" rel="#EquipmentOut" class="tab">
-							<span>
-								Equipment
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void(0); return false;" rel="#RHTC_out" class="tab">
-							<span>
-								RHTC
-							</span>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:void(0); return false;" rel="#CovidOut" class="tab">
-							<span>
-								COVID-19
-							</span>
-						</a>
-					</li>
-				</ul>
+				<div id="menu-list">
+					<a class="menu-link" href="index.html">Home</a>
+					<a data-content="service" class="menu-link" href="#">Support Request</a>
+					<a data-content="covidScreen" class="menu-link" href="#">Covid Screen</a>
+					<a data-content="contact" class="menu-link" href="#">Contact</a>
+					<a data-content="admin" class="menu-link" href="#">Admin</a>
 
-				<div class="tab_content_container">
-					<div id="ServicesOut" class="tab_content tab_content_active display_data_div">
-						<h4 class="loader" id="service_loader">Please log in...</h4>
-						<table id="service_list" class="display_data">
-							<tr class="listHead">
-								<th>Date</th>
-								<th>Time</th>
-								<th>Name</th>
-								<th>Grade</th>
-								<th>Phone</th>
-								<th>Email</th>
-								<th>State</th>
-								<th>Organization</th>
-								<th>Office Symbol</th>
-								<th>Support Type</th>
-								<th>Description</th>
-								<th></th>
-							</tr>
-						</table>
-						<button class="btnExport" onclick="exportServiceList();" title="EXPORT">
-							<i class="fas fa-download fa-3x"></i>
-						</button>
-					</div>
-					<div id="EquipmentOut" class="tab_content">
-						<h4 class="loader" id="equipment_loader">Please log in...</h4>
-						<table id="equipment_list" class="display_data">
-							<tr class="listHead">
-								<th>Date</th>
-								<th>Time</th>
-								<th>Name</th>
-								<th>Grade</th>
-								<th>Phone</th>
-								<th>Email</th>
-								<th>Organization</th>
-								<th>Office Symbol</th>
-								<th>Equipment</th>
-								<th>Description</th>
-								<th></th>
-							</tr>
-						</table>
-						<button class="btnExport" onclick="exportEquipList();" title="EXPORT">
-							<i class="fas fa-download fa-3x"></i>
-						</button>
-					</div>
-					<div id="RHTC_out" class="tab_content">
-						<h4 class="loader" id="rhtc_loader">Please log in...</h4>
-						<table id="rhtc_list" class="display_data">
-							<tr class="listHead">
-								<th>Date</th>
-								<th>Time</th>
-								<th>Name</th>
-								<th>Grade</th>
-								<th>Phone</th>
-								<th>Email</th>
-								<th>Organization</th>
-								<th>Office Symbol</th>
-								<th>Use</th>
-								<th></th>
-							</tr>
-						</table>
-						<button class="btnExport" onclick="exportRHTCList();" title="EXPORT">
-							<i class="fas fa-download fa-3x"></i>
-						</button>
-					</div>
-					<div id="CovidOut" class="tab_content">
-						<h4 class="loader" id="covid_loader">Please log in...</h4>
-						<table id="covid_list" class="display_data">
-							<tr class="listHead">
-								<th>Date</th>
-								<th>Time</th>
-								<th>Name</th>
-								<th>Temp</th>
-								<th>Symptoms</th>
-								<th>Squadron</th>
-								<th>Notes</th>
-								<th></th>
-							</tr>
-						</table>
-						<button class="btnExport" onclick="exportCovidList();" title="EXPORT">
-							<i class="fas fa-download fa-3x"></i>
-						</button>
-					</div>
 				</div>
 			</div>
-			<div class="footer">
 
-				<div class="footer_text">
-					USAF © All rights reserved - 188th Wing PA
-					<br>
-					<a href="188WingPA@gmail.com">188WingPA@gmail.com</a><a href="tel:479-573-5167">(479)573-5167</a>
-				</div>
-
-				<a href="https://www.facebook.com/188thWing/" target="_blank">
-					<i title="Facebook" class="fab fa-facebook-square fa-2x"></i>
-				</a>
-
-				<a href="https://twitter.com/188thwg?lang=en" target="_blank">
-					<i title="Twitter" class="fab fa-twitter-square fa-2x"></i>
-				</a>
-
-				<a href="https://www.instagram.com/188thwing/" target="_blank">
-					<i title="Instagram" class="fab fa-instagram-square fa-2x"></i>
-				</a>
-
-				<a href="https://www.dvidshub.net/search?q=188th+wing&view=grid" target="_blank">
-					<i title="DIVIDS" class="fas fa-camera-retro fa-2x"></i>
-				</a>
-
-				<a href="https://www.188wg.ang.af.mil/" target="_blank">
-					<i title="AF Site" class="fas fa-globe fa-2x"></i>
-				</a>
+			<div id="splash">
+				<img class="icon_img" src="assets/images/188th_PA.svg" alt="logo" id="Logo">
 			</div>
 
-			<!--JavaScript Libraries-->
+			<div class="notice">
+				<h1>NOTICE</h1>
+				<p>This system is not secured. Do not upload information considered FOR OFFICIAL USE ONLY (FOUO) or PERSONALLY IDENTIFIABLE INFORMATION (PII), which must be protected under the Freedom of Information Act (5 U.S.C. 552) and/or the Privacy Act of 1974 (5 U.S.C. 552a). Unauthorized disclosure or misuse of such information may result in disciplinary action, criminal and/or civil penalties.</p>
 
-			<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-			<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
-			<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.js"></script>
-			<script src="https://kit.fontawesome.com/ef382a7536.js" crossorigin="anonymous"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+				<button class="forms_button">ACKNOWLEDGE</button>
+				<br>
+				<br>
+			</div>
+			<div id="content_pages">
 
-			<!--My JavaScript-->
+				<div id="service" class="content" data-content="service">
 
-			<script src="assets/scripts/config_firebase.js"></script>
-			<script src="assets/scripts/firebase_auth.js"></script>
-			<script src="assets/scripts/script.js"></script>
-			<script src="assets/scripts/email.js"></script>
-			<script src="assets/scripts/lists.js"></script>
-			<script src="assets/scripts/export.js"></script>
+					<h1>Support Request</h1>
+					<hr>
+					<ul class="tabs">
+						<li>
+							<a href="javascript:void(0); return false;" rel="#Services" class="tab active">
+								<span>
+									Service
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0); return false;" rel="#Equipment" class="tab">
+								<span>
+									Equipment
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0); return false;" rel="#RHTC" class="tab">
+								<span>
+									RHTC
+								</span>
+							</a>
+						</li>
+					</ul>
 
-		</body>
+					<div class="tab_content_container">
+						<div id="Services" class="tab_content tab_content_active">
+							<form class="forms" id="add-service-form">
+								<div class="input-field col s12">
+									<input type="text" class="datepicker forms_input" name="date" required>
+									<label for="">Date of Service</label>
+								</div>
+								<div class="input-field col s12">
+									<input type="text" class="timepicker forms_input" name="time">
+									<label for="">Time of Service</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="text" name="fname" required>
+									<label for="">First Name</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="text" name="lname" required>
+									<label for="">Last Name</label>
+								</div>
+								<div class="input-field col s12">
+									<select class="forms_input" name='grade' required>
+										<option value="" disabled selected></option>
+										<option value="E-1">E-1</option>
+										<option value="E-2">E-2</option>
+										<option value="E-3">E-3</option>
+										<option value="E-4">E-4</option>
+										<option value="E-5">E-5</option>
+										<option value="E-6">E-6</option>
+										<option value="E-7">E-7</option>
+										<option value="E-8">E-8</option>
+										<option value="E-9">E-9</option>
+										<option value="W-1">W-1</option>
+										<option value="w-2">w-2</option>
+										<option value="W-3">W-3</option>
+										<option value="W-4">W-4</option>
+										<option value="W-5">W-5</option>
+										<option value="O-1">O-1</option>
+										<option value="O-2">O-2</option>
+										<option value="O-3">O-3</option>
+										<option value="O-4">O-4</option>
+										<option value="O-5">O-5</option>
+										<option value="O-6">O-6</option>
+										<option value="O-7">O-7</option>
+										<option value="O-8">O-8</option>
+										<option value="O-9">O-9</option>
+										<option value="O-10">O-10</option>
+										<option value="Civilian">Civilian</option>
+									</select>
+									<label for="">Select Grade</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="number" name="phone" required>
+									<label for="">Phone Number</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="email" name="emails" required>
+									<label for="">Email</label>
+								</div>
+								<div class="input-field col s12">
+									<select class="forms_input" name="state" required>
+										<option value="" disabled selected></option>
+										<option value="Alabama - AL">Alabama - AL</option>
+										<option value="Alaska - AK">Alaska - AK</option>
+										<option value="Arizona - AZ">Arizona - AZ</option>
+										<option value="Arkansas - AR">Arkansas - AR</option>
+										<option value="California - CA">California - CA</option>
+										<option value="Canal Zone - CZ">Canal Zone - CZ</option>
+										<option value="Colorado - CO">Colorado - CO</option>
+										<option value="Connecticut - CT">Connecticut - CT</option>
+										<option value="Delaware - DE">Delaware - DE</option>
+										<option value="District of Columbia - DC">District of Columbia - DC</option>
+										<option value="Florida - FL">Florida - FL</option>
+										<option value="Georgia - GA">Georgia - GA</option>
+										<option value="Guam - GU">Guam - GU</option>
+										<option value="Hawaii - HI">Hawaii - HI</option>
+										<option value="Idaho - ID">Idaho - ID</option>
+										<option value="Illinois - IL">Illinois - IL</option>
+										<option value="Indiana - IN">Indiana - IN</option>
+										<option value="Iowa - IA">Iowa - IA</option>
+										<option value="Kansas - KS">Kansas - KS</option>
+										<option value="Kentucky - KY">Kentucky - KY</option>
+										<option value="Louisiana - LA">Louisiana - LA</option>
+										<option value="Maine - ME">Maine - ME</option>
+										<option value="Maryland - MD">Maryland - MD</option>
+										<option value="Massachusetts - MA">Massachusetts - MA</option>
+										<option value="Michigan - MI">Michigan - MI</option>
+										<option value="Minnesota - MN">Minnesota - MN</option>
+										<option value="Mississippi - MS">Mississippi - MS</option>
+										<option value="Missouri - MO">Missouri - MO</option>
+										<option value="Montana - MT">Montana - MT</option>
+										<option value="Nebraska - NE">Nebraska - NE</option>
+										<option value="Nevada - NV">Nevada - NV</option>
+										<option value="New Hampshire - NH">New Hampshire - NH</option>
+										<option value="New Jersey - NJ">New Jersey - NJ</option>
+										<option value="New Mexico - NM">New Mexico - NM</option>
+										<option value="New York - NY">New York - NY</option>
+										<option value="North Carolina - NC">North Carolina - NC</option>
+										<option value="North Dakota - ND">North Dakota - ND</option>
+										<option value="Ohio - OH">Ohio - OH</option>
+										<option value="Oklahoma - OK">Oklahoma - OK</option>
+										<option value="Oregon - OR">Oregon - OR</option>
+										<option value="Pennsylvania - PA">Pennsylvania - PA</option>
+										<option value="Puerto Rico - PR">Puerto Rico - PR</option>
+										<option value="Rhode Island - RI">Rhode Island - RI</option>
+										<option value="South Carolina - SC">South Carolina - SC</option>
+										<option value="South Dakota - SD">South Dakota - SD</option>
+										<option value="Tennessee - TN">Tennessee - TN</option>
+										<option value="Texas - TX">Texas - TX</option>
+										<option value="Utah - UT">Utah - UT</option>
+										<option value="Vermont - VT">Vermont - VT</option>
+										<option value="Virgin Islands - VI">Virgin Islands - VI</option>
+										<option value="Virginia - VA">Virginia - VA</option>
+										<option value="Washington - WA">Washington - WA</option>
+										<option value="West Virginia - WV">West Virginia - WV</option>
+										<option value="Wisconsin - WI">Wisconsin - WI</option>
+										<option value="Wyoming - WY">Wyoming - WY</option>
+									</select>
+									<label for="">Select State</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="text" name="org" required>
+									<label for="">Organization</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="text" name="osymbol">
+									<label for="">Office Symbol</label>
+								</div>
+								<div class="input-field col s12">
+									<select class="forms_input" name='support' required>
+										<option value="" disabled selected></option>
+										<option value="Photo Support">Photo Support</option>
+										<option value="Video">Video</option>
+										<option value="Studio Photo">Studio Photo</option>
+										<option value="Other">Other</option>
+									</select>
+									<label for="">Select Support Type</label>
+								</div>
+								<div class="input-field col s12">
+									<textarea class="forms_input materialize-textarea" name="desc" required></textarea>
+									<label for="">Description of Support</label>
+								</div>
+								<br>
+								<br>
+								<input class="forms_button" type="submit" value="request">
+								<br>
+								<br>
+							</form>
+						</div>
+						<div id="Equipment" class="tab_content">
+							<form class="forms" id="add-equipment-form">
+								<div class="input-field col s12">
+									<input type="text" class="datepicker forms_input" name="date" required>
+									<label for="">Date Out</label>
+								</div>
+								<div class="input-field col s12">
+									<input type="text" class="timepicker forms_input" name="time">
+									<label for="">Time Out</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="text" name="fname" required>
+									<label for="">First Name</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="text" name="lname" required>
+									<label for="">Last Name</label>
+								</div>
+								<div class="input-field col s12">
+									<select class="forms_input" name='grade' required>
+										<option value="" disabled selected></option>
+										<option value="E-1">E-1</option>
+										<option value="E-2">E-2</option>
+										<option value="E-3">E-3</option>
+										<option value="E-4">E-4</option>
+										<option value="E-5">E-5</option>
+										<option value="E-6">E-6</option>
+										<option value="E-7">E-7</option>
+										<option value="E-8">E-8</option>
+										<option value="E-9">E-9</option>
+										<option value="W-1">W-1</option>
+										<option value="w-2">w-2</option>
+										<option value="W-3">W-3</option>
+										<option value="W-4">W-4</option>
+										<option value="W-5">W-5</option>
+										<option value="O-1">O-1</option>
+										<option value="O-2">O-2</option>
+										<option value="O-3">O-3</option>
+										<option value="O-4">O-4</option>
+										<option value="O-5">O-5</option>
+										<option value="O-6">O-6</option>
+										<option value="O-7">O-7</option>
+										<option value="O-8">O-8</option>
+										<option value="O-9">O-9</option>
+										<option value="O-10">O-10</option>
+										<option value="Civilian">Civilian</option>
+									</select>
+									<label for="">Select Grade</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="number" name="phone" required>
+									<label for="">Phone Number</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="email" name="emails" required>
+									<label for="">Email</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="text" name="org" required>
+									<label for="">Organization</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="text" name="osymbol">
+									<label for="">Office Symbol</label>
+								</div>
+								<div class="input-field col s12">
+									<select class="forms_input" name='equipment' required>
+										<option value="" disabled selected></option>
+										<option value="camera_kit">Camera Kit</option>
+										<option value="Other">Other</option>
+									</select>
+									<label for="">Equipment Type</label>
+								</div>
+								<div class="input-field col s12">
+									<textarea class="forms_input materialize-textarea" name="desc" required></textarea>
+									<label for="">Description of Support</label>
+								</div>
+								<br>
+								<br>
+								<input class="forms_button" type="submit" value="request">
+								<br>
+								<br>
+							</form>
+						</div>
+						<div id="RHTC" class="tab_content">
+							<form class="forms" id="add-rhtc-form" >
+								<div class="input-field col s12">
+									<input type="text" class="datepicker forms_input" name="date" required>
+									<label for="">Date Requested</label>
+								</div>
+								<div class="input-field col s12">
+									<input type="text" class="timepicker forms_input" name="time">
+									<label for="">Time Requested</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="text" name="fname" required>
+									<label for="">First Name</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="text" name="lname" required>
+									<label for="">Last Name</label>
+								</div>
+								<div class="input-field col s12">
+									<select class="forms_input" name='grade' required>
+										<option value="" disabled selected></option>
+										<option value="E-1">E-1</option>
+										<option value="E-2">E-2</option>
+										<option value="E-3">E-3</option>
+										<option value="E-4">E-4</option>
+										<option value="E-5">E-5</option>
+										<option value="E-6">E-6</option>
+										<option value="E-7">E-7</option>
+										<option value="E-8">E-8</option>
+										<option value="E-9">E-9</option>
+										<option value="W-1">W-1</option>
+										<option value="w-2">w-2</option>
+										<option value="W-3">W-3</option>
+										<option value="W-4">W-4</option>
+										<option value="W-5">W-5</option>
+										<option value="O-1">O-1</option>
+										<option value="O-2">O-2</option>
+										<option value="O-3">O-3</option>
+										<option value="O-4">O-4</option>
+										<option value="O-5">O-5</option>
+										<option value="O-6">O-6</option>
+										<option value="O-7">O-7</option>
+										<option value="O-8">O-8</option>
+										<option value="O-9">O-9</option>
+										<option value="O-10">O-10</option>
+										<option value="Civilian">Civilian</option>
+									</select>
+									<label for="">Select Grade</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="number" name="phone" required>
+									<label for="">Phone Number</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="email" name="emails" required>
+									<label for="">Email</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="text" name="org"  required>
+									<label for="">Organization</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="text" name="osymbol">
+									<label for="">Office Symbol</label>
+								</div>
+								<div class="input-field col s12">
+									<textarea class="forms_input materialize-textarea" name="desc" required></textarea>
+									<label for="">Reason For Use</label>
+								</div>
+								<br>
+								<br>
+								<input class="forms_button" type="submit" value="request">
+								<br>
+								<br>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div id="covidScreen" class="content" data-content="covidScreen">
+					<h1>Covid-19 Screen</h1>
+					<hr>
+					<ul class="tabs">
+						<li>
+							<a href="javascript:void(0); return false;" rel="#Covid" class="tab active">
+								<span>
+									Screen
+								</span>
+							</a>
+						</li>
+					</ul>
+					<div class="tab_content_container">
+						<div id="Covid" class="tab_content tab_content_active">
+							<form class="forms" id="add-covid-form">
+								<div class="input-field col s12">
+									<input class="forms_input" type="text" name="lname" required>
+									<label for="">Last Name</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="text" name="fname" required>
+									<label for="">First Name</label>
+								</div>
+								<div class="input-field col s12">
+									<input type="text" class="datepicker forms_input" name="date" required>
+									<label for="">Date In</label>
+								</div>
+								<div class="input-field col s12">
+									<input type="text" class="timepicker forms_input" name="time">
+									<label for="">Time In</label>
+								</div>
+								<div class="input-field col s12">
+									<input class="forms_input" type="number" name="temp" required>
+									<label for="">Measured Temp</label>
+								</div>
+								<div class="input-field col s12">
+									<select multiple class="forms_input" name='symptoms' required>
+										<option value="" disabled selected></option>
+										<option value="Dry Cough">Dry Cough (change from baseline)</option>
+										<option value="Shortness of breath">Shortness of breath (change from baseline)</option>
+										<option value="Muscle Aches">Muscle Aches (myalgias)</option>
+										<option value="Sore throat">Sore throat</option>
+										<option value="Headache">Headache (influenza like illness)</option>
+										<option value="Fatigue">Fatigue(influenza like illness)</option>
+										<option value="Had close contact with some who has COVID-19.">Have you had close contact with anyone who has COVID-19</option>
+										<option value="Other">Please enter other syptoms below.</option>
+									</select>
+									<label for="">Select Symtoms</label>
+								</div>
+								<div class="input-field col s12">
+									<input type="text" id="symptomOther" name="symptom8" disabled="disabled" />
+									<label for="">Other Symptoms</label>
+								</div>
+								<div class="input-field col s12">
+									<select class="forms_input" name='squadron' required>
+										<option value="" disabled selected></option>
+										<option value="ISRG">ISRG</option>
+										<option value="Ops">Ops</option>
+										<option value="Medical Group">Medical Group</option>
+										<option value="MSG">MSG</option>
+										<option value="Wing Staff">Wing Staff</option>
+									</select>
+									<label for="">Select Squadron</label>
+								</div>
+								<div class="input-field col s12">
+									<textarea class="forms_input materialize-textarea" name="notes"></textarea>
+									<label for="">Notes</label>
+								</div>
+								<br>
+								<br>
+								<input class="forms_button" type="submit" value="request">
+								<br>
+								<br>
+							</form>
+						</div>
+					</div>
 
-		</html>
+				</div>
+				<div id="contact" class="content hide" data-content="contact">
+					<h1>Contact Us</h1>
+					<hr>
+					<div class="contact_main">
+						<div class="contact_info contact_sub">
+							<a href="https://www.facebook.com/188thWing/" target="_blank">
+								<i title="Facebook" class="fab fa-facebook-square fa-3x"></i>
+							</a>
+							<a href="https://twitter.com/188thwg?lang=en" target="_blank">
+								<i title="Twitter" class="fab fa-twitter-square fa-3x"></i>
+							</a>
+							<a href="https://www.instagram.com/188thwing/" target="_blank">
+								<i title="Instagram" class="fab fa-instagram-square fa-3x"></i>
+							</a>
+							<a href="https://www.dvidshub.net/search?q=188th+wing&view=grid" target="_blank">
+								<i title="DIVIDS" class="fas fa-camera-retro fa-3x"></i>
+							</a>
+							<a href="https://www.188wg.ang.af.mil/" target="_blank">
+								<i title="AF Site" class="fas fa-globe fa-3x"></i>
+							</a>
+							<h3><a href="mailto:188wingpa@gmail.com">188WingPA@gmail.com</a></h3>
+							<h3><a href="tel:479-573-5167">(479) 573-5167</a></h3>
+						</div>
+						<div class="contact_form contact_sub">
+							<form class="forms" id="contact_form">
+								<p id="returnmessage"></p>
+								<label>Name: <span>*</span></label>
+								<input type="text" class="forms_input" id="contact_name" placeholder="Name"/>
+								<label>Email: <span>*</span></label>
+								<input type="text" class="forms_input" id="contact_email" placeholder="Email"/>
+								<label>Contact No: <span>*</span></label>
+								<input type="text" class="forms_input" id="contact_phone" placeholder="10 digit Mobile no."/>
+								<label>Message:</label>
+								<textarea class="forms_input" id="contact_message" placeholder="Message......."></textarea>
+								<input type="button" class="forms_button" id="submit_contact" value="Send Message"/>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div id="admin" class="content hide" data-content="admin">
+					<!-- NAVBAR -->
+					<nav class="z-depth-0 grey lighten-4">
+						<div class="nav-wrapper container">
+							<ul id="nav-mobile" class="right hide-on-med-and-down">
+								<li class="logged-in">
+									<a href="#" class="grey-text" id="logout">Logout</a>
+								</li>
+								<li class="logged-out">
+									<a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+
+					<!-- LOGIN MODAL -->
+					<div id="modal-login" class="modal">
+						<div class="modal-content">
+							<h4>Login</h4><br />
+							<form id="login-form">
+								<div class="input-field">
+									<input type="email" id="login-email" required />
+									<label for="login-email">Email address</label>
+								</div>
+								<div class="input-field">
+									<input type="password" id="login-password" required />
+									<label for="login-password">Your password</label>
+								</div>
+								<button class="btn yellow darken-2 z-depth-0">Login</button>
+							</form>
+						</div>
+					</div>
+
+					<h1>Admin Portal</h1>
+					<hr>
+					<ul class="tabs">
+						<li>
+							<a href="javascript:void(0); return false;" rel="#ServicesOut" class="tab active">
+								<span>
+									Service
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0); return false;" rel="#EquipmentOut" class="tab">
+								<span>
+									Equipment
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0); return false;" rel="#RHTC_out" class="tab">
+								<span>
+									RHTC
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0); return false;" rel="#CovidOut" class="tab">
+								<span>
+									COVID-19
+								</span>
+							</a>
+						</li>
+					</ul>
+
+					<div class="tab_content_container">
+						<div id="ServicesOut" class="tab_content tab_content_active display_data_div">
+							<h4 class="loader" id="service_loader">Please log in...</h4>
+							<button class="btnExport" onclick="exportServiceList();" title="EXPORT">
+								<i class="fas fa-download fa-3x"></i>
+							</button>
+							<table id="service_list" class="display_data">
+								<tr class="listHead">
+									<th>Date</th>
+									<th>Time</th>
+									<th>Name</th>
+									<th>Grade</th>
+									<th>Phone</th>
+									<th>Email</th>
+									<th>State</th>
+									<th>Organization</th>
+									<th>Office Symbol</th>
+									<th>Support Type</th>
+									<th>Description</th>
+									<th></th>
+								</tr>
+							</table>
+						</div>
+						<div id="EquipmentOut" class="tab_content">
+							<h4 class="loader" id="equipment_loader">Please log in...</h4>
+							<button class="btnExport" onclick="exportEquipList();" title="EXPORT">
+								<i class="fas fa-download fa-3x"></i>
+							</button>
+							<table id="equipment_list" class="display_data">
+								<tr class="listHead">
+									<th>Date</th>
+									<th>Time</th>
+									<th>Name</th>
+									<th>Grade</th>
+									<th>Phone</th>
+									<th>Email</th>
+									<th>Organization</th>
+									<th>Office Symbol</th>
+									<th>Equipment</th>
+									<th>Description</th>
+									<th></th>
+								</tr>
+							</table>
+							
+						</div>
+						<div id="RHTC_out" class="tab_content">
+							<h4 class="loader" id="rhtc_loader">Please log in...</h4>
+							<button class="btnExport" onclick="exportRHTCList();" title="EXPORT">
+								<i class="fas fa-download fa-3x"></i>
+							</button>
+							<table id="rhtc_list" class="display_data">
+								<tr class="listHead">
+									<th>Date</th>
+									<th>Time</th>
+									<th>Name</th>
+									<th>Grade</th>
+									<th>Phone</th>
+									<th>Email</th>
+									<th>Organization</th>
+									<th>Office Symbol</th>
+									<th>Use</th>
+									<th></th>
+								</tr>
+							</table>
+
+						</div>
+						<div id="CovidOut" class="tab_content">
+							<h4 class="loader" id="covid_loader">Please log in...</h4>
+							<button class="btnExport" onclick="exportCovidList();" title="EXPORT">
+								<i class="fas fa-download fa-3x"></i>
+							</button>
+							<table id="covid_list" class="display_data">
+								<tr class="listHead">
+									<th>Date</th>
+									<th>Time</th>
+									<th>Name</th>
+									<th>Temp</th>
+									<th>Symptoms</th>
+									<th>Squadron</th>
+									<th>Notes</th>
+									<th></th>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="footer">
+
+					<div class="footer_text">
+						USAF © All rights reserved - 188th Wing PA
+						<br>
+						<a href="188WingPA@gmail.com">188WingPA@gmail.com</a><a href="tel:479-573-5167">(479)573-5323</a>
+					</div>
+
+					<a href="https://www.facebook.com/188thWing/" target="_blank">
+						<i title="Facebook" class="fab fa-facebook-square fa-2x"></i>
+					</a>
+
+					<a href="https://twitter.com/188thwg?lang=en" target="_blank">
+						<i title="Twitter" class="fab fa-twitter-square fa-2x"></i>
+					</a>
+
+					<a href="https://www.instagram.com/188thwing/" target="_blank">
+						<i title="Instagram" class="fab fa-instagram-square fa-2x"></i>
+					</a>
+
+					<a href="https://www.dvidshub.net/search?q=188th+wing&view=grid" target="_blank">
+						<i title="DIVIDS" class="fas fa-camera-retro fa-2x"></i>
+					</a>
+
+					<a href="https://www.188wg.ang.af.mil/" target="_blank">
+						<i title="AF Site" class="fas fa-globe fa-2x"></i>
+					</a>
+				</div>
+
+				<!--JavaScript Libraries-->
+
+				<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+				<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+				<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.js"></script>
+				<script src="https://kit.fontawesome.com/ef382a7536.js" crossorigin="anonymous"></script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+				<!--My JavaScript-->
+
+				<script src="assets/scripts/config_firebase.js"></script>
+				<script src="assets/scripts/firebase_auth.js"></script>
+				<script src="assets/scripts/script.js"></script>
+				<script src="assets/scripts/email.js"></script>
+				<script src="assets/scripts/lists.js"></script>
+				<script src="assets/scripts/export.js"></script>
+
+			</body>
+
+			</html>

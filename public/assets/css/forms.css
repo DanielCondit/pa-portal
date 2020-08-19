@@ -4,33 +4,17 @@
 }
 
 .forms {
-	width: 50%;
+	width: 75%;
 	margin: 0 auto;
 }
 
-.forms_input {
-	box-sizing:border-box;
+.forms p label span, .forms .input-field div ul li span {
 	width: 100%;
-	height: 40px;
-	border: none;
-	border-bottom: 1px solid #120A8F;
-	margin: 5px 0;
-	transition: height 0.2s linear;
 }
 
 .form_hover {
-	height: 75px;
 	cursor: pointer;
-	transition: height 0.2s linear;
 }
-
-/*.half_input {
-	width: 49.55%;
-}
-
-.thirds_input {
-	width: 32.78%
-	}*/
 
 .forms_button {
 	display: block;

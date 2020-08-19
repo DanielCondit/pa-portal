@@ -50,8 +50,8 @@ firebase.auth().onAuthStateChanged(function(user) {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute("data-id");
         db.collection("covid_screen")
-          .doc(id)
-          .delete();
+        .doc(id)
+        .delete();
       });
     }
 
@@ -105,8 +105,8 @@ firebase.auth().onAuthStateChanged(function(user) {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute("data-id");
         db.collection("equipment")
-          .doc(id)
-          .delete();
+        .doc(id)
+        .delete();
       });
     }
 
@@ -157,8 +157,8 @@ firebase.auth().onAuthStateChanged(function(user) {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute("data-id");
         db.collection("rhtc")
-          .doc(id)
-          .delete();
+        .doc(id)
+        .delete();
       });
     }
 
@@ -182,13 +182,17 @@ firebase.auth().onAuthStateChanged(function(user) {
 
       tr.setAttribute("data-id", doc.id);
 
-      date.textContent = doc.data().date;
+      let utcSec = doc.data().date;
+      let rDate = new Date();
+      rDate.setUTCSeconds(utcSec);
+
+      date.textContent = rDate.toString().substring(0, 15);
       time.textContent = doc.data().time;
       name.textContent = [doc.data().lname, doc.data().fname];
       grade.textContent = doc.data().grade;
       phone.textContent = doc.data().phone;
       emails.textContent = doc.data().emails;
-      state.textContent = doc.data().state.slice(-2);
+      state.textContent = doc.data().state;
       org.textContent = doc.data().org;
       osymbol.textContent = doc.data().osymbol;
       support.textContent = doc.data().support;
@@ -215,78 +219,78 @@ firebase.auth().onAuthStateChanged(function(user) {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute("data-id");
         db.collection("services")
-          .doc(id)
-          .delete();
+        .doc(id)
+        .delete();
       });
     }
+
     // Realtime listener
     function getRealtimeData() {
       document.querySelector("#covid_loader").style.display = "block";
       db.collection("covid_screen")
-        .orderBy("date")
-        .onSnapshot(snapshot => {
-          document.querySelector("#covid_loader").style.display = "none";
-          let changes = snapshot.docChanges();
-          changes.forEach(change => {
-            if (change.type === "added") {
-              renderCovid(change.doc);
-            } else if (change.type === "removed") {
-              let li = covidList.querySelector(`[data-id=${change.doc.id}]`);
-              covidList.removeChild(li);
-            }
-          });
+      .orderBy("date")
+      .onSnapshot(snapshot => {
+        document.querySelector("#covid_loader").style.display = "none";
+        let changes = snapshot.docChanges();
+        changes.forEach(change => {
+          if (change.type === "added") {
+            renderCovid(change.doc);
+          } else if (change.type === "removed") {
+            let li = covidList.querySelector(`[data-id=${change.doc.id}]`);
+            covidList.removeChild(li);
+          }
         });
+      });
 
       document.querySelector("#equipment_loader").style.display = "block";
       db.collection("equipment")
-        .orderBy("date")
-        .onSnapshot(snapshot => {
-          document.querySelector("#equipment_loader").style.display = "none";
-          let changes = snapshot.docChanges();
-          changes.forEach(change => {
-            if (change.type === "added") {
-              renderEquipment(change.doc);
-            } else if (change.type === "removed") {
-              let li = equipmentList.querySelector(`[data-id=${change.doc.id}]`);
-              equipmentList.removeChild(li);
-            }
-          });
+      .orderBy("date")
+      .onSnapshot(snapshot => {
+        document.querySelector("#equipment_loader").style.display = "none";
+        let changes = snapshot.docChanges();
+        changes.forEach(change => {
+          if (change.type === "added") {
+            renderEquipment(change.doc);
+          } else if (change.type === "removed") {
+            let li = equipmentList.querySelector(`[data-id=${change.doc.id}]`);
+            equipmentList.removeChild(li);
+          }
         });
+      });
 
       document.querySelector("#rhtc_loader").style.display = "block";
       db.collection("rhtc")
-        .orderBy("date")
-        .onSnapshot(snapshot => {
-          document.querySelector("#rhtc_loader").style.display = "none";
-          let changes = snapshot.docChanges();
-          changes.forEach(change => {
-            if (change.type === "added") {
-              renderRHTC(change.doc);
-            } else if (change.type === "removed") {
-              let li = rhtcList.querySelector(`[data-id=${change.doc.id}]`);
-              rhtcList.removeChild(li);
-            }
-          });
+      .orderBy("date")
+      .onSnapshot(snapshot => {
+        document.querySelector("#rhtc_loader").style.display = "none";
+        let changes = snapshot.docChanges();
+        changes.forEach(change => {
+          if (change.type === "added") {
+            renderRHTC(change.doc);
+          } else if (change.type === "removed") {
+            let li = rhtcList.querySelector(`[data-id=${change.doc.id}]`);
+            rhtcList.removeChild(li);
+          }
         });
+      });
 
       document.querySelector("#service_loader").style.display = "block";
-      db.collection("services")
-        .orderBy("date")
-        .onSnapshot(snapshot => {
-          document.querySelector("#service_loader").style.display = "none";
-          let changes = snapshot.docChanges();
-          changes.forEach(change => {
-            if (change.type === "added") {
-              renderService(change.doc);
-            } else if (change.type === "removed") {
-              let li = serviceList.querySelector(`[data-id=${change.doc.id}]`);
-              serviceList.removeChild(li);
-            }
-          });
+      db.collection("Form_833")
+      .orderBy("date")
+      .onSnapshot(snapshot => {
+        document.querySelector("#service_loader").style.display = "none";
+        let changes = snapshot.docChanges();
+        changes.forEach(change => {
+          if (change.type === "added") {
+            renderService(change.doc);
+          } else if (change.type === "removed") {
+            let li = serviceList.querySelector(`[data-id=${change.doc.id}]`);
+            serviceList.removeChild(li);
+          }
         });
+      });
     }
     getRealtimeData();
-
   }
 });
 
@@ -295,40 +299,40 @@ function getData() {
   document.querySelector("#loader").style.display = "block";
 
   db.collection("covid_screen")
-    .orderBy("date")
-    .get()
-    .then(snapshot => {
-      console.log(snapshot.docs);
-      document.querySelector("#loader").style.display = "none";
-      snapshot.docs.forEach(doc => renderCovid(doc));
-    });
+  .orderBy("date")
+  .get()
+  .then(snapshot => {
+    console.log(snapshot.docs);
+    document.querySelector("#loader").style.display = "none";
+    snapshot.docs.forEach(doc => renderCovid(doc));
+  });
 
   db.collection("equipment")
-    .orderBy("date")
-    .get()
-    .then(snapshot => {
-      console.log(snapshot.docs);
-      document.querySelector("#loader").style.display = "none";
-      snapshot.docs.forEach(doc => renderEquipment(doc));
-    });
+  .orderBy("date")
+  .get()
+  .then(snapshot => {
+    console.log(snapshot.docs);
+    document.querySelector("#loader").style.display = "none";
+    snapshot.docs.forEach(doc => renderEquipment(doc));
+  });
 
   db.collection("rhtc")
-    .orderBy("date")
-    .get()
-    .then(snapshot => {
-      console.log(snapshot.docs);
-      document.querySelector("#loader").style.display = "none";
-      snapshot.docs.forEach(doc => renderRHTC(doc));
-    });
+  .orderBy("date")
+  .get()
+  .then(snapshot => {
+    console.log(snapshot.docs);
+    document.querySelector("#loader").style.display = "none";
+    snapshot.docs.forEach(doc => renderRHTC(doc));
+  });
 
-  db.collection("services")
-    .orderBy("date")
-    .get()
-    .then(snapshot => {
-      console.log(snapshot.docs);
-      document.querySelector("#loader").style.display = "none";
-      snapshot.docs.forEach(doc => renderService(doc));
-    });
+  db.collection("Form_833")
+  .orderBy("date")
+  .get()
+  .then(snapshot => {
+    console.log(snapshot.docs);
+    document.querySelector("#loader").style.display = "none";
+    snapshot.docs.forEach(doc => renderService(doc));
+  });
 }
 
 // getData();
@@ -421,7 +425,7 @@ document.getElementById('add-rhtc-form').addEventListener("submit", e => {
 document.getElementById('add-service-form').addEventListener("submit", e => {
   e.preventDefault();
 
-  db.collection("services").add({
+  db.collection("Form_833").add({
     date: document.getElementById('add-service-form').date.value,
     time: document.getElementById('add-service-form').time.value,
     fname: document.getElementById('add-service-form').fname.value,

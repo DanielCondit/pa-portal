@@ -1,12 +1,11 @@
 //Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyBTuSEihzq63X1gagewoeTrEIaMzQV2MyE",
-    authDomain: "pa-portal-188.firebaseapp.com",
-    databaseURL: "https://pa-portal-188.firebaseio.com/",
-    projectId: "pa-portal-188",
-    storageBucket: "pa-portal-188.appspot.com",
-    messagingSenderId: "877270573995",
-    appId: "1:877270573995:web:fb59dcd80124c786af28ee"
+    apiKey: "AIzaSyApjdNsx_V4AQgWeRxiZTnhUoC_v0dwHNA",
+    authDomain: "https://pa-portal-d171a.firebaseapp.com",
+    databaseURL: "https://pa-portal-d171a.firebaseio.com/Form_833/0ch9FE1FfHGiMsqPf0R5",
+    projectId: "pa-portal-d171a",
+    messagingSenderId: "472781469417",
+    appId: "1:472781469417:web:061c7de9e636a3ee6ca278"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
