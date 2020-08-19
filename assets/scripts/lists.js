@@ -12,17 +12,18 @@ firebase.auth().onAuthStateChanged(function(user) {
     function renderCovid(doc) {
 
       "use strict";
-      let li = document.createElement("li");
-      let date = document.createElement("span");
-      let time = document.createElement("span");
-      let name = document.createElement("span");
-      let temp = document.createElement("span");
-      let symptoms = document.createElement("span");
-      let squadron = document.createElement("span");
-      let notes = document.createElement("span");
-      let cross = document.createElement("button");
+      let tr = document.createElement("tr");
+      let date = document.createElement("td");
+      let time = document.createElement("td");
+      let name = document.createElement("td");
+      let temp = document.createElement("td");
+      let symptoms = document.createElement("td");
+      let squadron = document.createElement("td");
+      let notes = document.createElement("td");
+      let del = document.createElement("td");
+      var delButton = del.appendChild(document.createElement("button"));
 
-      li.setAttribute("data-id", doc.id);
+      tr.setAttribute("data-id", doc.id);
 
       date.textContent = doc.data().date;
       time.textContent = doc.data().time;
@@ -31,21 +32,21 @@ firebase.auth().onAuthStateChanged(function(user) {
       symptoms.textContent = doc.data().symptoms;
       squadron.textContent = doc.data().squadron;
       notes.textContent = doc.data().notes;
-      cross.textContent = "DEL";
+      delButton.textContent = "DELETE";
 
-      li.appendChild(date);
-      li.appendChild(time);
-      li.appendChild(name);
-      li.appendChild(temp);
-      li.appendChild(symptoms);
-      li.appendChild(squadron);
-      li.appendChild(notes);
-      li.appendChild(cross);
+      tr.appendChild(date);
+      tr.appendChild(time);
+      tr.appendChild(name);
+      tr.appendChild(temp);
+      tr.appendChild(symptoms);
+      tr.appendChild(squadron);
+      tr.appendChild(notes);
+      tr.appendChild(del);
 
-      covidList.appendChild(li);
+      covidList.appendChild(tr);
 
       // Deleting Data
-      cross.addEventListener("click", e => {
+      del.addEventListener("click", e => {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute("data-id");
         db.collection("covid_screen")
@@ -57,21 +58,24 @@ firebase.auth().onAuthStateChanged(function(user) {
     function renderEquipment(doc) {
 
       "use strict";
-      let li = document.createElement("li");
-      let date = document.createElement("span");
-      let name = document.createElement("span");
-      let grade = document.createElement("span");
-      let phone = document.createElement("span");
-      let emails = document.createElement("span");
-      let org = document.createElement("span");
-      let osymbol = document.createElement("span");
-      let equipment = document.createElement("span");
-      let desc = document.createElement("span");
-      let cross = document.createElement("button");
+      let tr = document.createElement("tr");
+      let date = document.createElement("td");
+      let time = document.createElement("td");
+      let name = document.createElement("td");
+      let grade = document.createElement("td");
+      let phone = document.createElement("td");
+      let emails = document.createElement("td");
+      let org = document.createElement("td");
+      let osymbol = document.createElement("td");
+      let equipment = document.createElement("td");
+      let desc = document.createElement("td");
+      let del = document.createElement("td");
+      var delButton = del.appendChild(document.createElement("button"));
 
-      li.setAttribute("data-id", doc.id);
+      tr.setAttribute("data-id", doc.id);
 
       date.textContent = doc.data().date;
+      time.textContent = doc.data().time;
       name.textContent = [doc.data().lname, doc.data().fname];
       grade.textContent = doc.data().grade;
       phone.textContent = doc.data().phone;
@@ -80,23 +84,24 @@ firebase.auth().onAuthStateChanged(function(user) {
       osymbol.textContent = doc.data().osymbol;
       equipment.textContent = doc.data().osymbol;
       desc.textContent = doc.data().desc;
-      cross.textContent = "DELETE";
+      delButton.textContent = "DELETE";
 
-      li.appendChild(date);
-      li.appendChild(name);
-      li.appendChild(grade);
-      li.appendChild(phone);
-      li.appendChild(emails);
-      li.appendChild(org);
-      li.appendChild(osymbol);
-      li.appendChild(equipment);
-      li.appendChild(desc);
-      li.appendChild(cross);
+      tr.appendChild(date);
+      tr.appendChild(time);
+      tr.appendChild(name);
+      tr.appendChild(grade);
+      tr.appendChild(phone);
+      tr.appendChild(emails);
+      tr.appendChild(org);
+      tr.appendChild(osymbol);
+      tr.appendChild(equipment);
+      tr.appendChild(desc);
+      tr.appendChild(del);
 
-      equipmentList.appendChild(li);
+      equipmentList.appendChild(tr);
 
       // Deleting Data
-      cross.addEventListener("click", e => {
+      del.addEventListener("click", e => {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute("data-id");
         db.collection("equipment")
@@ -108,20 +113,23 @@ firebase.auth().onAuthStateChanged(function(user) {
     function renderRHTC(doc) {
 
       "use strict";
-      let li = document.createElement("li");
-      let date = document.createElement("span");
-      let name = document.createElement("span");
-      let grade = document.createElement("span");
-      let phone = document.createElement("span");
-      let emails = document.createElement("span");
-      let org = document.createElement("span");
-      let osymbol = document.createElement("span");
-      let desc = document.createElement("span");
-      let cross = document.createElement("button");
+      let tr = document.createElement("tr");
+      let date = document.createElement("td");
+      let time = document.createElement("td");
+      let name = document.createElement("td");
+      let grade = document.createElement("td");
+      let phone = document.createElement("td");
+      let emails = document.createElement("td");
+      let org = document.createElement("td");
+      let osymbol = document.createElement("td");
+      let desc = document.createElement("td");
+      let del = document.createElement("td");
+      var delButton = del.appendChild(document.createElement("button"));
 
-      li.setAttribute("data-id", doc.id);
+      tr.setAttribute("data-id", doc.id);
 
       date.textContent = doc.data().date;
+      time.textContent = doc.data().time;
       name.textContent = [doc.data().lname, doc.data().fname];
       grade.textContent = doc.data().grade;
       phone.textContent = doc.data().phone;
@@ -129,22 +137,23 @@ firebase.auth().onAuthStateChanged(function(user) {
       org.textContent = doc.data().org;
       osymbol.textContent = doc.data().osymbol;
       desc.textContent = doc.data().desc;
-      cross.textContent = "DELETE";
+      delButton.textContent = "DELETE";
 
-      li.appendChild(date);
-      li.appendChild(name);
-      li.appendChild(grade);
-      li.appendChild(phone);
-      li.appendChild(emails);
-      li.appendChild(org);
-      li.appendChild(osymbol);
-      li.appendChild(desc);
-      li.appendChild(cross);
+      tr.appendChild(date);
+      tr.appendChild(time);
+      tr.appendChild(name);
+      tr.appendChild(grade);
+      tr.appendChild(phone);
+      tr.appendChild(emails);
+      tr.appendChild(org);
+      tr.appendChild(osymbol);
+      tr.appendChild(desc);
+      tr.appendChild(del);
 
-      rhtcList.appendChild(li);
+      rhtcList.appendChild(tr);
 
       // Deleting Data
-      cross.addEventListener("click", e => {
+      del.addEventListener("click", e => {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute("data-id");
         db.collection("rhtc")
@@ -156,22 +165,25 @@ firebase.auth().onAuthStateChanged(function(user) {
     function renderService(doc) {
 
       "use strict";
-      let li = document.createElement("li");
-      let date = document.createElement("span");
-      let name = document.createElement("span");
-      let grade = document.createElement("span");
-      let phone = document.createElement("span");
-      let emails = document.createElement("span");
-      let state = document.createElement("span");
-      let org = document.createElement("span");
-      let osymbol = document.createElement("span");
-      let support = document.createElement("span");
-      let desc = document.createElement("span");
-      let cross = document.createElement("button");
+      let tr = document.createElement("tr");
+      let date = document.createElement("td");
+      let time = document.createElement("td");
+      let name = document.createElement("td");
+      let grade = document.createElement("td");
+      let phone = document.createElement("td");
+      let emails = document.createElement("td");
+      let state = document.createElement("td");
+      let org = document.createElement("td");
+      let osymbol = document.createElement("td");
+      let support = document.createElement("td");
+      let desc = document.createElement("td");
+      let del = document.createElement("td");
+      var delButton = del.appendChild(document.createElement("button"));
 
-      li.setAttribute("data-id", doc.id);
+      tr.setAttribute("data-id", doc.id);
 
       date.textContent = doc.data().date;
+      time.textContent = doc.data().time;
       name.textContent = [doc.data().lname, doc.data().fname];
       grade.textContent = doc.data().grade;
       phone.textContent = doc.data().phone;
@@ -181,24 +193,25 @@ firebase.auth().onAuthStateChanged(function(user) {
       osymbol.textContent = doc.data().osymbol;
       support.textContent = doc.data().support;
       desc.textContent = doc.data().desc;
-      cross.textContent = "DELETE";
+      delButton.textContent = "DELETE";
 
-      li.appendChild(date);
-      li.appendChild(name);
-      li.appendChild(grade);
-      li.appendChild(phone);
-      li.appendChild(emails);
-      li.appendChild(state);
-      li.appendChild(org);
-      li.appendChild(osymbol);
-      li.appendChild(support);
-      li.appendChild(desc);
-      li.appendChild(cross);
+      tr.appendChild(date);
+      tr.appendChild(time);
+      tr.appendChild(name);
+      tr.appendChild(grade);
+      tr.appendChild(phone);
+      tr.appendChild(emails);
+      tr.appendChild(state);
+      tr.appendChild(org);
+      tr.appendChild(osymbol);
+      tr.appendChild(support);
+      tr.appendChild(desc);
+      tr.appendChild(del);
 
-      serviceList.appendChild(li);
+      serviceList.appendChild(tr);
 
       // Deleting Data
-      cross.addEventListener("click", e => {
+      delButton.addEventListener("click", e => {
         e.stopPropagation();
         let id = e.target.parentElement.getAttribute("data-id");
         db.collection("services")
@@ -350,6 +363,7 @@ document.getElementById('add-equipment-form').addEventListener("submit", e => {
 
   db.collection("equipment").add({
     date: document.getElementById('add-equipment-form').date.value,
+    time: document.getElementById('add-equipment-form').time.value,
     fname: document.getElementById('add-equipment-form').fname.value,
     lname: document.getElementById('add-equipment-form').lname.value,
     grade: document.getElementById('add-equipment-form').grade.value,
@@ -361,6 +375,7 @@ document.getElementById('add-equipment-form').addEventListener("submit", e => {
     desc: document.getElementById('add-equipment-form').desc.value
   });
   document.getElementById('add-equipment-form').date.value = "";
+  document.getElementById('add-equipment-form').time.value = "";
   document.getElementById('add-equipment-form').fname.value = "";
   document.getElementById('add-equipment-form').lname.value = "";
   document.getElementById('add-equipment-form').grade.value = "";
@@ -379,6 +394,7 @@ document.getElementById('add-rhtc-form').addEventListener("submit", e => {
 
   db.collection("rhtc").add({
     date: document.getElementById('add-rhtc-form').date.value,
+    time: document.getElementById('add-rhtc-form').time.value,
     fname: document.getElementById('add-rhtc-form').fname.value,
     lname: document.getElementById('add-rhtc-form').lname.value,
     grade: document.getElementById('add-rhtc-form').grade.value,
@@ -389,6 +405,7 @@ document.getElementById('add-rhtc-form').addEventListener("submit", e => {
     desc: document.getElementById('add-rhtc-form').desc.value
   });
   document.getElementById('add-rhtc-form').date.value = "";
+  document.getElementById('add-rhtc-form').time.value = "";
   document.getElementById('add-rhtc-form').fname.value = "";
   document.getElementById('add-rhtc-form').lname.value = "";
   document.getElementById('add-rhtc-form').grade.value = "";
@@ -406,6 +423,7 @@ document.getElementById('add-service-form').addEventListener("submit", e => {
 
   db.collection("services").add({
     date: document.getElementById('add-service-form').date.value,
+    time: document.getElementById('add-service-form').time.value,
     fname: document.getElementById('add-service-form').fname.value,
     lname: document.getElementById('add-service-form').lname.value,
     grade: document.getElementById('add-service-form').grade.value,
@@ -418,6 +436,7 @@ document.getElementById('add-service-form').addEventListener("submit", e => {
     desc: document.getElementById('add-service-form').desc.value
   });
   document.getElementById('add-service-form').date.value = "";
+  document.getElementById('add-service-form').time.value = "";
   document.getElementById('add-service-form').fname.value = "";
   document.getElementById('add-service-form').lname.value = "";
   document.getElementById('add-service-form').grade.value = "";
