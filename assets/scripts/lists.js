@@ -28,7 +28,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       time.textContent = doc.data().time;
       name.textContent = [doc.data().lname, doc.data().fname];
       temp.textContent = doc.data().temp;
-      symptoms.textContent = [doc.data().symptom1, doc.data().symptom2, doc.data().symptom3, doc.data().symptom4, doc.data().symptom5, doc.data().symptom6, doc.data().symptom7, doc.data().symptom8];
+      symptoms.textContent = doc.data().symptoms;
       squadron.textContent = doc.data().squadron;
       notes.textContent = doc.data().notes;
       cross.textContent = "DEL";
@@ -329,14 +329,7 @@ document.getElementById('add-covid-form').addEventListener("submit", e => {
     date: document.getElementById('add-covid-form').date.value,
     time: document.getElementById('add-covid-form').time.value,
     temp: document.getElementById('add-covid-form').temp.value,
-    symptom1: document.getElementById('add-covid-form').symptom1.value,
-    symptom2: document.getElementById('add-covid-form').symptom2.value,
-    symptom3: document.getElementById('add-covid-form').symptom3.value,
-    symptom4: document.getElementById('add-covid-form').symptom4.value,
-    symptom5: document.getElementById('add-covid-form').symptom5.value,
-    symptom6: document.getElementById('add-covid-form').symptom6.value,
-    symptom7: document.getElementById('add-covid-form').symptom7.value,
-    symptom8: document.getElementById('add-covid-form').symptom8.value,
+    symptoms: document.getElementById('add-covid-form').symptoms.value,
     squadron: document.getElementById('add-covid-form').squadron.value,
     notes: document.getElementById('add-covid-form').notes.value,
   });
@@ -345,14 +338,7 @@ document.getElementById('add-covid-form').addEventListener("submit", e => {
   document.getElementById('add-covid-form').date.value = "";
   document.getElementById('add-covid-form').time.value = "";
   document.getElementById('add-covid-form').temp.value = "";
-  document.getElementById('add-covid-form').symptom1.value = "";
-  document.getElementById('add-covid-form').symptom2.value = "";
-  document.getElementById('add-covid-form').symptom3.value = "";
-  document.getElementById('add-covid-form').symptom4.value = "";
-  document.getElementById('add-covid-form').symptom5.value = "";
-  document.getElementById('add-covid-form').symptom6.value = "";
-  document.getElementById('add-covid-form').symptom7.value = "";
-  document.getElementById('add-covid-form').symptom8.value = "";
+  document.getElementById('add-covid-form').symptoms.value = "";
   document.getElementById('add-covid-form').squadron.value = "";
   document.getElementById('add-covid-form').notes.value = "";
 

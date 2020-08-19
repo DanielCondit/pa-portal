@@ -85,11 +85,11 @@
 				<div class="tab_content_container">
 					<div id="Services" class="tab_content tab_content_active">
 						<form class="forms" id="add-service-form">
-							<input class="forms_input half_input" type="datetime-local" name="date" required>
-							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
-							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
+							<input class="forms_input" type="datetime-local" name="date" required>
+							<input class="forms_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
+							<input class="forms_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
 							<div class="input-field col s12">
-								<select class="forms_input thirds_input" name='grade' required>
+								<select class="forms_input" name='grade' required>
 									<option value="" disabled selected>Grade</option>
 									<option value="E-1">E-1</option>
 									<option value="E-2">E-2</option>
@@ -118,10 +118,10 @@
 									<option value="Civilian">Civilian</option>
 								</select>
 							</div>
-							<input class="forms_input half_input" type="number" name="phone" placeholder="Phone Number" required>
-							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" required>
+							<input class="forms_input" type="number" name="phone" placeholder="Phone Number" required>
+							<input class="forms_input" type="email" name="emails" placeholder="E-mail" required>
 							<div class="input-field">
-								<select class="forms_input thirds_input" name="state" required>
+								<select class="forms_input" name="state" required>
 									<option value="" disabled selected>State</option>
 									<option value="Alabama - AL">Alabama - AL</option>
 									<option value="Alaska - AK">Alaska - AK</option>
@@ -180,10 +180,10 @@
 									<option value="Wyoming - WY">Wyoming - WY</option>
 								</select>
 							</div>
-							<input class="forms_input thirds_input" type="text" name="org"  maxlength="20" placeholder="Organization" required>
-							<input class="forms_input thirds_input" type="text" name="osymbol" maxlength="20" placeholder="Office Symbol">
+							<input class="forms_input" type="text" name="org"  maxlength="20" placeholder="Organization" required>
+							<input class="forms_input" type="text" name="osymbol" maxlength="20" placeholder="Office Symbol">
 							<div class="input-field col s12">
-								<select class="forms_input half_input" name='support' required>
+								<select class="forms_input" name='support' required>
 									<option value="" disabled selected>Select Support Type</option>
 									<option value="Photo Support">Photo Support</option>
 									<option value="Video">Video</option>
@@ -201,12 +201,20 @@
 					</div>
 					<div id="Equipment" class="tab_content">
 						<form class="forms" id="add-equipment-form">
-							<input class="forms_input half_input" type="datetime-local" name="date" required>
-							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
-							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
 							<div class="input-field col s12">
-								<select class="forms_input thirds_input" name='grade' required>
-									<option value="" disabled selected>Grade</option>
+								<input class="forms_input" type="datetime-local" name="date" required>
+							</div>
+							<div class="input-field col s12">
+								<input class="forms_input" type="text" name="fname" maxlength="20" required>
+								<label for="">First Name</label>
+							</div>
+							<div class="input-field col s12">
+								<input class="forms_input" type="text" name="lname" maxlength="20" required>
+								<label for="">Last Name</label>
+							</div>
+							<div class="input-field col s12">
+								<select class="forms_input" name='grade' required>
+									<option value="" disabled selected>Select</option>
 									<option value="E-1">E-1</option>
 									<option value="E-2">E-2</option>
 									<option value="E-3">E-3</option>
@@ -233,19 +241,35 @@
 									<option value="O-10">O-10</option>
 									<option value="Civilian">Civilian</option>
 								</select>
+								<label for="">Grade</label>
 							</div>
-							<input class="forms_input half_input" type="number" name="phone" placeholder="Phone Number" required>
-							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" required>
-							<input class="forms_input thirds_input" type="text" name="org"  maxlength="20" placeholder="Organization" required>
-							<input class="forms_input thirds_input" type="text" name="osymbol" maxlength="20" placeholder="Office Symbol">
 							<div class="input-field col s12">
-								<select class="forms_input half_input" name='equipment' required>
-									<option value="" disabled selected>Select Equipment</option>
+								<input class="forms_input" type="number" name="phone" required>
+								<label for="">Phone Number</label>
+							</div>
+							<div class="input-field col s12">
+								<input class="forms_input" type="email" name="emails" required>
+								<label for="">Email</label>
+							</div>
+							<div class="input-field col s12">
+								<input class="forms_input" type="text" name="org"  maxlength="20" required>
+								<label for="">Organization</label>
+							</div>
+							<div class="input-field col s12">
+								<input class="forms_input" type="text" name="osymbol" maxlength="20">
+							</div>
+							<div class="input-field col s12">
+								<select class="forms_input" name='equipment' required>
+									<option value="" disabled selected>Select</option>
 									<option value="camera_kit">Camera Kit</option>
 									<option value="Other">Other</option>
 								</select>
+								<label for="">Office Symbol</label>
 							</div>
-							<textarea class="forms_input" name="desc" maxlength="200" placeholder="Description of Support" required></textarea>
+							<div class="input-field col s12">
+								<textarea class="forms_input materialize-textarea" name="desc" required></textarea>
+								<label for="">Description of Support</label>
+							</div>
 							<br>
 							<br>
 							<input class="forms_button" type="submit" value="request">
@@ -255,12 +279,20 @@
 					</div>
 					<div id="RHTC" class="tab_content">
 						<form class="forms" id="add-rhtc-form" >
-							<input class="forms_input half_input" type="datetime-local" name="date" required>
-							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
-							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
 							<div class="input-field col s12">
-								<select class="forms_input thirds_input" name='grade' required>
-									<option value="" disabled selected>Grade</option>
+								<input class="forms_input" type="datetime-local" name="date" required>
+							</div>
+							<div class="input-field col s12">
+								<input class="forms_input" type="text" name="fname" maxlength="20" required>
+								<label for="">First Name</label>
+							</div>
+							<div class="input-field col s12">
+								<input class="forms_input" type="text" name="lname" maxlength="20" required>
+								<label for="">Last Name</label>
+							</div>
+							<div class="input-field col s12">
+								<select class="forms_input" name='grade' required>
+									<option value="" disabled selected>Select</option>
 									<option value="E-1">E-1</option>
 									<option value="E-2">E-2</option>
 									<option value="E-3">E-3</option>
@@ -287,12 +319,28 @@
 									<option value="O-10">O-10</option>
 									<option value="Civilian">Civilian</option>
 								</select>
+								<label for="">Grade</label>
 							</div>
-							<input class="forms_input half_input" type="number" name="phone" placeholder="Phone Number" required>
-							<input class="forms_input half_input" type="email" name="emails" placeholder="E-mail" required>
-							<input class="forms_input thirds_input" type="text" name="org"  maxlength="20" placeholder="Organization" required>
-							<input class="forms_input thirds_input" type="text" name="osymbol" maxlength="20" placeholder="Office Symbol">
-							<textarea class="forms_input" name="desc" maxlength="200" placeholder="Reason For Use" required></textarea>
+							<div class="input-field col s12">
+								<input class="forms_input" type="number" name="phone" required>
+								<label for="">Phone Number</label>
+							</div>
+							<div class="input-field col s12">
+								<input class="forms_input" type="email" name="emails" required>
+								<label for="">Email</label>
+							</div>
+							<div class="input-field col s12">
+								<input class="forms_input" type="text" name="org"  maxlength="20" required>
+								<label for="">Organization</label>
+							</div>
+							<div class="input-field col s12">
+								<input class="forms_input" type="text" name="osymbol" maxlength="20">
+								<label for="">Office Symbol</label>
+							</div>
+							<div class="input-field col s12">
+								<textarea class="forms_input materialize-textarea" name="desc" required></textarea>
+								<label for="">Reason For Use</label>
+							</div>
 							<br>
 							<br>
 							<input class="forms_button" type="submit" value="request">
@@ -302,78 +350,59 @@
 					</div>
 					<div id="Covid" class="tab_content">
 						<form class="forms" id="add-covid-form">
-							<input class="forms_input thirds_input" type="text" name="lname" maxlength="20" placeholder="Last Name" required>
-							<input class="forms_input thirds_input" type="text" name="fname" maxlength="20" placeholder="First Name" required>
-							<input type="text" class="datepicker forms_input half_input" name="date" value="Date" required>
-							<input type="text" class="timepicker forms_input half_input" name="time" value="Time">
-							<input class="forms_input half_input" type="number" name="temp" placeholder="Measured Temp" required>
-							<p>
-								<label>
-									<input type="checkbox" value="Dry Cough" class="forms_input thirds_input" id='symptom1' />
-									<span>Dry Cough (change from baseline)</span>
-								</label>
-							</p>
-							<br>
-							<p>
-								<label>
-									<input type="checkbox" value="Shortness of breath" class="forms_input thirds_input" id='symptom2' />
-									<span>Shortness of breath (change from baseline)</span>
-								</label>
-							</p>
-							<br>
-							<p>
-								<label>
-									<input type="checkbox" value="Muscle Aches" class="forms_input thirds_input" id='symptom3' />
-									<span>Muscle Aches (myalgias)</span>
-								</label>
-							</p>
-							<br>
-							<p>
-								<label>
-									<input type="checkbox" value="Sore throat" class="forms_input thirds_input" id='symptom4' />
-									<span>Sore throat</span>
-								</label>
-							</p>
-							<br>
-							<p>
-								<label>
-									<input type="checkbox" value="Headache" class="forms_input thirds_input" id='symptom5' />
-									<span>Headache (influenza like illness)</span>
-								</label>
-							</p>
-							<br>
-							<p>
-								<label>
-									<input type="checkbox" value="Fatigue" class="forms_input thirds_input" id='symptom6' />
-									<span>Fatigue(influenza like illness)</label</span>
-								</label>
-							</p>
-							<br>
-							<p>
-								<label>
-									<input type="checkbox" value="Had close contact with some who has COVID-19." class="forms_input thirds_input" id='symptom7'/>
-									<span>Have you had close contact with anyone who has COVID-19</span>
-								</label>
-							</p>
-							<br>
-							<p>
-								<label>
-									<input type="checkbox" value="Other" class="forms_input thirds_input" onclick="if (this.checked){ document.getElementById('symptomOther').removeAttribute('disabled');}" />
-									<span>Please enter other syptoms below.</span>
-								</label>
-							</p>
-							<input type="text" id="symptomOther" name="symptom8" disabled="disabled" />
 							<div class="input-field col s12">
-								<select class="forms_input thirds_input" name='squadron' required>
-									<option value="" disabled selected>Select Squadron</option>
+								<input class="forms_input" type="text" name="lname" maxlength="20" required>
+								<label for="">Last Name</label>
+							</div>
+							<div class="input-field col s12">
+								<input class="forms_input" type="text" name="fname" maxlength="20" required>
+								<label for="">First Name</label>
+							</div>
+							<div class="input-field col s12">
+								<input type="text" class="datepicker forms_input" name="date" required>
+								<label for="">Date In</label>
+							</div>
+							<div class="input-field col s12">
+								<input type="text" class="timepicker forms_input" name="time">
+								<label for="">Time In</label>
+							</div>
+							<div class="input-field col s12">
+								<input class="forms_input" type="number" name="temp" required>
+								<label for="">Measured Temp</label>
+							</div>
+							<div class="input-field col s12">
+								<select multiple class="forms_input" name='symptoms' required>
+									<option value="" disabled selected>Select</option>
+									<option value="Dry Cough">Dry Cough (change from baseline)</option>
+									<option value="Shortness of breath">Shortness of breath (change from baseline)</option>
+									<option value="Muscle Aches">Muscle Aches (myalgias)</option>
+									<option value="Sore throat">Sore throat</option>
+									<option value="Headache">Headache (influenza like illness)</option>
+									<option value="Fatigue">Fatigue(influenza like illness)</option>
+									<option value="Had close contact with some who has COVID-19.">Have you had close contact with anyone who has COVID-19</option>
+									<option value="Other">Please enter other syptoms below.</option>
+								</select>
+								<label for="">Select Symtoms</label>
+							</div>
+							<div class="input-field col s12">
+								<input type="text" id="symptomOther" name="symptom8" disabled="disabled" />
+								<label for="">Other Symptoms</label>
+							</div>
+							<div class="input-field col s12">
+								<select class="forms_input" name='squadron' required>
+									<option value="" disabled selected>Select</option>
 									<option value="ISRG">ISRG</option>
 									<option value="Ops">Ops</option>
 									<option value="Medical Group">Medical Group</option>
 									<option value="MSG">MSG</option>
 									<option value="Wing Staff">Wing Staff</option>
 								</select>
+								<label for="">Select Squadron</label>
 							</div>
-							<textarea class="forms_input" name="notes" maxlength="200" placeholder="Notes"></textarea>
+							<div class="input-field col s12">
+								<textarea class="forms_input materialize-textarea" name="notes"></textarea>
+								<label for="">Notes</label>
+							</div>
 							<br>
 							<br>
 							<input class="forms_button" type="submit" value="request">
@@ -382,7 +411,6 @@
 						</form>
 					</div>
 				</div>
-
 			</div>
 			<div id="contact" class="content hide" data-content="contact">
 				<h1>Contact Us</h1>
@@ -560,57 +588,54 @@
 					</div>
 				</div>
 			</div>
-		</div>
+			<div class="footer">
 
-		<div class="footer">
+				<div class="footer_text">
+					USAF © All rights reserved - 188th Wing PA
+					<br>
+					<a href="188WingPA@gmail.com">188WingPA@gmail.com</a><a href="tel:479-573-5167">(479)573-5167</a>
+				</div>
 
-			<div class="footer_text">
-				USAF © All rights reserved - 188th Wing PA
-				<br>
-				<a href="188WingPA@gmail.com">188WingPA@gmail.com</a><a href="tel:479-573-5167">(479)573-5167</a>
+				<a href="https://www.facebook.com/188thWing/" target="_blank">
+					<i title="Facebook" class="fab fa-facebook-square fa-2x"></i>
+				</a>
+
+				<a href="https://twitter.com/188thwg?lang=en" target="_blank">
+					<i title="Twitter" class="fab fa-twitter-square fa-2x"></i>
+				</a>
+
+				<a href="https://www.instagram.com/188thwing/" target="_blank">
+					<i title="Instagram" class="fab fa-instagram-square fa-2x"></i>
+				</a>
+
+				<a href="https://www.dvidshub.net/search?q=188th+wing&view=grid" target="_blank">
+					<i title="DIVIDS" class="fas fa-camera-retro fa-2x"></i>
+				</a>
+
+				<a href="https://www.188wg.ang.af.mil/" target="_blank">
+					<i title="AF Site" class="fas fa-globe fa-2x"></i>
+				</a>
 			</div>
 
-			<a href="https://www.facebook.com/188thWing/" target="_blank">
-				<i title="Facebook" class="fab fa-facebook-square fa-2x"></i>
-			</a>
+			<!--JavaScript Libraries-->
 
-			<a href="https://twitter.com/188thwg?lang=en" target="_blank">
-				<i title="Twitter" class="fab fa-twitter-square fa-2x"></i>
-			</a>
+			<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.js"></script>
+			<script src="https://kit.fontawesome.com/ef382a7536.js" crossorigin="anonymous"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-			<a href="https://www.instagram.com/188thwing/" target="_blank">
-				<i title="Instagram" class="fab fa-instagram-square fa-2x"></i>
-			</a>
+			<!--My JavaScript-->
 
-			<a href="https://www.dvidshub.net/search?q=188th+wing&view=grid" target="_blank">
-				<i title="DIVIDS" class="fas fa-camera-retro fa-2x"></i>
-			</a>
+			<script src="assets/scripts/config_firebase.js"></script>
+			<script src="assets/scripts/firebase_auth.js"></script>
+			<script src="assets/scripts/script.js"></script>
+			<script src="assets/scripts/email.js"></script>
+			<script src="assets/scripts/lists.js"></script>
 
-			<a href="https://www.188wg.ang.af.mil/" target="_blank">
-				<i title="AF Site" class="fas fa-globe fa-2x"></i>
-			</a>
-		</div>
-	</div>
+		</body>
 
-	<!--JavaScript Libraries-->
-
-	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/additional-methods.js"></script>
-	<script src="https://kit.fontawesome.com/ef382a7536.js" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-	<!--My JavaScript-->
-
-	<script src="assets/scripts/config_firebase.js"></script>
-	<script src="assets/scripts/firebase_auth.js"></script>
-	<script src="assets/scripts/script.js"></script>
-	<script src="assets/scripts/email.js"></script>
-	<script src="assets/scripts/lists.js"></script>
-
-</body>
-
-</html>
+		</html>
