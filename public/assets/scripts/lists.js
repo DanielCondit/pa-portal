@@ -182,11 +182,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 
       tr.setAttribute("data-id", doc.id);
 
-      let utcSec = doc.data().date;
-      let rDate = new Date();
-      rDate.setUTCSeconds(utcSec);
+      // let utcSec = doc.data().date;
+      // let rDate = new Date();
+      // rDate.setUTCSeconds(utcSec);
 
-      date.textContent = rDate.toString().substring(0, 15);
+      date.textContent = doc.data().date;
       time.textContent = doc.data().time;
       name.textContent = [doc.data().lname, doc.data().fname];
       grade.textContent = doc.data().grade;
