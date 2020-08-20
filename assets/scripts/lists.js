@@ -16,6 +16,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       let date = document.createElement("td");
       let time = document.createElement("td");
       let name = document.createElement("td");
+      let phone = document.createElement("td");
       let temp = document.createElement("td");
       let symptoms = document.createElement("td");
       let squadron = document.createElement("td");
@@ -27,6 +28,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       date.textContent = doc.data().date;
       time.textContent = doc.data().time;
       name.textContent = [doc.data().lname, doc.data().fname];
+      phone.textContent = doc.data().phone;
       temp.textContent = doc.data().temp;
       symptoms.textContent = [doc.data().symptom1, doc.data().symptom2, doc.data().symptom3, doc.data().symptom4, doc.data().symptom5, doc.data().symptom6, doc.data().symptom7, doc.data().symptom8];
       squadron.textContent = doc.data().squadron;
@@ -36,6 +38,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       tr.appendChild(date);
       tr.appendChild(time);
       tr.appendChild(name);
+      tr.appendChild(phone);
       tr.appendChild(temp);
       tr.appendChild(symptoms);
       tr.appendChild(squadron);
@@ -379,6 +382,7 @@ document.getElementById('add-covid-form').addEventListener("submit", e => {
   db.collection("covid_screen").add({
     lname: document.getElementById('add-covid-form').lname.value,
     fname: document.getElementById('add-covid-form').fname.value,
+    phone: document.getElementById('add-covid-form').phone.value,
     date: document.getElementById('add-covid-form').date.value,
     time: document.getElementById('add-covid-form').time.value,
     temp: document.getElementById('add-covid-form').temp.value,
@@ -395,6 +399,7 @@ document.getElementById('add-covid-form').addEventListener("submit", e => {
   });
   document.getElementById('add-covid-form').lname.value = "";
   document.getElementById('add-covid-form').fname.value = "";
+  document.getElementById('add-covid-form').phone.value = "";
   document.getElementById('add-covid-form').date.value = "";
   document.getElementById('add-covid-form').time.value = "";
   document.getElementById('add-covid-form').temp.value = "";

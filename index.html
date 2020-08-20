@@ -129,7 +129,7 @@
 									<label for="">Select Grade</label>
 								</div>
 								<div class="input-field col s12">
-									<input class="forms_input" type="number" name="phone" required>
+									<input class="forms_input" type="tel" name="phone" required>
 									<label for="">Phone Number</label>
 								</div>
 								<div class="input-field col s12">
@@ -276,7 +276,7 @@
 									<label for="">Select Grade</label>
 								</div>
 								<div class="input-field col s12">
-									<input class="forms_input" type="number" name="phone" required>
+									<input class="forms_input" type="tel" name="phone" required>
 									<label for="">Phone Number</label>
 								</div>
 								<div class="input-field col s12">
@@ -360,7 +360,7 @@
 									<label for="">Select Grade</label>
 								</div>
 								<div class="input-field col s12">
-									<input class="forms_input" type="number" name="phone" required>
+									<input class="forms_input" type="tel" name="phone" required>
 									<label for="">Phone Number</label>
 								</div>
 								<div class="input-field col s12">
@@ -413,11 +413,15 @@
 									<label for="covFname">First Name</label>
 								</div>
 								<div class="input-field col s12">
+									<input class="forms_input" type="tel" id="covPhone" name="phone" required>
+									<label for="covPhone">Phone</label>
+								</div>
+								<div class="input-field col s12">
 									<input type="text" class="datepicker forms_input" id="covDate" name="date" required>
 									<label for="covDate">Date In</label>
 								</div>
 								<div class="input-field col s12">
-									<input type="text" class="timepicker forms_input" id="covTime" name="time">
+									<input type="text" class="timepicker forms_input" id="covTime" name="time" required>
 									<label for="covTime">Time In</label>
 								</div>
 								<div class="input-field col s12">
@@ -502,6 +506,7 @@
 										<option value="Medical Group">Medical Group</option>
 										<option value="MSG">MSG</option>
 										<option value="Wing Staff">Wing Staff</option>
+										<option value="Wing Staff">Guest</option>
 									</select>
 									<label for="covSquad">Select Squadron</label>
 								</div>
@@ -698,6 +703,7 @@
 									<th>Date</th>
 									<th>Time</th>
 									<th>Name</th>
+									<th>Phone</th>
 									<th>Temp</th>
 									<th>Symptoms</th>
 									<th>Squadron</th>
