@@ -20,7 +20,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       let symptoms = document.createElement("td");
       let squadron = document.createElement("td");
       let notes = document.createElement("td");
-      let del = document.createElement("button");
+      // let del = document.createElement("button");
 
       tr.setAttribute("data-id", doc.id);
 
@@ -31,7 +31,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       symptoms.textContent = [doc.data().symptom1, doc.data().symptom2, doc.data().symptom3, doc.data().symptom4, doc.data().symptom5, doc.data().symptom6, doc.data().symptom7, doc.data().symptom8];
       squadron.textContent = doc.data().squadron;
       notes.textContent = doc.data().notes;
-      del.textContent = "DELETE";
+      // del.textContent = "DELETE";
 
       tr.appendChild(date);
       tr.appendChild(time);
@@ -40,18 +40,18 @@ firebase.auth().onAuthStateChanged(function(user) {
       tr.appendChild(symptoms);
       tr.appendChild(squadron);
       tr.appendChild(notes);
-      tr.appendChild(del);
+      // tr.appendChild(del);
 
       covidList.appendChild(tr);
 
       // Deleting Data
-      del.addEventListener("click", e => {
-        e.stopPropagation();
-        let id = e.target.parentElement.getAttribute("data-id");
-        db.collection("covid_screen")
-        .doc(id)
-        .delete();
-      });
+      // del.addEventListener("click", e => {
+      //   e.stopPropagation();
+      //   let id = e.target.parentElement.getAttribute("data-id");
+      //   db.collection("covid_screen")
+      //   .doc(id)
+      //   .delete();
+      // });
     }
 
     function renderEquipment(doc) {
@@ -68,7 +68,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       let osymbol = document.createElement("td");
       let equipment = document.createElement("td");
       let desc = document.createElement("td");
-      let del = document.createElement("button");
+      // let del = document.createElement("button");
 
       tr.setAttribute("data-id", doc.id);
 
@@ -82,7 +82,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       osymbol.textContent = doc.data().osymbol;
       equipment.textContent = doc.data().osymbol;
       desc.textContent = doc.data().desc;
-      del.textContent = "DELETE";
+      // del.textContent = "DELETE";
 
       tr.appendChild(date);
       tr.appendChild(time);
@@ -94,18 +94,18 @@ firebase.auth().onAuthStateChanged(function(user) {
       tr.appendChild(osymbol);
       tr.appendChild(equipment);
       tr.appendChild(desc);
-      tr.appendChild(del);
+      // tr.appendChild(del);
 
       equipmentList.appendChild(tr);
 
       // Deleting Data
-      del.addEventListener("click", e => {
-        e.stopPropagation();
-        let id = e.target.parentElement.getAttribute("data-id");
-        db.collection("equipment")
-        .doc(id)
-        .delete();
-      });
+      // del.addEventListener("click", e => {
+      //   e.stopPropagation();
+      //   let id = e.target.parentElement.getAttribute("data-id");
+      //   db.collection("equipment")
+      //   .doc(id)
+      //   .delete();
+      // });
     }
 
     function renderRHTC(doc) {
@@ -121,7 +121,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       let org = document.createElement("td");
       let osymbol = document.createElement("td");
       let desc = document.createElement("td");
-      let del = document.createElement("button");
+      // let del = document.createElement("button");
 
       tr.setAttribute("data-id", doc.id);
 
@@ -134,7 +134,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       org.textContent = doc.data().org;
       osymbol.textContent = doc.data().osymbol;
       desc.textContent = doc.data().desc;
-      del.textContent = "DELETE";
+      // del.textContent = "DELETE";
 
       tr.appendChild(date);
       tr.appendChild(time);
@@ -145,18 +145,18 @@ firebase.auth().onAuthStateChanged(function(user) {
       tr.appendChild(org);
       tr.appendChild(osymbol);
       tr.appendChild(desc);
-      tr.appendChild(del);
+      // tr.appendChild(del);
 
       rhtcList.appendChild(tr);
 
       // Deleting Data
-      del.addEventListener("click", e => {
-        e.stopPropagation();
-        let id = e.target.parentElement.getAttribute("data-id");
-        db.collection("rhtc")
-        .doc(id)
-        .delete();
-      });
+      // del.addEventListener("click", e => {
+      //   e.stopPropagation();
+      //   let id = e.target.parentElement.getAttribute("data-id");
+      //   db.collection("rhtc")
+      //   .doc(id)
+      //   .delete();
+      // });
     }
 
     function renderService(doc) {
@@ -174,7 +174,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       let osymbol = document.createElement("td");
       let support = document.createElement("td");
       let desc = document.createElement("td");
-      let del = document.createElement("button");
+      // let del = document.createElement("button");
 
 
       tr.setAttribute("data-id", doc.id);
@@ -233,7 +233,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       osymbol.textContent = doc.data().osymbol;
       support.textContent = doc.data().support;
       desc.textContent = doc.data().desc;
-      del.textContent = "DELETE";
+      // del.textContent = "DELETE";
 
       tr.appendChild(date);
       tr.appendChild(time);
@@ -246,18 +246,18 @@ firebase.auth().onAuthStateChanged(function(user) {
       tr.appendChild(osymbol);
       tr.appendChild(support);
       tr.appendChild(desc);
-      tr.appendChild(del);
+      // tr.appendChild(del);
 
       serviceList.appendChild(tr);
 
       // Deleting Data
-      del.addEventListener("click", e => {
-        e.stopPropagation();
-        let id = e.target.parentElement.getAttribute("data-id");
-        db.collection("Form_833")
-        .doc(id)
-        .delete();
-      });
+      // del.addEventListener("click", e => {
+      //   e.stopPropagation();
+      //   let id = e.target.parentElement.getAttribute("data-id");
+      //   db.collection("Form_833")
+      //   .doc(id)
+      //   .delete();
+      // });
     }
 
     // Realtime listener

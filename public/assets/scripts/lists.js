@@ -20,8 +20,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       let symptoms = document.createElement("td");
       let squadron = document.createElement("td");
       let notes = document.createElement("td");
-      let del = document.createElement("td");
-      var delButton = del.appendChild(document.createElement("button"));
+      // let del = document.createElement("button");
 
       tr.setAttribute("data-id", doc.id);
 
@@ -29,10 +28,10 @@ firebase.auth().onAuthStateChanged(function(user) {
       time.textContent = doc.data().time;
       name.textContent = [doc.data().lname, doc.data().fname];
       temp.textContent = doc.data().temp;
-      symptoms.textContent = doc.data().symptoms;
+      symptoms.textContent = [doc.data().symptom1, doc.data().symptom2, doc.data().symptom3, doc.data().symptom4, doc.data().symptom5, doc.data().symptom6, doc.data().symptom7, doc.data().symptom8];
       squadron.textContent = doc.data().squadron;
       notes.textContent = doc.data().notes;
-      delButton.textContent = "DELETE";
+      // del.textContent = "DELETE";
 
       tr.appendChild(date);
       tr.appendChild(time);
@@ -41,18 +40,18 @@ firebase.auth().onAuthStateChanged(function(user) {
       tr.appendChild(symptoms);
       tr.appendChild(squadron);
       tr.appendChild(notes);
-      tr.appendChild(del);
+      // tr.appendChild(del);
 
       covidList.appendChild(tr);
 
       // Deleting Data
-      del.addEventListener("click", e => {
-        e.stopPropagation();
-        let id = e.target.parentElement.getAttribute("data-id");
-        db.collection("covid_screen")
-        .doc(id)
-        .delete();
-      });
+      // del.addEventListener("click", e => {
+      //   e.stopPropagation();
+      //   let id = e.target.parentElement.getAttribute("data-id");
+      //   db.collection("covid_screen")
+      //   .doc(id)
+      //   .delete();
+      // });
     }
 
     function renderEquipment(doc) {
@@ -69,8 +68,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       let osymbol = document.createElement("td");
       let equipment = document.createElement("td");
       let desc = document.createElement("td");
-      let del = document.createElement("td");
-      var delButton = del.appendChild(document.createElement("button"));
+      // let del = document.createElement("button");
 
       tr.setAttribute("data-id", doc.id);
 
@@ -84,7 +82,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       osymbol.textContent = doc.data().osymbol;
       equipment.textContent = doc.data().osymbol;
       desc.textContent = doc.data().desc;
-      delButton.textContent = "DELETE";
+      // del.textContent = "DELETE";
 
       tr.appendChild(date);
       tr.appendChild(time);
@@ -96,18 +94,18 @@ firebase.auth().onAuthStateChanged(function(user) {
       tr.appendChild(osymbol);
       tr.appendChild(equipment);
       tr.appendChild(desc);
-      tr.appendChild(del);
+      // tr.appendChild(del);
 
       equipmentList.appendChild(tr);
 
       // Deleting Data
-      del.addEventListener("click", e => {
-        e.stopPropagation();
-        let id = e.target.parentElement.getAttribute("data-id");
-        db.collection("equipment")
-        .doc(id)
-        .delete();
-      });
+      // del.addEventListener("click", e => {
+      //   e.stopPropagation();
+      //   let id = e.target.parentElement.getAttribute("data-id");
+      //   db.collection("equipment")
+      //   .doc(id)
+      //   .delete();
+      // });
     }
 
     function renderRHTC(doc) {
@@ -123,8 +121,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       let org = document.createElement("td");
       let osymbol = document.createElement("td");
       let desc = document.createElement("td");
-      let del = document.createElement("td");
-      var delButton = del.appendChild(document.createElement("button"));
+      // let del = document.createElement("button");
 
       tr.setAttribute("data-id", doc.id);
 
@@ -137,7 +134,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       org.textContent = doc.data().org;
       osymbol.textContent = doc.data().osymbol;
       desc.textContent = doc.data().desc;
-      delButton.textContent = "DELETE";
+      // del.textContent = "DELETE";
 
       tr.appendChild(date);
       tr.appendChild(time);
@@ -148,18 +145,18 @@ firebase.auth().onAuthStateChanged(function(user) {
       tr.appendChild(org);
       tr.appendChild(osymbol);
       tr.appendChild(desc);
-      tr.appendChild(del);
+      // tr.appendChild(del);
 
       rhtcList.appendChild(tr);
 
       // Deleting Data
-      del.addEventListener("click", e => {
-        e.stopPropagation();
-        let id = e.target.parentElement.getAttribute("data-id");
-        db.collection("rhtc")
-        .doc(id)
-        .delete();
-      });
+      // del.addEventListener("click", e => {
+      //   e.stopPropagation();
+      //   let id = e.target.parentElement.getAttribute("data-id");
+      //   db.collection("rhtc")
+      //   .doc(id)
+      //   .delete();
+      // });
     }
 
     function renderService(doc) {
@@ -177,16 +174,55 @@ firebase.auth().onAuthStateChanged(function(user) {
       let osymbol = document.createElement("td");
       let support = document.createElement("td");
       let desc = document.createElement("td");
-      let del = document.createElement("td");
-      var delButton = del.appendChild(document.createElement("button"));
+      // let del = document.createElement("button");
+
 
       tr.setAttribute("data-id", doc.id);
 
-      // let utcSec = doc.data().date;
-      // let rDate = new Date();
-      // rDate.setUTCSeconds(utcSec);
+      // let today = new Date();
+      // let today_dd = today.getDate();
+      // let today_mm = today.getMonth()+1; 
+      // let today_yyyy = today.getFullYear();
+      // if(today_dd<10) 
+      // {
+      //   today_dd='0'+today_dd;
+      // } 
 
-      date.textContent = doc.data().date;
+      // if(today_mm<10) 
+      // {
+      //   today_mm='0'+today_mm;
+      // } 
+      // today = today_yyyy+''+today_mm+''+today_dd;
+
+      // let oldDate = new Date("2020-08-18");
+      // let oldDate_dd = oldDate.getDate()+1;
+      // let oldDate_mm = oldDate.getMonth()+1; 
+      // let oldDate_yyyy = oldDate.getFullYear();
+      // if(oldDate_dd<10) 
+      // {
+      //   oldDate_dd='0'+oldDate_dd;
+      // } 
+
+      // if(oldDate_mm<10) 
+      // {
+      //   oldDate_mm='0'+oldDate_mm;
+      // } 
+      // oldDate = oldDate_yyyy+''+oldDate_mm+''+oldDate_dd;
+
+      // if (today <= oldDate){
+      //   let unixDate = doc.data().date;
+      //   let myDate = moment.unix(unixDate.seconds).format('MMM Do, YYYY');
+      //   date.textContent = myDate;
+      // } else if (today > oldDate){
+      //   date.textContent = doc.data().date;
+      // } else {
+      //   console.log("No dates to display.");
+      // }
+      
+      let unixDate = doc.data().date;
+      let myDate = moment.unix(unixDate.seconds).format('MMM Do, YYYY');
+
+      date.textContent = myDate;
       time.textContent = doc.data().time;
       name.textContent = [doc.data().lname, doc.data().fname];
       grade.textContent = doc.data().grade;
@@ -197,7 +233,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       osymbol.textContent = doc.data().osymbol;
       support.textContent = doc.data().support;
       desc.textContent = doc.data().desc;
-      delButton.textContent = "DELETE";
+      // del.textContent = "DELETE";
 
       tr.appendChild(date);
       tr.appendChild(time);
@@ -210,18 +246,18 @@ firebase.auth().onAuthStateChanged(function(user) {
       tr.appendChild(osymbol);
       tr.appendChild(support);
       tr.appendChild(desc);
-      tr.appendChild(del);
+      // tr.appendChild(del);
 
       serviceList.appendChild(tr);
 
       // Deleting Data
-      delButton.addEventListener("click", e => {
-        e.stopPropagation();
-        let id = e.target.parentElement.getAttribute("data-id");
-        db.collection("services")
-        .doc(id)
-        .delete();
-      });
+      // del.addEventListener("click", e => {
+      //   e.stopPropagation();
+      //   let id = e.target.parentElement.getAttribute("data-id");
+      //   db.collection("Form_833")
+      //   .doc(id)
+      //   .delete();
+      // });
     }
 
     // Realtime listener
@@ -346,7 +382,14 @@ document.getElementById('add-covid-form').addEventListener("submit", e => {
     date: document.getElementById('add-covid-form').date.value,
     time: document.getElementById('add-covid-form').time.value,
     temp: document.getElementById('add-covid-form').temp.value,
-    symptoms: document.getElementById('add-covid-form').symptoms.value,
+    symptom1: document.getElementById('add-covid-form').symptom1.value,
+    symptom2: document.getElementById('add-covid-form').symptom2.value,
+    symptom3: document.getElementById('add-covid-form').symptom3.value,
+    symptom4: document.getElementById('add-covid-form').symptom4.value,
+    symptom5: document.getElementById('add-covid-form').symptom5.value,
+    symptom6: document.getElementById('add-covid-form').symptom6.value,
+    symptom7: document.getElementById('add-covid-form').symptom7.value,
+    symptom8: document.getElementById('add-covid-form').symptom8.value,
     squadron: document.getElementById('add-covid-form').squadron.value,
     notes: document.getElementById('add-covid-form').notes.value,
   });
@@ -355,7 +398,14 @@ document.getElementById('add-covid-form').addEventListener("submit", e => {
   document.getElementById('add-covid-form').date.value = "";
   document.getElementById('add-covid-form').time.value = "";
   document.getElementById('add-covid-form').temp.value = "";
-  document.getElementById('add-covid-form').symptoms.value = "";
+  document.getElementById('add-covid-form').symptom1.value = "";
+  document.getElementById('add-covid-form').symptom2.value = "";
+  document.getElementById('add-covid-form').symptom3.value = "";
+  document.getElementById('add-covid-form').symptom4.value = "";
+  document.getElementById('add-covid-form').symptom5.value = "";
+  document.getElementById('add-covid-form').symptom6.value = "";
+  document.getElementById('add-covid-form').symptom7.value = "";
+  document.getElementById('add-covid-form').symptom8.value = "";
   document.getElementById('add-covid-form').squadron.value = "";
   document.getElementById('add-covid-form').notes.value = "";
 

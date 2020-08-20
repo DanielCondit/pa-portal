@@ -326,10 +326,7 @@ margin: 0 auto;
 }
 
 .display_data td{
-  margin: 0;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  margin: 0 auto;
 }
 
 .display_data button{
