@@ -59,6 +59,7 @@ $(document).ready(function () {
   $('select').formSelect();
   $('.modal').modal();
   $('.timepicker').timepicker();
+
 });
 
 

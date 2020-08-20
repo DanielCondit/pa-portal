@@ -80,7 +80,7 @@
 
 					<div class="tab_content_container">
 						<div id="Services" class="tab_content tab_content_active row">
-							<form class="forms" id="add-service-form">
+							<form class="forms" id="add-service-form" onsubmit="servicelert()">
 								<div class="input-field col s12">
 									<input type="text" class="datepicker forms_input" name="date" required>
 									<label for="">Date of Service</label>
@@ -224,10 +224,16 @@
 								<input class="forms_button" type="submit" value="submit">
 								<br>
 								<br>
+								<script>
+									function serviceAlert() {
+										alert("Submit Succesful");
+									}
+								</script>
+
 							</form>
 						</div>
 						<div id="Equipment" class="tab_content row">
-							<form class="forms" id="add-equipment-form">
+							<form class="forms" id="add-equipment-form" onsubmit="equiplert()">
 								<div class="input-field col s12">
 									<input type="text" class="datepicker forms_input" name="date" required>
 									<label for="">Date Out</label>
@@ -308,9 +314,14 @@
 								<input class="forms_button" type="submit" value="submit">
 								<br>
 								<br>
+								<script>
+									function equipAlert() {
+										alert("Request Submited");
+									}
+								</script>
 							</form>
 						</div>
-						<div id="RHTC" class="tab_content row">
+						<div id="RHTC" class="tab_content row" onsubmit="rhtcAlert()">
 							<form class="forms" id="add-rhtc-form" >
 								<div class="input-field col s12">
 									<input type="text" class="datepicker forms_input" name="date" required>
@@ -384,6 +395,11 @@
 								<input class="forms_button" type="submit" value="submit">
 								<br>
 								<br>
+								<script>
+									function rhtcAlert() {
+										alert("Request Submited");
+									}
+								</script>
 							</form>
 						</div>
 					</div>
@@ -393,7 +409,7 @@
 					<h1>Covid-19 Screen</h1>
 					<hr>
 					<div id="Covid" class="covScreenContainer row">
-						<form class="forms" id="add-covid-form">
+						<form class="forms" id="add-covid-form" onsubmit="covAlert()">
 							<div class="input-field col s12">
 								<input class="forms_input" type="text" id="covLname" name="lname" required>
 								<label for="covLname">Last Name</label>
@@ -507,6 +523,11 @@
 							<input class="forms_button" type="submit" value="submit">
 							<br>
 							<br>
+							<script>
+								function covAlert() {
+									alert("Submit Succesful");
+								}
+							</script>
 						</form>
 					</div>
 				</div>
