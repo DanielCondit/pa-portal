@@ -129,7 +129,7 @@
 									<label for="">Select Grade</label>
 								</div>
 								<div class="input-field col s12">
-									<input class="forms_input" type="number" name="phone" required>
+									<input class="forms_input" type="tel" name="phone" required>
 									<label for="">Phone Number</label>
 								</div>
 								<div class="input-field col s12">
@@ -221,7 +221,7 @@
 								</div>
 								<br>
 								<br>
-								<input class="forms_button" type="submit" value="request">
+								<input class="forms_button" type="submit" value="submit">
 								<br>
 								<br>
 							</form>
@@ -276,7 +276,7 @@
 									<label for="">Select Grade</label>
 								</div>
 								<div class="input-field col s12">
-									<input class="forms_input" type="number" name="phone" required>
+									<input class="forms_input" type="tel" name="phone" required>
 									<label for="">Phone Number</label>
 								</div>
 								<div class="input-field col s12">
@@ -305,7 +305,7 @@
 								</div>
 								<br>
 								<br>
-								<input class="forms_button" type="submit" value="request">
+								<input class="forms_button" type="submit" value="submit">
 								<br>
 								<br>
 							</form>
@@ -360,7 +360,7 @@
 									<label for="">Select Grade</label>
 								</div>
 								<div class="input-field col s12">
-									<input class="forms_input" type="number" name="phone" required>
+									<input class="forms_input" type="tel" name="phone" required>
 									<label for="">Phone Number</label>
 								</div>
 								<div class="input-field col s12">
@@ -381,7 +381,7 @@
 								</div>
 								<br>
 								<br>
-								<input class="forms_button" type="submit" value="request">
+								<input class="forms_button" type="submit" value="submit">
 								<br>
 								<br>
 							</form>
@@ -392,130 +392,122 @@
 				<div id="covidScreen" class="content" data-content="covidScreen">
 					<h1>Covid-19 Screen</h1>
 					<hr>
-					<ul class="tabs">
-						<li>
-							<a href="javascript:void(0); return false;" rel="#Covid" class="tab active">
-								<span>
-									Screen
-								</span>
-							</a>
-						</li>
-					</ul>
-					<div class="tab_content_container">
-						<div id="Covid" class="tab_content tab_content_activ row">
-							<form class="forms" id="add-covid-form">
-								<div class="input-field col s12">
-									<input class="forms_input" type="text" id="covLname" name="lname" required>
-									<label for="covLname">Last Name</label>
-								</div>
-								<div class="input-field col s12">
-									<input class="forms_input" type="text" id="covFname" name="fname" required>
-									<label for="covFname">First Name</label>
-								</div>
-								<div class="input-field col s12">
-									<input type="text" class="datepicker forms_input" id="covDate" name="date" required>
-									<label for="covDate">Date In</label>
-								</div>
-								<div class="input-field col s12">
-									<input type="text" class="timepicker forms_input" id="covTime" name="time">
-									<label for="covTime">Time In</label>
-								</div>
-								<div class="input-field col s12">
-									<input class="forms_input" type="number" id="covTemp" name="temp" required>
-									<label for="covTemp">Measured Temp</label>
-								</div>
-								<div class="input-field col s12" >
-									<p>
-										<label for="symptom1">
-											<input type="checkbox" id="symptom1" name="symptom1" value="Dry Cough">
-											<span>Dry Cough (Change from Baseline)</span>
-										</label>
-									</p>
-								</div>
-								<div class="input-field col s12" >
-									<p>
-										<label for="symptom2">
-											<input type="checkbox" id="symptom2" name="symptom2" value="Shortness of breath">
-											<span>Shortness of Breath (Change from Baseline)</span>
-										</label>
-									</p>
-								</div>
-								<div class="input-field col s12" >
-									<p>
-										<label for="symptom3">
-											<input type="checkbox" id="symptom3" name="symptom3" value="Muscle Aches">
-											<span>Muscle Aches (Myalgias)</span>
-										</label>
-									</p>
-								</div>
-								<div class="input-field col s12" >
-									<p>
-										<label for="symptom4">
-											<input type="checkbox" id="symptom4" name="symptom4" value="Sore throat">
-											<span>Sore Throat</span>
-										</label>
-									</p>
-								</div>
-								<div class="input-field col s12" >
-									<p>
-										<label for="symptom5">
-											<input type="checkbox" id="symptom5" name="symptom5" value="Headache">
-											<span>Headache (Influenza Like Illness)</span>
-										</label>
-									</p>
-								</div>
-								<div class="input-field col s12" >
-									<p>
-										<label for="symptom6">
-											<input type="checkbox" id="symptom6" name="symptom6" value="Fatigue">
-											<span>Fatigue (Influenza Like Illness)</span>
-										</label>
-									</p>
-								</div>
-								<div class="input-field col s12" >
-									<p>
-										<label for="symptom7">
-											<input type="checkbox" id="symptom7" name="symptom7" value="Had close contact with some who has COVID-19.">
-											<span>Have you had close contact with anyone who has COVID-19?</span>
-										</label>
-									</p>
-								</div>
-								<div class="input-field col s12" >
-									<p>
-										<label for="otherSymptom">
-											<input type="checkbox" id="otherSymptom" name="otherSymptoms" onclick="if (this.checked){ document.getElementById('symptomOther').removeAttribute('disabled');}">
-											<span>Please enter other syptoms below.</span>
-										</label>
-									</p>
-								</div>
-								
-								<br>
-								<div class="input-field col s12">
-									<textarea class="forms_input materialize-textarea" id="symptomOther" name="symptom8" disabled="disabled"></textarea>
-									<label for="sympto8">Other Symptoms</label>
-								</div>
-								<div class="input-field col s12">
-									<select class="forms_input" id="covSquad" name="squadron" required>
-										<option value="" disabled selected></option>
-										<option value="ISRG">ISRG</option>
-										<option value="Ops">Ops</option>
-										<option value="Medical Group">Medical Group</option>
-										<option value="MSG">MSG</option>
-										<option value="Wing Staff">Wing Staff</option>
-									</select>
-									<label for="covSquad">Select Squadron</label>
-								</div>
-								<div class="input-field col s12">
-									<textarea class="forms_input materialize-textarea" id="covNotes" name="notes"></textarea>
-									<label for="covNotes">Notes</label>
-								</div>
-								<br>
-								<br>
-								<input class="forms_button" type="submit" value="request">
-								<br>
-								<br>
-							</form>
-						</div>
+					<div id="Covid" class="covScreenContainer row">
+						<form class="forms" id="add-covid-form">
+							<div class="input-field col s12">
+								<input class="forms_input" type="text" id="covLname" name="lname" required>
+								<label for="covLname">Last Name</label>
+							</div>
+							<div class="input-field col s12">
+								<input class="forms_input" type="text" id="covFname" name="fname" required>
+								<label for="covFname">First Name</label>
+							</div>
+							<div class="input-field col s12">
+								<input class="forms_input" type="tel" id="covPhone" name="phone" required>
+								<label for="covPhone">Phone</label>
+							</div>
+							<div class="input-field col s12">
+								<input type="text" class="datepicker forms_input" id="covDate" name="date" required>
+								<label for="covDate">Date In</label>
+							</div>
+							<div class="input-field col s12">
+								<input type="text" class="timepicker forms_input" id="covTime" name="time" required>
+								<label for="covTime">Time In</label>
+							</div>
+							<div class="input-field col s12">
+								<input class="forms_input" type="number" id="covTemp" name="temp" required>
+								<label for="covTemp">Measured Temp</label>
+							</div>
+							<div class="input-field col s12" >
+								<p>
+									<label for="symptom1">
+										<input type="checkbox" id="symptom1" name="symptom1" value="Dry Cough">
+										<span>Dry Cough (Change from Baseline)</span>
+									</label>
+								</p>
+							</div>
+							<div class="input-field col s12" >
+								<p>
+									<label for="symptom2">
+										<input type="checkbox" id="symptom2" name="symptom2" value="Shortness of breath">
+										<span>Shortness of Breath (Change from Baseline)</span>
+									</label>
+								</p>
+							</div>
+							<div class="input-field col s12" >
+								<p>
+									<label for="symptom3">
+										<input type="checkbox" id="symptom3" name="symptom3" value="Muscle Aches">
+										<span>Muscle Aches (Myalgias)</span>
+									</label>
+								</p>
+							</div>
+							<div class="input-field col s12" >
+								<p>
+									<label for="symptom4">
+										<input type="checkbox" id="symptom4" name="symptom4" value="Sore throat">
+										<span>Sore Throat</span>
+									</label>
+								</p>
+							</div>
+							<div class="input-field col s12" >
+								<p>
+									<label for="symptom5">
+										<input type="checkbox" id="symptom5" name="symptom5" value="Headache">
+										<span>Headache (Influenza Like Illness)</span>
+									</label>
+								</p>
+							</div>
+							<div class="input-field col s12" >
+								<p>
+									<label for="symptom6">
+										<input type="checkbox" id="symptom6" name="symptom6" value="Fatigue">
+										<span>Fatigue (Influenza Like Illness)</span>
+									</label>
+								</p>
+							</div>
+							<div class="input-field col s12" >
+								<p>
+									<label for="symptom7">
+										<input type="checkbox" id="symptom7" name="symptom7" value="Had close contact with some who has COVID-19.">
+										<span>Have you had close contact with anyone who has COVID-19?</span>
+									</label>
+								</p>
+							</div>
+							<div class="input-field col s12" >
+								<p>
+									<label for="otherSymptom">
+										<input type="checkbox" id="otherSymptom" name="otherSymptoms" onclick="if (this.checked){ document.getElementById('symptomOther').removeAttribute('disabled');}">
+										<span>Please enter other syptoms below.</span>
+									</label>
+								</p>
+							</div>
+							<div class="input-field col s12">
+								<textarea class="forms_input materialize-textarea" id="symptomOther" name="symptom8" disabled="disabled"></textarea>
+								<label for="sympto8">Other Symptoms</label>
+							</div>
+							<div class="input-field col s12">
+								<select class="forms_input" id="covSquad" name="squadron" required>
+									<option value="" disabled selected></option>
+									<option value="ISRG">ISRG</option>
+									<option value="Ops">Ops</option>
+									<option value="Medical Group">Medical Group</option>
+									<option value="MSG">MSG</option>
+									<option value="Wing Staff">Wing Staff</option>
+									<option value="Wing Staff">Guest</option>
+								</select>
+								<label for="covSquad">Select Squadron</label>
+							</div>
+							<div class="input-field col s12">
+								<textarea class="forms_input materialize-textarea" id="covNotes" name="notes"></textarea>
+								<label for="covNotes">Notes</label>
+							</div>
+							<br>
+							<br>
+							<input class="forms_button" type="submit" value="submit">
+							<br>
+							<br>
+						</form>
 					</div>
 				</div>
 
@@ -698,6 +690,7 @@
 									<th>Date</th>
 									<th>Time</th>
 									<th>Name</th>
+									<th>Phone</th>
 									<th>Temp</th>
 									<th>Symptoms</th>
 									<th>Squadron</th>

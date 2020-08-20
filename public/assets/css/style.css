@@ -80,6 +80,8 @@ body {
 
 /*  ^^ EVD GLOBAL STYLES FOR THE SITE ^^ */
 
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 /* GLOBAL MAIN MENU STYLES */
 
 #menu-wrapper {
@@ -189,6 +191,8 @@ body {
 
 /* ^^ END GLOBAL MAIN MENU STYLES ^^ */
 
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 /* STYLES FOR SPLASH(HOME) PAGE */
 
 #splash{
@@ -206,6 +210,8 @@ body {
 }
 
 /* ^^ END STYLES FOR SPLASH(HOME) PAGE ^^ */
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* STYLES FOR SERVICES PAGE */
 
@@ -264,19 +270,14 @@ ul.tabs li a:hover, ul.tabs li a.active {
   display:none;
   position:relative;
   width:1px;
-  height:1px;
-/*  overflow:auto;
-overflow-x:hidden;*/
-}
+  height:1px;}
 
 .tab_content_active {
   display:block;
   position:relative;
   width:100%;
   height:auto;
-/*  overflow:auto;
-overflow-x:hidden;*/
-margin: 0 auto;
+  margin: 0 auto;
 }
 
 .tab_content_active span {
@@ -286,6 +287,32 @@ margin: 0 auto;
 }
 
 /* END STYLES FOR SERVICES PAGE */
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*STYLES FOR COVID SCREEN PAGE*/
+
+.covScreenContainer {
+  width:100%;
+  height:auto;
+  float:left;
+  background:white;
+  padding:20px;
+  margin-top:1px;
+  font-size:14px;
+  border-radius:0 0 10px 10px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  -moz-border-radius:0 0 10px 10px;
+  -webkit-border-radius:0 0 10px 10px;
+  display:block;
+  position:relative;
+  margin: 0 auto;
+}
+
+/*END STYLES FOR COVID SCREEN PAGE*/
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* STYLES FOR THE CONTACT PAGE */
 
@@ -319,6 +346,8 @@ margin: 0 auto;
 
 /* ^^ END STYLES FOR THE CONTACT PAGE ^^ */
 
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
 /* STYLES FOR ADMIN PAGE*/
 
 .display_data {
@@ -347,6 +376,8 @@ margin: 0 auto;
 }
 
 /* ^^ END STYLES FOR ADMIN PAGE^^ */
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* STYLES FOR MOBILE */
 
